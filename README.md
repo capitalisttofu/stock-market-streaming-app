@@ -35,7 +35,7 @@ the performance of our Apache Flink application.
 
 ## Setup
 
-We use docker to run the kafka cluster as well as the apache flink application. They can be simplfy spun up with `docker-compose up`.
+We use docker to run the kafka cluster as well as the apache flink application. They can be simplfy spun up with `docker-compose up`. Instructions on provisioning the partition and topics of the kafka cluster can be found in the `backend/README.md` file.
 
 
 
