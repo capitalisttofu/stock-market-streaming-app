@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum SecType {
+  I = 1;
+  E = 2;
+}
+
+// Inspired by the definition given in the competition description
+message RawTradeEvent {
+  string id = 1; // In csv ID
+  SecType secType = 2; // In csv SecType
+  optional float lastTradePrice = 3; // In csv Last
+  optional google.protobuf.Timestamp tradingTime = 4; // In csv Trading time
+  optional google.protobuf.Timestamp tradingDate = 5; // In csv Trading date
+}
+
+message TradeEvent {
+  string id = 1;
+  string symbol = 2; // Parsed from id id = [symbol].[exchange]
+  string exchange = 3; // Parsed from id
+  SecType sectype = 4;
+  float lasttradeprice = 5;
+  google.protobuf.Timestamp lastUpdate = 6;
+  google.protobuf.Timestamp lastTrade = 7;
+}
+
+// TODO: Add Buy/Sell Advice proto definitions when we get there
