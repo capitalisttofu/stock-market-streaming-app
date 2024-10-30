@@ -1,5 +1,6 @@
 import {
   BUY_SELL_ADVICE_TOPIC,
+  RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION,
   SORTED_RAW_TRADE_DATA_TOPIC,
   TRADE_DATA_TOPIC,
 } from './constants'
@@ -21,8 +22,20 @@ export const main = async () => {
     // data source stream.
     // In order to fine-tune our application, and avoid losing data
     // in re-provisioning we do not recreate sorted_raw_trade_data_topic
-    if (!existingTopicsSet.has(SORTED_RAW_TRADE_DATA_TOPIC)) {
-      console.log('Raw data topic does not exist yet, creating')
+    // except if we want to using the .env file
+
+    if (
+      !existingTopicsSet.has(SORTED_RAW_TRADE_DATA_TOPIC) ||
+      RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION
+    ) {
+      if (existingTopicsSet.has(SORTED_RAW_TRADE_DATA_TOPIC)) {
+        console.log(
+          `Recreating ${SORTED_RAW_TRADE_DATA_TOPIC} because of env RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION`,
+        )
+        await admin.deleteTopics({ topics: [SORTED_RAW_TRADE_DATA_TOPIC] })
+      }
+
+      console.log('Creating topic', SORTED_RAW_TRADE_DATA_TOPIC)
       await admin.createTopics({
         topics: [
           {

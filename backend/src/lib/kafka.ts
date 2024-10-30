@@ -8,4 +8,16 @@ const kafka = new KafkaJS.Kafka({
 })
 
 export const admin = kafka.admin()
-export const producer = kafka.producer()
+
+export const producer = kafka.producer({
+  kafkaJS: {},
+})
+
+export const getConsumer = (consumerGroupId: string) => {
+  return kafka.consumer({
+    kafkaJS: {
+      groupId: consumerGroupId,
+      fromBeginning: true,
+    },
+  })
+}
