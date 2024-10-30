@@ -1,21 +1,12 @@
-import { KafkaJS } from '@confluentinc/kafka-javascript'
 import {
   BUY_SELL_ADVICE_TOPIC,
-  LOCAL_KAFKA_BROKER_LIST,
   SORTED_RAW_TRADE_DATA_TOPIC,
   TRADE_DATA_TOPIC,
 } from './constants'
+import { admin } from './lib/kafka'
 
 export const main = async () => {
   console.log('Provisioning kafka')
-
-  const kafka = new KafkaJS.Kafka({
-    kafkaJS: {
-      brokers: LOCAL_KAFKA_BROKER_LIST,
-    },
-  })
-
-  const admin = kafka.admin()
 
   await admin.connect()
 

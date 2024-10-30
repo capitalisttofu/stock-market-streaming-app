@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "provision:kafka": "ts-node-transpile-only -r ./src/provisionKafka.ts",
+    "csvToStream": "ts-node-transpile-only -r ./src/csvToStream/produceRawTradeData.ts",
     "gen-proto-ts-files": "pbjs -t static-module -w commonjs -o generatedProto/compiled.js ../proto/messages.proto && pbts -o generatedProto/compiled.d.ts generatedProto/compiled.js"
   },
   "author": "",
