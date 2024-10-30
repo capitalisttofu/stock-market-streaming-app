@@ -5,7 +5,7 @@ import { producer } from '../lib/kafka'
 
 export const produceRawTradeData = async (datapoint: ParsedRawData) => {
   // Create validates the message, so might be better
-  // but it can be more efficient to code directly
+  // but it can be more efficient to encode directly
   // leaving this code here for future reference and example
   /*
     const message = RawTradeEvent.create(datapoint)
