@@ -23,12 +23,15 @@ export const main = async () => {
     // In order to fine-tune our application, and avoid losing data
     // in re-provisioning we do not recreate sorted_raw_trade_data_topic
     // except if we want to using the .env file
+    const rawTradeEventTopicExists = existingTopicsSet.has(
+      SORTED_RAW_TRADE_DATA_TOPIC,
+    )
 
     if (
-      !existingTopicsSet.has(SORTED_RAW_TRADE_DATA_TOPIC) ||
+      !rawTradeEventTopicExists ||
       RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION
     ) {
-      if (existingTopicsSet.has(SORTED_RAW_TRADE_DATA_TOPIC)) {
+      if (rawTradeEventTopicExists) {
         console.log(
           `Recreating ${SORTED_RAW_TRADE_DATA_TOPIC} because of env RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION`,
         )
