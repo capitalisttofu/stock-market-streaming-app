@@ -60,13 +60,13 @@ export const main = async () => {
 
           if (time > 0) {
             if (lastTradingTime) {
-              // Wait the time difference
               const timeDifference = time - lastTradingTime
 
               if (timeDifference < 0) {
                 console.log('Events are in incorrect order')
               }
 
+              // Wait the time difference
               await new Promise((resolve) =>
                 setTimeout(resolve, timeDifference),
               )
