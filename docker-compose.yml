@@ -5,6 +5,7 @@ version: "3.5"
 services:
   kafka-0: # Works as both broker and controller
     image: docker.io/bitnami/kafka:latest
+    container_name: stock-market-kafka-0
     ports:
       - '9094:9094'
     environment:
@@ -19,6 +20,7 @@ services:
     volumes:
       - kafka_0_data:/bitnami/kafka
   kafka-1: # Works as only controller
+    container_name: stock-market-kafka-1
     image: docker.io/bitnami/kafka:latest
     environment:
       - KAFKA_CFG_NODE_ID=1
@@ -31,6 +33,7 @@ services:
     volumes:
       - kafka_1_data:/bitnami/kafka
   kafka-2: # Works as only broker
+    container_name: stock-market-kafka-2
     image: docker.io/bitnami/kafka:latest
     ports:
       - "9096:9094"
