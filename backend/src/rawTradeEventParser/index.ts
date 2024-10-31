@@ -1,6 +1,6 @@
 import { RawTradeEvent } from '../../generatedProto/compiled'
 import { SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
-import { getConsumer } from '../lib/kafka'
+import { getConsumer, producer } from '../lib/kafka'
 import { produceTradeData } from './produceTradeData'
 
 const CONSUMER_ID = 'raw_trade_event_parser'
@@ -8,6 +8,7 @@ const CONSUMER_ID = 'raw_trade_event_parser'
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_ID)
   await consumer.connect()
+  await producer.connect()
 
   try {
     await consumer.subscribe({
