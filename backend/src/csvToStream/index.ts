@@ -1,6 +1,11 @@
 import { SecType } from '../../generatedProto/compiled'
 import { producer } from '../lib/kafka'
 import { produceRawTradeData } from './produceRawTradeData'
+import { parseHeaders, parseTradeData } from './parseTradeData'
+import { timestampToMilliseconds } from './timestampToMilliseconds'
+import * as fs from 'fs'
+import * as readline from 'readline'
+import { rawDataDirectory } from '../constants'
 
 export type ParsedRawData = {
   id: string
@@ -10,43 +15,68 @@ export type ParsedRawData = {
   tradingTime?: string
 }
 
-const data: Array<ParsedRawData> = [
-  {
-    id: 'IDECD.FR',
-    secType: SecType.E,
-    lastTradePrice: 23,
-    tradingDate: '2021-01-01',
-    tradingTime: '03:00:11.273',
-  },
-  {
-    id: 'LARF.FR',
-    secType: SecType.I,
-    lastTradePrice: 10,
-    tradingDate: '2021-01-01',
-    tradingTime: '04:00:11.273',
-  },
-  {
-    id: 'IXBTI.FR',
-    secType: SecType.E,
-    lastTradePrice: 23,
-    tradingDate: '2021-01-01',
-    tradingTime: '05:00:11.273',
-  },
-  {
-    id: 'IDECD.FR',
-    secType: SecType.E,
-    lastTradePrice: 14,
-    tradingDate: '2021-01-01',
-    tradingTime: '06:00:11.273',
-  },
-]
-
 export const main = async () => {
   await producer.connect()
 
   try {
-    for (const datapoint of data) {
-      await produceRawTradeData(datapoint)
+    // Find the csv files
+    const filesInDir = fs.readdirSync(rawDataDirectory)
+    const csvFiles = filesInDir
+      .filter((fileName) => fileName.endsWith('.csv'))
+      .toSorted()
+
+    for await (const fileName of csvFiles) {
+      // Load the csv files
+      const csvFilePath = rawDataDirectory + '/' + fileName
+      const fileStream = fs.createReadStream(csvFilePath)
+
+      const readLineInterface = readline.createInterface({
+        input: fileStream,
+      })
+
+      let lastTradingTime
+      let headers
+
+      for await (const line of readLineInterface) {
+        // Ignore comments
+        if (line.startsWith('#')) continue
+
+        // First row contains the header
+        if (headers === undefined) {
+          headers = parseHeaders(line)
+          continue
+        }
+
+        // Parse each row of trade data
+        const data = parseTradeData(line, headers)
+        if (!data) continue
+
+        // Compute the "hour" of the data
+        const tradingTimeHour = data.tradingTime?.split(":")[0]
+
+        // Start only producing the data in real time after 7 am
+        if (data.tradingTime && tradingTimeHour && Number(tradingTimeHour) >= 7) {
+          const time = timestampToMilliseconds(data.tradingTime)
+
+          if (time > 0) {
+            if (lastTradingTime) {
+              // Wait the time difference
+              const timeDifference = time - lastTradingTime
+
+              if (timeDifference < 0) {
+                console.log('Events are in incorrect order')
+              }
+
+              await new Promise((resolve) =>
+                setTimeout(resolve, timeDifference),
+              )
+            }
+            lastTradingTime = time
+          }
+        }
+
+        await produceRawTradeData(data)
+      }
     }
     console.log('All messages produced successfully')
   } catch (e) {

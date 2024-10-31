@@ -12,3 +12,5 @@ export const RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION = env
   .get('RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION')
   .default('false')
   .asBool()
+
+export const rawDataDirectory = 'rawData'
