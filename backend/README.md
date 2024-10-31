@@ -39,7 +39,23 @@ re-ran and the new definitions committed to git.
 
 ## Injecting csv data to raw data trade stream
 
-TODO: After functionality completed add more info here
+`csv-to-raw-trade-stream` searches for CSV files in the `backend/rawData` directory. Non CSV files are ignored.
+Each file is processed one by one in ascending order. The parser ignores lines in the csv file, which start with
+the `#` character as they are assumed to be comments. The parser assumes that the first uncommented line contains the header
+of the data. After processing the header, each row of the file is parsed by extracing the following values:
+- `ID` (unique identifier of this symbol with trading exchange: Paris (FR) / Amsterdam (NL) / Frankfurt (ETR))
+- `SecType` (security type: \[E]quity or \[i]ndex)
+- `Last` (last trade price)
+- `Trading time` (Time of last update (bid / ask / trade) in HH-MM-SS.sss)
+- `Trading date` (Date of last trade in DD-MM-YYYY).
+
+After preprocessing, the data is converted into a `RawTradeEvent` protobuf. Finally, `csv-to-raw-trade-stream`
+produces new messages in the `sorted_raw_trade_data` topic with the financial data. The sending time of the message
+depends on the `Trading time`. Before 7 am, there are typically fewer events.
+Therefore, the events are directly sent to the `sorted_raw_trade_data` topic. After 7 am, the number of events
+increases, and `csv-to-raw-trade-stream` simulates a real event producer by waiting the `Trading time` difference of
+current and next event before sending the next event. If the `Trading time` of the datapoint is missing,
+the event is sent directly.
 
 Running the script can be done with `npm run csv-to-raw-trade-stream`
 If when developing you need to clear the stream due to broken data
@@ -56,3 +72,6 @@ If you want to rerun ALL data available in the `sorted_raw_trade_data` (and not 
 leaves the consumer running for a while due to not disconnecting it, so you might need to wait
 a minute or two before you can run the script.
 The parser can be run after, before, or during running the `csv-to-raw-trade-stream`
+
+After consuming the messages, `raw_trade_event_parser` produces new messages to the `trade_data` topic.
+The messages are sent to different partitions based on the symbol of the trade data.
