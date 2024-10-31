@@ -43,11 +43,11 @@ re-ran and the new definitions committed to git.
 Each file is processed one by one in ascending order. The parser ignores lines in the csv file, which start with
 the `#` character as they are assumed to be comments. The parser assumes that the first uncommented line contains the header
 of the data. After processing the header, each row of the file is parsed by extracing the following values:
-- `ID` (unique identifier of this symbol with trading exchange: Paris (FR) / Amsterdam (NL) / Frankfurt (ETR))
-- `SecType` (security type: \[E]quity or \[i]ndex)
-- `Last` (last trade price)
-- `Trading time` (Time of last update (bid / ask / trade) in HH-MM-SS.sss)
-- `Trading date` (Date of last trade in DD-MM-YYYY).
+- `ID` is an unique identifier of a symbol with trading exchange: Paris (FR) / Amsterdam (NL) / Frankfurt (ETR)
+- `SecType` is the security type: \[E]quity or \[i]ndex
+- `Last` is the last trade price
+- `Trading time` is the time of last update (bid / ask / trade) in HH-MM-SS.sss
+- `Trading date` is the date of last trade in DD-MM-YYYY.
 
 After preprocessing, the data is converted into a `RawTradeEvent` protobuf. Finally, `csv-to-raw-trade-stream`
 produces new messages in the `sorted_raw_trade_data` topic with the financial data. The sending time of the message
