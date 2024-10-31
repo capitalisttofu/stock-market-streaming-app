@@ -26,7 +26,7 @@ export const main = async () => {
       .toSorted()
 
     for await (const fileName of csvFiles) {
-      // Load the csv files
+      // Load the csv file
       const csvFilePath = rawDataDirectory + '/' + fileName
       const fileStream = fs.createReadStream(csvFilePath)
 

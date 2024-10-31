@@ -1,6 +1,7 @@
 import { RawTradeEvent } from '../../generatedProto/compiled'
 import { SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
 import { getConsumer } from '../lib/kafka'
+import { produceTradeData } from './produceTradeData'
 
 const CONSUMER_ID = 'raw_trade_event_parser'
 
@@ -21,6 +22,8 @@ export const main = async () => {
         }
         const decoded = RawTradeEvent.decode(message.value)
         console.log(decoded)
+
+        await produceTradeData(decoded)
       },
     })
   } catch (e) {
