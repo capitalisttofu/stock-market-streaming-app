@@ -1,0 +1,1 @@
+`rawData` directory stores the csv files with the raw financial data. The files are not included in the repository due to their large size. When running the csvToStream, all CSV files of the `rawData` directory will be processes in sorted order. The raw data files can be found at https://zenodo.org/records/6382482.

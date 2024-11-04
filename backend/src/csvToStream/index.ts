@@ -1,52 +1,55 @@
-import { SecType } from '../../generatedProto/compiled'
+import { google, SecType } from '../../generatedProto/compiled'
 import { producer } from '../lib/kafka'
 import { produceRawTradeData } from './produceRawTradeData'
+import { parseHeaders, parseTradeData } from './parseTradeData'
+import * as fs from 'fs'
+import * as readline from 'readline'
+import { rawDataDirectory } from '../constants'
 
 export type ParsedRawData = {
   id: string
   secType: SecType
   lastTradePrice?: number
-  tradingDate?: string
-  tradingTime?: string
+  tradingDate?: google.protobuf.Timestamp
+  tradingTime?: google.protobuf.Timestamp
 }
-
-const data: Array<ParsedRawData> = [
-  {
-    id: 'IDECD.FR',
-    secType: SecType.E,
-    lastTradePrice: 23,
-    tradingDate: '2021-01-01',
-    tradingTime: '03:00:11.273',
-  },
-  {
-    id: 'LARF.FR',
-    secType: SecType.I,
-    lastTradePrice: 10,
-    tradingDate: '2021-01-01',
-    tradingTime: '04:00:11.273',
-  },
-  {
-    id: 'IXBTI.FR',
-    secType: SecType.E,
-    lastTradePrice: 23,
-    tradingDate: '2021-01-01',
-    tradingTime: '05:00:11.273',
-  },
-  {
-    id: 'IDECD.FR',
-    secType: SecType.E,
-    lastTradePrice: 14,
-    tradingDate: '2021-01-01',
-    tradingTime: '06:00:11.273',
-  },
-]
 
 export const main = async () => {
   await producer.connect()
 
   try {
-    for (const datapoint of data) {
-      await produceRawTradeData(datapoint)
+    // Find the csv files
+    const filesInDir = fs.readdirSync(rawDataDirectory)
+    const csvFiles = filesInDir
+      .filter((fileName) => fileName.endsWith('.csv'))
+      .toSorted()
+
+    for await (const fileName of csvFiles) {
+      // Load the csv file
+      const csvFilePath = rawDataDirectory + '/' + fileName
+      const fileStream = fs.createReadStream(csvFilePath)
+
+      const readLineInterface = readline.createInterface({
+        input: fileStream,
+      })
+
+      let headers
+      for await (const line of readLineInterface) {
+        // Ignore comments
+        if (line.startsWith('#')) continue
+
+        // First row contains the header
+        if (headers === undefined) {
+          headers = parseHeaders(line)
+          continue
+        }
+
+        // Parse each row of trade data
+        const data = parseTradeData(line, headers)
+
+        // Produce raw trade data
+        if (data) await produceRawTradeData(data)
+      }
     }
     console.log('All messages produced successfully')
   } catch (e) {
