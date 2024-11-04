@@ -13,11 +13,12 @@ The specifics and requirements of the course project can be found in the pdf
 ### Kafka Cluster
 
 We use Kafka as our message stream.
-There are three relevant Kafka topics
+There are four relevant Kafka topics
 
 - `sorted_raw_trade_data`
 - `trade_data`
 - `buy_sell_advice`
+- `discarded_data`
 
 `sorted_raw_trade_data` topic has all trade data sorted in the correct order based off Trading Date and Trading Time.
 This is a simplification to how the actual data would be recieved in this type of application due to the fact
@@ -31,7 +32,9 @@ of a new field `symbol` that is parsed from the `ID` field. The data is parition
 to guarantee that all data for a specific symbol is found in a specific kafka parition. This is a useful property to improve
 the performance of our Apache Flink application.
 
-`buy_sell_advice` topic consists of `Buy` or `Sell` advice as described in the challenge and Course Project pdf. The Apache Flink application produces messages to this topic based off the calculations being run in the Apache Flink application. 
+`buy_sell_advice` topic consists of `Buy` or `Sell` advice as described in the challenge and Course Project pdf. The Apache Flink application produces messages to this topic based off the calculations being run in the Apache Flink application.
+
+`discarded_data` contains data points, which have been discarded due to not having values for the required attributes. The data points are discarded in `raw_trade_event_parser`. Currently, the discarded data points are not consumed. However, a consumer could easily be created if the missing data needs to be analyzed.
 
 ## Setup
 

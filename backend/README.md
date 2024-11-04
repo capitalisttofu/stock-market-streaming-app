@@ -80,4 +80,4 @@ If the `Last`, and `Trading time` variables of the datapoint are defined,
 `raw_trade_event_parser` produces a new messages to the `trade_data` topic.
 The messages are sent to different partitions based on the symbol of the trade data.
 If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_parser` produces a new messages to the
-`discarded-trade-events` topic.
+`discarded_data` topic.

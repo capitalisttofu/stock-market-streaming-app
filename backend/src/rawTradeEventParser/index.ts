@@ -1,6 +1,7 @@
 import { google, RawTradeEvent, SecType } from '../../generatedProto/compiled'
 import { REALTIME_DATA_PRODUCTION_END_HOUR, REALTIME_DATA_PRODUCTION_START_HOUR, SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
 import { getConsumer, producer } from '../lib/kafka'
+import { produceDiscardedData } from './produceDiscardedData'
 import { produceTradeData } from './produceTradeData'
 import { nanoSecondsToMilliseconds, secondsToHours } from './timeConversions'
 
@@ -84,7 +85,8 @@ export const main = async () => {
           }
           await produceTradeData(tradeEvent)
         } else {
-          // TODO: send to error stream
+          // Discard data point
+          await produceDiscardedData(decoded)
         }
       },
     })

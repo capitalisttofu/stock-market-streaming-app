@@ -1,5 +1,6 @@
 import {
   BUY_SELL_ADVICE_TOPIC,
+  DISCARDED_DATA_TOPIC,
   RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION,
   SORTED_RAW_TRADE_DATA_TOPIC,
   TRADE_DATA_TOPIC,
@@ -60,8 +61,13 @@ export const main = async () => {
       await admin.deleteTopics({ topics: [BUY_SELL_ADVICE_TOPIC] })
     }
 
+    if (existingTopicsSet.has(DISCARDED_DATA_TOPIC)) {
+      console.log('Deleting Discarded Data topic')
+      await admin.deleteTopics({ topics: [DISCARDED_DATA_TOPIC] })
+    }
+
     console.log(
-      `Creating topics ${TRADE_DATA_TOPIC} and ${BUY_SELL_ADVICE_TOPIC}`,
+      `Creating topics ${TRADE_DATA_TOPIC}, ${BUY_SELL_ADVICE_TOPIC} and ${DISCARDED_DATA_TOPIC}`,
     )
     await admin.createTopics({
       topics: [
@@ -81,6 +87,12 @@ export const main = async () => {
           // due to us expecting less number of messages being produced to the topic
           // and no additional calculations/processing being done on this topic's data
           numPartitions: 3,
+          // For development, use only replication factor of 1 due to saving on storage
+          replicationFactor: 1,
+        },
+        {
+          topic: BUY_SELL_ADVICE_TOPIC,
+          numPartitions: 1,
           // For development, use only replication factor of 1 due to saving on storage
           replicationFactor: 1,
         },

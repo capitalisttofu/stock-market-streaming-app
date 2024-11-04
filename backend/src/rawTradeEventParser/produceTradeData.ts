@@ -8,6 +8,8 @@ export const produceTradeData = async (datapoint: ParsedTradeEvent) => {
     const encoded = TradeEvent.encode(datapoint).finish()
     const buffer = Buffer.from(encoded)
 
+    console.log("Trade data produced")
+
     await producer.send({
       topic: TRADE_DATA_TOPIC,
       // All messages with same symbol go to the same partition
