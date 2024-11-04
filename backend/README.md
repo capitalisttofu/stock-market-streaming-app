@@ -45,25 +45,18 @@ the `#` character as they are assumed to be comments. The parser assumes that th
 of the data. After processing the header, each row of the file is parsed by extracing the following values:
 - `ID` is an unique identifier of a symbol with trading exchange: Paris (FR) / Amsterdam (NL) / Frankfurt (ETR)
 - `SecType` is the security type: \[E]quity or \[i]ndex
-- `Last` is the last trade price
-- `Trading time` is the time of last update (bid / ask / trade) in HH-MM-SS.sss
-- `Trading date` is the date of last trade in DD-MM-YYYY.
+- `Last` is the last trade price. This attribute is optional
+- `Trading time` is the time of last update (bid / ask / trade) in HH-MM-SS.sss or HH-MM-SS.ssss. This attribute is optional
+- `Trading date` is the date of last trade in DD-MM-YYYY. This attribute is optional
 
 After preprocessing, the data is converted into a `RawTradeEvent` protobuf. Finally, `csv-to-raw-trade-stream`
-produces new messages in the `sorted_raw_trade_data` topic with the financial data. The sending time of the message
-depends on the `Trading time`. Before 7 am, there are typically fewer events.
-Therefore, the events are directly sent to the `sorted_raw_trade_data` topic. After 7 am, the number of events
-increases, and `csv-to-raw-trade-stream` simulates a real event producer by waiting the `Trading time` difference of
-current and next event before sending the next event. If the `Trading time` of the datapoint is missing,
-the event is sent directly.
+produces new messages in the `sorted_raw_trade_data` topic with the financial data.
 
 Running the script can be done with `npm run csv-to-raw-trade-stream`
 If when developing you need to clear the stream due to broken data
 please follow the provisioning instructions above (and setting correct .env value)
 
 ## Parsing Raw Trade Events
-
-TODO: More instructions here later
 
 To run our `sorted_raw_trade_data` consumer that parses the messages run the script
 `npm run raw-trade-event-parser`. The program does not autoshutdown but remains listening to events.
@@ -73,5 +66,18 @@ leaves the consumer running for a while due to not disconnecting it, so you migh
 a minute or two before you can run the script.
 The parser can be run after, before, or during running the `csv-to-raw-trade-stream`
 
-After consuming the messages, `raw_trade_event_parser` produces new messages to the `trade_data` topic.
+After consuming the messages, `raw_trade_event_parser` can similate the datasource in two different ways:
+- Send the events directly after each other
+- Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
+
+As the event density varies during the day, there are two environmental variables
+(`REALTIME_DATA_PRODUCTION_START_HOUR` and `REALTIME_DATA_PRODUCTION_END_HOUR`) in the `.env` file to control the
+start and end hour of the real event producer simulation. For example, if REALTIME_DATA_PRODUCTION_START_HOUR is 7
+and REALTIME_DATA_PRODUCTION_END_HOUR is 20. The realistic producer simulation happens between 7 am and 8 pm.
+Between 0 am and 7 am, and after 8 pm, the events are sent directly without waiting their time difference.
+
+If the `Last`, and `Trading time` variables of the datapoint are defined,
+`raw_trade_event_parser` produces a new messages to the `trade_data` topic.
 The messages are sent to different partitions based on the symbol of the trade data.
+If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_parser` produces a new messages to the
+`discarded-trade-events` topic.
