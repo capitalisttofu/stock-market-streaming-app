@@ -5,6 +5,7 @@ import { parseHeaders, parseTradeData } from './parseTradeData'
 import * as fs from 'fs'
 import * as readline from 'readline'
 import { rawDataDirectory } from '../constants'
+import dayjs = require('dayjs')
 
 export type ParsedRawData = {
   id: string
@@ -20,8 +21,6 @@ const PRODUCE_DATA_BATCH_SIZE = 10_000
 export const main = async () => {
   await producer.connect()
 
-  let lineCounter = 0
-
   try {
     // Find the csv files
     const filesInDir = fs.readdirSync(rawDataDirectory)
@@ -30,6 +29,10 @@ export const main = async () => {
       .toSorted()
 
     for await (const fileName of csvFiles) {
+      const fileStartTime = dayjs()
+      console.log('Processing file', fileName)
+      let lineCounter = 0
+
       // Load the csv file
       const csvFilePath = rawDataDirectory + '/' + fileName
       const fileStream = fs.createReadStream(csvFilePath)
@@ -71,6 +74,12 @@ export const main = async () => {
           console.log(`Total lines processed so far: ${lineCounter}`)
         }
       }
+
+      console.log('Processing file complete:', fileName)
+      console.log(
+        'Time elapsed (minutes)',
+        dayjs().diff(fileStartTime, 'minute'),
+      )
     }
     console.log('All messages produced successfully')
   } catch (e) {
