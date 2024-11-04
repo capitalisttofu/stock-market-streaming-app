@@ -23,7 +23,7 @@ message TradeEvent {
   SecType sectype = 4;
   float lasttradeprice = 5;
   google.protobuf.Timestamp lastUpdate = 6;
-  optional google.protobuf.Timestamp lastTrade = 7;
+  google.protobuf.Timestamp lastTrade = 7;
 }
 
 // TODO: Add Buy/Sell Advice proto definitions when we get there

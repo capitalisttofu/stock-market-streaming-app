@@ -11,7 +11,7 @@ export type ParsedTradeEvent = {
   sectype: SecType;
   lasttradeprice: number;
   lastUpdate: google.protobuf.ITimestamp;
-  lastTrade?: google.protobuf.ITimestamp;
+  lastTrade: google.protobuf.ITimestamp;
 }
 
 const CONSUMER_ID = 'raw_trade_event_parser'
@@ -35,9 +35,9 @@ export const main = async () => {
         }
         const decoded = RawTradeEvent.decode(message.value)
 
-        // Check that tradingTime and lastTradePrice exits
-        // Not checking trading data due to it being uncommon and not necessary for the computations
+        // Check that tradingTime, tradingDate and lastTradePrice exist
         if (
+          decoded.tradingDate &&
           decoded.lastTradePrice !== undefined &&
           decoded.lastTradePrice !== null &&
           decoded.tradingTime &&
@@ -80,7 +80,7 @@ export const main = async () => {
             sectype: decoded.secType,
             lasttradeprice: decoded.lastTradePrice,
             lastUpdate: decoded.tradingTime,
-            lastTrade: decoded.tradingDate ? decoded.tradingDate : undefined,
+            lastTrade: decoded.tradingDate,
           }
           await produceTradeData(tradeEvent)
         } else {
