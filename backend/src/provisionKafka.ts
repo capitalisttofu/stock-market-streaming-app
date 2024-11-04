@@ -91,7 +91,7 @@ export const main = async () => {
           replicationFactor: 1,
         },
         {
-          topic: BUY_SELL_ADVICE_TOPIC,
+          topic: DISCARDED_DATA_TOPIC,
           numPartitions: 1,
           // For development, use only replication factor of 1 due to saving on storage
           replicationFactor: 1,
