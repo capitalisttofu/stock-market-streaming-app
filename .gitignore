@@ -3,3 +3,5 @@ dist
 .DS_Store
 backend/rawData/*
 !backend/rawData/README.md
+taskmanager_output_logs/*
+!taskmanager_output_logs/.gitkeep
