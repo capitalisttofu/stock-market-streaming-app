@@ -5,7 +5,7 @@ import { parseHeaders, parseTradeData } from './parseTradeData'
 import * as fs from 'fs'
 import * as readline from 'readline'
 import { rawDataDirectory } from '../constants'
-import dayjs = require('dayjs')
+import * as dayjs from 'dayjs'
 
 export type ParsedRawData = {
   id: string

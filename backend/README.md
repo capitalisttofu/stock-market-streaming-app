@@ -67,14 +67,16 @@ a minute or two before you can run the script.
 The parser can be run after, before, or during running the `csv-to-raw-trade-stream`
 
 After consuming the messages, `raw_trade_event_parser` can similate the datasource in two different ways:
-- Send the events directly after each other
+- Send the events immediately after each other
 - Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
 
-As the event density varies during the day, there are two environmental variables
-(`REALTIME_DATA_PRODUCTION_START_HOUR` and `REALTIME_DATA_PRODUCTION_END_HOUR`) in the `.env` file to control the
-start and end hour of the real event producer simulation. For example, if REALTIME_DATA_PRODUCTION_START_HOUR is 7
-and REALTIME_DATA_PRODUCTION_END_HOUR is 20. The realistic producer simulation happens between 7 am and 8 pm.
-Between 0 am and 7 am, and after 8 pm, the events are sent directly without waiting their time difference.
+The similation can be controlled with two environmental variables: `REALTIME_DATA_PRODUCTION_START_HOUR`
+and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. As the event frequency varies during the day, it is often
+beneficial to limit the real event producer simulation to specific hours.
+`REALTIME_DATA_PRODUCTION_START_HOUR` defines when real event production begins. Before this time, events are processed continuously. `REALTIME_DATA_PRODUCTION_END_HOUR` marks when real-time processing stops for the day. After this time, events are processed immediately after each other.
+The values for these environment variables should be specified as an hour between 0 and 24.
+For example, if `REALTIME_DATA_PRODUCTION_START_HOUR` is set to 7 and `REALTIME_DATA_PRODUCTION_END_HOUR` to 20, the real event producer simulation runs between 7 a.m. and 8 p.m. Outside of these hours (from midnight to 7 a.m. and after 8 p.m.), events are processed immediately, without observing
+the usual time intervals between them.
 
 If the `Last`, and `Trading time` variables of the datapoint are defined,
 `raw_trade_event_parser` produces a new messages to the `trade_data` topic.
