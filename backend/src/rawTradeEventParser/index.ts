@@ -1,18 +1,22 @@
 import { google, RawTradeEvent, SecType } from '../../generatedProto/compiled'
-import { REALTIME_DATA_PRODUCTION_END_HOUR, REALTIME_DATA_PRODUCTION_START_HOUR, SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
+import {
+  REALTIME_DATA_PRODUCTION_END_HOUR,
+  REALTIME_DATA_PRODUCTION_START_HOUR,
+  SORTED_RAW_TRADE_DATA_TOPIC,
+} from '../constants'
 import { getConsumer, producer } from '../lib/kafka'
 import { produceDiscardedData } from './produceDiscardedData'
 import { produceTradeData } from './produceTradeData'
 import { nanoSecondsToMilliseconds, secondsToHours } from './timeConversions'
 
 export type ParsedTradeEvent = {
-  id: string;
-  symbol: string;
-  exchange: string;
-  sectype: SecType;
-  lasttradeprice: number;
-  lastUpdate: google.protobuf.ITimestamp;
-  lastTrade: google.protobuf.ITimestamp;
+  id: string
+  symbol: string
+  exchange: string
+  sectype: SecType
+  lasttradeprice: number
+  lastUpdate: google.protobuf.ITimestamp
+  lastTrade: google.protobuf.ITimestamp
 }
 
 const CONSUMER_ID = 'raw_trade_event_parser'
@@ -28,12 +32,18 @@ export const main = async () => {
       topic: SORTED_RAW_TRADE_DATA_TOPIC,
     })
 
+    let messageCounter = 0
+    let discardedCounter = 0
+    let tradeEventCounter = 0
+
     await consumer.run({
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {
           return
         }
+        messageCounter++
+
         const decoded = RawTradeEvent.decode(message.value)
 
         // Check that tradingTime, tradingDate and lastTradePrice exist
@@ -47,7 +57,9 @@ export const main = async () => {
           decoded.tradingTime.nanos !== null &&
           decoded.tradingTime.nanos !== undefined
         ) {
-          const time = nanoSecondsToMilliseconds(Number(decoded.tradingTime.nanos))
+          const time = nanoSecondsToMilliseconds(
+            Number(decoded.tradingTime.nanos),
+          )
 
           if (time > 0) {
             if (lastTradingTime) {
@@ -57,7 +69,9 @@ export const main = async () => {
                 console.log('Events are in incorrect order')
               }
 
-              const tradingTimeHour = secondsToHours(Number(decoded.tradingTime.seconds))
+              const tradingTimeHour = secondsToHours(
+                Number(decoded.tradingTime.seconds),
+              )
 
               // tradingTimeHour is between REALTIME_DATA_PRODUCTION_START_HOUR and REALTIME_DATA_PRODUCTION_END_HOUR
               if (
@@ -66,14 +80,14 @@ export const main = async () => {
               ) {
                 // Wait the time difference
                 await new Promise((resolve) =>
-                  setTimeout(resolve, timeDifference)
+                  setTimeout(resolve, timeDifference),
                 )
               }
             }
             lastTradingTime = time
           }
 
-          const [symbol, exchange] = decoded.id.split(".")
+          const [symbol, exchange] = decoded.id.split('.')
           const tradeEvent: ParsedTradeEvent = {
             id: decoded.id,
             symbol: symbol,
@@ -83,10 +97,27 @@ export const main = async () => {
             lastUpdate: decoded.tradingTime,
             lastTrade: decoded.tradingDate,
           }
-          await produceTradeData(tradeEvent)
+          produceTradeData(tradeEvent)
+          tradeEventCounter++
         } else {
           // Discard data point
-          await produceDiscardedData(decoded)
+          produceDiscardedData(decoded)
+          discardedCounter++
+        }
+
+        // TODO: Add some interval logic here to flush if taken too long since previous flush
+        // incase messages come slower
+        if (messageCounter % 10_000 === 0) {
+          await producer.flush({ timeout: 5_000 })
+        }
+
+        if (messageCounter % 100_000 === 0) {
+          console.log(
+            `Processed messages: ${messageCounter}`,
+            new Date().toISOString(),
+          )
+          console.log('Discard', discardedCounter)
+          console.log('TradeEvents', tradeEventCounter)
         }
       },
     })

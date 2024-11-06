@@ -5,6 +5,7 @@ import { parseHeaders, parseTradeData } from './parseTradeData'
 import * as fs from 'fs'
 import * as readline from 'readline'
 import { rawDataDirectory } from '../constants'
+import * as dayjs from 'dayjs'
 
 export type ParsedRawData = {
   id: string
@@ -13,6 +14,9 @@ export type ParsedRawData = {
   tradingDate?: google.protobuf.Timestamp
   tradingTime?: google.protobuf.Timestamp
 }
+
+const LOG_EVERY_X_LINES_PROCESSED = 100_000
+const PRODUCE_DATA_BATCH_SIZE = 10_000
 
 export const main = async () => {
   await producer.connect()
@@ -25,6 +29,10 @@ export const main = async () => {
       .toSorted()
 
     for await (const fileName of csvFiles) {
+      const fileStartTime = dayjs()
+      console.log('Processing file', fileName)
+      let lineCounter = 0
+
       // Load the csv file
       const csvFilePath = rawDataDirectory + '/' + fileName
       const fileStream = fs.createReadStream(csvFilePath)
@@ -34,6 +42,9 @@ export const main = async () => {
       })
 
       let headers
+
+      let datapoints: Array<ParsedRawData> = []
+
       for await (const line of readLineInterface) {
         // Ignore comments
         if (line.startsWith('#')) continue
@@ -46,10 +57,29 @@ export const main = async () => {
 
         // Parse each row of trade data
         const data = parseTradeData(line, headers)
+        if (data) {
+          datapoints.push(data)
+        }
 
-        // Produce raw trade data
-        if (data) await produceRawTradeData(data)
+        // Produce raw trade data points
+        if (datapoints.length % PRODUCE_DATA_BATCH_SIZE === 0) {
+          await produceRawTradeData(datapoints)
+          datapoints = []
+        }
+
+        lineCounter++
+
+        if (lineCounter % LOG_EVERY_X_LINES_PROCESSED === 0) {
+          console.log(new Date().toISOString())
+          console.log(`Total lines processed so far: ${lineCounter}`)
+        }
       }
+
+      console.log('Processing file complete:', fileName)
+      console.log(
+        'Time elapsed (minutes)',
+        dayjs().diff(fileStartTime, 'minute'),
+      )
     }
     console.log('All messages produced successfully')
   } catch (e) {
