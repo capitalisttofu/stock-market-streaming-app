@@ -44,8 +44,12 @@ First one must build our flink image that supports pyflink (found in the `pyflin
 This can be done with
 `docker build -t my-pyflink-image:latest ./pyflink_image`
 
-They can be simplfy spun up with `docker-compose up`. Instructions on provisioning the partition and topics of the kafka cluster can be found in the `backend/README.md` file.
+Then one can simplfy spin up kafka and the flink nodes with `docker-compose up`.
 
-The fink dashboard is available at `http://localhost:8081/#/overview`
+Instructions on provisioning the partition and topics of the kafka cluster can be found in the `backend/README.md` file.
+
+Instructions on running pyflink jobs can be found in the `flink_app/README.md` file.
+
+The flink dashboard is available at `http://localhost:8081/#/overview`
 
 
