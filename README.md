@@ -46,5 +46,6 @@ This can be done with
 
 They can be simplfy spun up with `docker-compose up`. Instructions on provisioning the partition and topics of the kafka cluster can be found in the `backend/README.md` file.
 
+The fink dashboard is available at `http://localhost:8081/#/overview`
 
 

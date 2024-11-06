@@ -51,6 +51,7 @@ services:
 
 
   jobmanager:
+    container_name: stock-market-jobmanager
     image: my-pyflink-image:latest
     depends_on:
       - kafka-0
@@ -59,12 +60,15 @@ services:
     ports:
       - "8081:8081"
     command: jobmanager
+    volumes:
+      - ./flink_app:/flink_app
     environment:
       - |
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager  
 
   taskmanager:
+    container_name: stock-market-taskmanager
     image: my-pyflink-image:latest
     depends_on:
       - jobmanager
