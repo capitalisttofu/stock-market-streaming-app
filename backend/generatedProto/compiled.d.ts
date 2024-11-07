@@ -2,8 +2,8 @@ import * as $protobuf from "protobufjs";
 import Long = require("long");
 /** SecType enum. */
 export enum SecType {
-    I = 1,
-    E = 2
+    I = 0,
+    E = 1
 }
 
 /** Represents a RawTradeEvent. */

@@ -3,8 +3,8 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 enum SecType {
-  I = 1;
-  E = 2;
+  I = 0;
+  E = 1;
 }
 
 // Inspired by the definition given in the competition description

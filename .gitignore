@@ -1,6 +1,7 @@
 node_modules
 dist
 .DS_Store
+__pycache__
 backend/rawData/*
 !backend/rawData/README.md
 taskmanager_output_logs/*
