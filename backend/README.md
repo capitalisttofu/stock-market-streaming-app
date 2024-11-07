@@ -83,3 +83,11 @@ If the `Last`, and `Trading time` variables of the datapoint are defined,
 The messages are sent to different partitions based on the symbol of the trade data.
 If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_parser` produces a new messages to the
 `discarded_data` topic.
+
+## Trade Data API
+
+The trade data api consumes two Kafka topics: `trade_data` and `buy_sell_advice`, and sends the events with WebSockets
+to the frontend. It consists of an express API, which listens on port 3000. The API uses Socket.io for managing the
+WebSockets.
+
+The trade data API can be run with `npm run trade-data-api`.
