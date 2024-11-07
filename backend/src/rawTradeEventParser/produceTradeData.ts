@@ -1,12 +1,18 @@
 import { ParsedTradeEvent } from '.'
-import { TradeEvent } from '../../generatedProto/compiled'
+import { SecType } from '../../generatedProto/compiled'
 import { TRADE_DATA_TOPIC } from '../constants'
+import { TradeEventAvro } from '../lib/avro'
 import { producer } from '../lib/kafka'
 
 export const produceTradeData = (datapoint: ParsedTradeEvent) => {
   try {
-    const encoded = TradeEvent.encode(datapoint).finish()
-    const buffer = Buffer.from(encoded)
+    const buffer = TradeEventAvro.toBuffer({
+      id: datapoint.id,
+      symbol: datapoint.symbol,
+      exchange: datapoint.exchange,
+      kind: datapoint.sectype === SecType.E ? 'E' : 'I',
+      lasttradeprice: datapoint.lasttradeprice,
+    })
 
     producer.send({
       topic: TRADE_DATA_TOPIC,

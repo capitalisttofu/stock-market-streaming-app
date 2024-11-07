@@ -57,36 +57,6 @@ export const main = async () => {
           decoded.tradingTime.nanos !== null &&
           decoded.tradingTime.nanos !== undefined
         ) {
-          const time = nanoSecondsToMilliseconds(
-            Number(decoded.tradingTime.nanos),
-          )
-
-          if (time > 0) {
-            if (lastTradingTime) {
-              const timeDifference = time - lastTradingTime
-
-              if (timeDifference < 0) {
-                console.log('Events are in incorrect order')
-              }
-
-              const tradingTimeHour = secondsToHours(
-                Number(decoded.tradingTime.seconds),
-              )
-
-              // tradingTimeHour is between REALTIME_DATA_PRODUCTION_START_HOUR and REALTIME_DATA_PRODUCTION_END_HOUR
-              if (
-                tradingTimeHour >= REALTIME_DATA_PRODUCTION_START_HOUR &&
-                tradingTimeHour < REALTIME_DATA_PRODUCTION_END_HOUR
-              ) {
-                // Wait the time difference
-                await new Promise((resolve) =>
-                  setTimeout(resolve, timeDifference),
-                )
-              }
-            }
-            lastTradingTime = time
-          }
-
           const [symbol, exchange] = decoded.id.split('.')
           const tradeEvent: ParsedTradeEvent = {
             id: decoded.id,

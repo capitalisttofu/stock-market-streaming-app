@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@confluentinc/kafka-javascript": "^0.3.0",
+    "avsc": "^5.7.7",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "env-var": "^7.5.0",
