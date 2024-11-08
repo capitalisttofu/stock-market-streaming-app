@@ -1,16 +1,18 @@
 import { TradeEvent } from '../../generatedProto/compiled'
+import { TRADE_DATA_TOPIC } from '../constants'
 import { getConsumer } from '../lib/kafka'
+import { broadcastTradeEvent } from './socket'
 
 export const consumeMessages = async (consumerId: string, topic: string) => {
-  const tradeDataConsumer = getConsumer(consumerId)
+  const consumer = getConsumer(consumerId)
 
   try {
-    await tradeDataConsumer.connect()
-    await tradeDataConsumer.subscribe({ topic, })
+    await consumer.connect()
+    await consumer.subscribe({ topic })
 
     let messageCounter = 0
 
-    await tradeDataConsumer.run({
+    await consumer.run({
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {
@@ -19,10 +21,13 @@ export const consumeMessages = async (consumerId: string, topic: string) => {
 
         messageCounter += 1
 
-        const decoded = TradeEvent.decode(message.value)
-        console.log(`Consumer ${consumerId}: ${JSON.stringify(decoded)}`)
+        // Broadcast new messages in trade topic
+        if (topic === TRADE_DATA_TOPIC) {
+          const decoded = TradeEvent.decode(message.value)
+          console.log(`Consumer ${consumerId}: ${JSON.stringify(decoded)}`)
 
-        // TODO: send data to frontend
+          broadcastTradeEvent(topic, decoded)
+        }
 
         if (messageCounter % 10_000 === 0) {
           console.log(
