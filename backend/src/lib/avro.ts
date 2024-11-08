@@ -10,7 +10,7 @@ export const TradeEventAvro = avro.Type.forSchema({
     { name: 'symbol', type: 'string' },
     { name: 'exchange', type: 'string' },
     {
-      name: 'kind',
+      name: 'sectype',
       type: { type: 'enum', name: 'SecType', symbols: ['I', 'E'] },
     },
     {
@@ -19,9 +19,3 @@ export const TradeEventAvro = avro.Type.forSchema({
     },
   ],
 })
-
-/*
-const buf = type.toBuffer({kind: 'CAT', name: 'Albert'}); // Encoded buffer.
-const val = type.fromBuffer(buf); // = {kind: 'CAT', name: 'Albert'}
-
-*/

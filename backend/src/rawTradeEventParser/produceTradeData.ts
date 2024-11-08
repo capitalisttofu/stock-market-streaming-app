@@ -10,7 +10,7 @@ export const produceTradeData = (datapoint: ParsedTradeEvent) => {
       id: datapoint.id,
       symbol: datapoint.symbol,
       exchange: datapoint.exchange,
-      kind: datapoint.sectype === SecType.E ? 'E' : 'I',
+      sectype: datapoint.sectype === SecType.E ? 'E' : 'I',
       lasttradeprice: datapoint.lasttradeprice,
     })
 

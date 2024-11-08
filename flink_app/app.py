@@ -2,10 +2,61 @@ import logging
 import sys
 
 from pyflink.datastream import StreamExecutionEnvironment
-from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
+from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer, FlinkKafkaProducer
 from pyflink.datastream.formats.avro import (
     AvroRowDeserializationSchema,
+    AvroRowSerializationSchema,
 )
+from pyflink.common import Types
+from pyflink.table import Row
+
+TRADE_EVENT_SCHEMA = """
+{
+  "type": "record",
+  "name": "TradeEvent",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "symbol", "type": "string" },
+    { "name": "exchange", "type": "string" },
+    {
+      "name": "sectype",
+      "type": { "type": "enum", "name": "SecType", "symbols": ["I", "E"] }
+    },
+    { "name": "lasttradeprice", "type": "float" }
+  ]
+}
+"""
+
+# TODO: Fill in once we actually know what we want
+BUYSELL_EVENT_SCHEMA = """
+{
+  "type": "record",
+  "name": "BuySellEvent",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "symbol", "type": "string" },
+    { "name": "exchange", "type": "string" },
+    {
+      "name": "buy_or_sell_action",
+      "type": { "type": "enum", "name": "BuyOrSell", "symbols": ["B", "S"] }
+    }
+  ]
+}
+"""
+
+
+def map_trade_to_buysell(trade_event):
+    # Define a mapping from "I" -> "B" and "E" -> "S" as an example
+    buy_or_sell_action_map = {"I": "B", "E": "S"}
+
+    # Transform TradeEvent to BuySellEvent
+
+    return Row(
+        id=trade_event["id"],
+        symbol=trade_event["symbol"],
+        exchange=trade_event["exchange"],
+        buy_or_sell_action=buy_or_sell_action_map.get(trade_event["sectype"], "B"),
+    )
 
 
 if __name__ == "__main__":
@@ -19,25 +70,7 @@ if __name__ == "__main__":
     }
 
     deserialization_schema = AvroRowDeserializationSchema(
-        avro_schema_string="""
-{
-  "type": "record",
-  "name": "TradeEvent",
-  "fields": [
-    { "name": "id", "type": "string" },
-    { "name": "symbol", "type": "string" },
-    { "name": "exchange", "type": "string" },
-    {
-      "name": "kind",
-      "type": { "type": "enum", "name": "SecType", "symbols": ["I", "E"] }
-    },
-    {
-      "name": "lasttradeprice",
-      "type": "float"
-    }
-  ]
-}
-"""
+        avro_schema_string=TRADE_EVENT_SCHEMA
     )
 
     consumer = FlinkKafkaConsumer(
@@ -49,6 +82,26 @@ if __name__ == "__main__":
 
     data_source = env.add_source(consumer)
 
-    data_source.print()
+    serialization_schema = AvroRowSerializationSchema(
+        avro_schema_string=BUYSELL_EVENT_SCHEMA
+    )
+
+    kafka_producer = FlinkKafkaProducer(
+        topic="buy_sell_advice",
+        serialization_schema=serialization_schema,
+        producer_config=kafka_properties,
+    )
+
+    # Map data from TradeEvent to BuySellEvent
+    mapped_stream = data_source.map(
+        map_trade_to_buysell,
+        output_type=Types.ROW_NAMED(
+            ["id", "symbol", "exchange", "buy_or_sell_action"],
+            [Types.STRING(), Types.STRING(), Types.STRING(), Types.STRING()],
+        ),
+    )
+    mapped_stream.print()
+    # Produce mapped data to Kafka
+    mapped_stream.add_sink(kafka_producer)
 
     env.execute()
