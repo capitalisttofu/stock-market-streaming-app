@@ -19,3 +19,17 @@ export const TradeEventAvro = avro.Type.forSchema({
     },
   ],
 })
+
+export const BuySellEventAvro = avro.Type.forSchema({
+  type: 'record',
+  name: 'BuySellEvent',
+  fields: [
+    { name: 'id', type: 'string' },
+    { name: 'symbol', type: 'string' },
+    { name: 'exchange', type: 'string' },
+    {
+      name: 'buy_or_sell_action',
+      type: { type: 'enum', name: 'BuyOrSell', symbols: ['B', 'S'] },
+    },
+  ],
+})
