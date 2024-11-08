@@ -49,6 +49,42 @@ services:
     volumes:
       - kafka_2_data:/bitnami/kafka
 
+
+  jobmanager:
+    container_name: stock-market-jobmanager
+    image: my-pyflink-image:latest
+    depends_on:
+      - kafka-0
+      - kafka-1
+      - kafka-2
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    volumes:
+      - ./flink_app:/flink_app
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager  
+
+  taskmanager:
+    container_name: stock-market-taskmanager
+    image: my-pyflink-image:latest
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    volumes:
+      - ./taskmanager_output_logs:/taskmanager_output_logs
+    scale: 1
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2
+        taskmanager.memory.task.off-heap.size: 128m  
+        taskmanager.memory.process.size: 2g
+
+
 volumes:
   kafka_0_data:
     driver: local

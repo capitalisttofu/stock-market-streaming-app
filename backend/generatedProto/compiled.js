@@ -13,13 +13,13 @@ var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * SecType enum.
  * @exports SecType
  * @enum {number}
- * @property {number} I=1 I value
- * @property {number} E=2 E value
+ * @property {number} I=0 I value
+ * @property {number} E=1 E value
  */
 $root.SecType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[1] = "I"] = 1;
-    values[valuesById[2] = "E"] = 2;
+    values[valuesById[0] = "I"] = 0;
+    values[valuesById[1] = "E"] = 1;
     return values;
 })();
 
@@ -65,7 +65,7 @@ $root.RawTradeEvent = (function() {
      * @memberof RawTradeEvent
      * @instance
      */
-    RawTradeEvent.prototype.secType = 1;
+    RawTradeEvent.prototype.secType = 0;
 
     /**
      * RawTradeEvent lastTradePrice.
@@ -243,8 +243,8 @@ $root.RawTradeEvent = (function() {
             switch (message.secType) {
             default:
                 return "secType: enum value expected";
+            case 0:
             case 1:
-            case 2:
                 break;
             }
         if (message.lastTradePrice != null && message.hasOwnProperty("lastTradePrice")) {
@@ -293,12 +293,12 @@ $root.RawTradeEvent = (function() {
             }
             break;
         case "I":
-        case 1:
-            message.secType = 1;
+        case 0:
+            message.secType = 0;
             break;
         case "E":
-        case 2:
-            message.secType = 2;
+        case 1:
+            message.secType = 1;
             break;
         }
         if (object.lastTradePrice != null)
@@ -331,7 +331,7 @@ $root.RawTradeEvent = (function() {
         var object = {};
         if (options.defaults) {
             object.id = "";
-            object.secType = options.enums === String ? "I" : 1;
+            object.secType = options.enums === String ? "I" : 0;
         }
         if (message.id != null && message.hasOwnProperty("id"))
             object.id = message.id;
@@ -444,7 +444,7 @@ $root.TradeEvent = (function() {
      * @memberof TradeEvent
      * @instance
      */
-    TradeEvent.prototype.sectype = 1;
+    TradeEvent.prototype.sectype = 0;
 
     /**
      * TradeEvent lasttradeprice.
@@ -618,8 +618,8 @@ $root.TradeEvent = (function() {
             switch (message.sectype) {
             default:
                 return "sectype: enum value expected";
+            case 0:
             case 1:
-            case 2:
                 break;
             }
         if (message.lasttradeprice != null && message.hasOwnProperty("lasttradeprice"))
@@ -664,12 +664,12 @@ $root.TradeEvent = (function() {
             }
             break;
         case "I":
-        case 1:
-            message.sectype = 1;
+        case 0:
+            message.sectype = 0;
             break;
         case "E":
-        case 2:
-            message.sectype = 2;
+        case 1:
+            message.sectype = 1;
             break;
         }
         if (object.lasttradeprice != null)
@@ -704,7 +704,7 @@ $root.TradeEvent = (function() {
             object.id = "";
             object.symbol = "";
             object.exchange = "";
-            object.sectype = options.enums === String ? "I" : 1;
+            object.sectype = options.enums === String ? "I" : 0;
             object.lasttradeprice = 0;
             object.lastUpdate = null;
             object.lastTrade = null;
