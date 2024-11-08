@@ -20,7 +20,7 @@ TRADE_EVENT_SCHEMA = """
     { "name": "exchange", "type": "string" },
     {
       "name": "sectype",
-      "type": { "type": "enum", "name": "SecType", "symbols": ["I", "E"] }
+      "type": "string"
     },
     { "name": "lasttradeprice", "type": "float" }
   ]
@@ -38,7 +38,7 @@ BUYSELL_EVENT_SCHEMA = """
     { "name": "exchange", "type": "string" },
     {
       "name": "buy_or_sell_action",
-      "type": { "type": "enum", "name": "BuyOrSell", "symbols": ["B", "S"] }
+      "type": "string"
     }
   ]
 }

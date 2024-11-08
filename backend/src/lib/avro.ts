@@ -11,7 +11,7 @@ export const TradeEventAvro = avro.Type.forSchema({
     { name: 'exchange', type: 'string' },
     {
       name: 'sectype',
-      type: { type: 'enum', name: 'SecType', symbols: ['I', 'E'] },
+      type: 'string',
     },
     {
       name: 'lasttradeprice',
@@ -29,7 +29,7 @@ export const BuySellEventAvro = avro.Type.forSchema({
     { name: 'exchange', type: 'string' },
     {
       name: 'buy_or_sell_action',
-      type: { type: 'enum', name: 'BuyOrSell', symbols: ['B', 'S'] },
+      type: 'string',
     },
   ],
 })
