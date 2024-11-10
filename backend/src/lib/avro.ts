@@ -10,8 +10,8 @@ export const TradeEventAvro = avro.Type.forSchema({
     { name: 'symbol', type: 'string' },
     { name: 'exchange', type: 'string' },
     {
-      name: 'kind',
-      type: { type: 'enum', name: 'SecType', symbols: ['I', 'E'] },
+      name: 'sectype',
+      type: 'string',
     },
     {
       name: 'lasttradeprice',
@@ -20,8 +20,16 @@ export const TradeEventAvro = avro.Type.forSchema({
   ],
 })
 
-/*
-const buf = type.toBuffer({kind: 'CAT', name: 'Albert'}); // Encoded buffer.
-const val = type.fromBuffer(buf); // = {kind: 'CAT', name: 'Albert'}
-
-*/
+export const BuySellEventAvro = avro.Type.forSchema({
+  type: 'record',
+  name: 'BuySellEvent',
+  fields: [
+    { name: 'id', type: 'string' },
+    { name: 'symbol', type: 'string' },
+    { name: 'exchange', type: 'string' },
+    {
+      name: 'buy_or_sell_action',
+      type: 'string',
+    },
+  ],
+})

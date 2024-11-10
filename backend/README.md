@@ -43,6 +43,7 @@ re-ran and the new definitions committed to git.
 Each file is processed one by one in ascending order. The parser ignores lines in the csv file, which start with
 the `#` character as they are assumed to be comments. The parser assumes that the first uncommented line contains the header
 of the data. After processing the header, each row of the file is parsed by extracing the following values:
+
 - `ID` is an unique identifier of a symbol with trading exchange: Paris (FR) / Amsterdam (NL) / Frankfurt (ETR)
 - `SecType` is the security type: \[E]quity or \[i]ndex
 - `Last` is the last trade price. This attribute is optional
@@ -67,6 +68,7 @@ a minute or two before you can run the script.
 The parser can be run after, before, or during running the `csv-to-raw-trade-stream`
 
 After consuming the messages, `raw_trade_event_parser` can similate the datasource in two different ways:
+
 - Send the events immediately after each other
 - Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
 
@@ -83,3 +85,8 @@ If the `Last`, and `Trading time` variables of the datapoint are defined,
 The messages are sent to different partitions based on the symbol of the trade data.
 If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_parser` produces a new messages to the
 `discarded_data` topic.
+
+## Testing output of buy_sell_advice topic
+
+We have a simple test script to log every 1000th buy or sell advice event
+that the pyflink app produces. It can be run with `npm run test-buy-sell-consumer`
