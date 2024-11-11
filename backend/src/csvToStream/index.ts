@@ -1,4 +1,3 @@
-import { google, SecType } from '../../generatedProto/compiled'
 import { producer } from '../lib/kafka'
 import { produceRawTradeData } from './produceRawTradeData'
 import { parseHeaders, parseTradeData } from './parseTradeData'
@@ -6,13 +5,14 @@ import * as fs from 'fs'
 import * as readline from 'readline'
 import { rawDataDirectory } from '../constants'
 import * as dayjs from 'dayjs'
+import { SecType } from '../secType'
 
 export type ParsedRawData = {
   id: string
   secType: SecType
   lastTradePrice?: number
-  tradingDate?: google.protobuf.Timestamp
-  tradingTime?: google.protobuf.Timestamp
+  tradingDate?: number
+  tradingTime?: number
 }
 
 const LOG_EVERY_X_LINES_PROCESSED = 100_000

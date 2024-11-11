@@ -1,5 +1,4 @@
 import { ParsedTradeEvent } from '.'
-import { SecType } from '../../generatedProto/compiled'
 import { TRADE_DATA_TOPIC } from '../constants'
 import { TradeEventAvro } from '../lib/avro'
 import { producer } from '../lib/kafka'
@@ -10,8 +9,10 @@ export const produceTradeData = (datapoint: ParsedTradeEvent) => {
       id: datapoint.id,
       symbol: datapoint.symbol,
       exchange: datapoint.exchange,
-      sectype: datapoint.sectype === SecType.E ? 'E' : 'I',
-      lasttradeprice: datapoint.lasttradeprice,
+      sectype: datapoint.sectype,
+      lasttradeprice: datapoint.lastTradePrice,
+      lastupdatetime: datapoint.lastUpdateTime,
+      lasttradedate: datapoint.lastTradeDate,
     })
 
     producer.send({
