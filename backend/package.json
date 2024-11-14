@@ -7,6 +7,7 @@
     "provision:kafka": "ts-node-transpile-only -r tsconfig-paths/register -r dotenv/config ./src/provisionKafka.ts",
     "csv-to-raw-trade-stream": "ts-node-transpile-only -r ./src/csvToStream/index.ts",
     "raw-trade-event-parser": "ts-node-transpile-only -r ./src/rawTradeEventParser/index.ts",
+    "trade-data-api": "ts-node-transpile-only -r ./src/tradeDataAPI/index.ts",
     "test-buy-sell-consumer": "ts-node-transpile-only -r ./src/testBuySellConsumer/index.ts",
     "reset-kafka-raw-trade-event-parser-offset": "docker exec -it stock-market-kafka-0 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-0:9092 --group raw_trade_event_parser --reset-offsets --to-earliest --topic sorted_raw_trade_data --execute"
   },
@@ -17,9 +18,11 @@
     "avsc": "^5.7.7",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
-    "env-var": "^7.5.0"
+    "env-var": "^7.5.0",
+    "express": "^4.21.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
