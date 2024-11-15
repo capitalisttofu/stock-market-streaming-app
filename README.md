@@ -23,7 +23,7 @@ There are four relevant Kafka topics
 `sorted_raw_trade_data` topic has all trade data sorted in the correct order based off Trading Date and Trading Time.
 This is a simplification to how the actual data would be recieved in this type of application due to the fact
 that events can come out of order and so forth.As per the original competition, the data is stored in the stream
-in grpc/protobuffer format for space efficiency and serialization/deserialization efficiency. Only the relevant fields
+in Avro format for space efficiency and serialization/deserialization efficiency. Only the relevant fields
 from the given data csv's is injected into this topic. We consider this kafka topic to be outside of our application and handle it
 as a "mocked data source". The relevant code to fill this topic is found in this repository. The raw csv data used to populate the `sorted_raw_trade_data` topic can be found at https://zenodo.org/records/6382482.
 

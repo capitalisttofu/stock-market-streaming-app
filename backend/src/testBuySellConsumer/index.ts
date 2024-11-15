@@ -1,4 +1,3 @@
-import { RawTradeEvent } from '../../generatedProto/compiled'
 import { BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro } from '../lib/avro'
 import { getConsumer, producer } from '../lib/kafka'

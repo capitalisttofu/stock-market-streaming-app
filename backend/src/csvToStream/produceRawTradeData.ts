@@ -1,24 +1,19 @@
 import { ParsedRawData } from '.'
-import { RawTradeEvent } from '../../generatedProto/compiled'
 import { SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
+import { RawTradeEventAvro } from '../lib/avro'
 import { producer } from '../lib/kafka'
 
 export const produceRawTradeData = async (datapoints: ParsedRawData[]) => {
-  // Create validates the message, so might be better
-  // but it can be more efficient to encode directly
-  // leaving this code here for future reference and example
-  /*
-    const message = RawTradeEvent.create(datapoint)
-
-    const encoded = RawTradeEvent.encode(message).finish()
-
-    const res = RawTradeEvent.decode(encoded)
-    console.log(res)
-   */
-
   const messages = datapoints.map((datapoint) => {
-    const encoded = RawTradeEvent.encode(datapoint).finish()
-    return { value: Buffer.from(encoded) }
+    const buffer = RawTradeEventAvro.toBuffer({
+      id: datapoint.id,
+      sectype: datapoint.secType,
+      lasttradeprice: datapoint.lastTradePrice,
+      tradingtime: datapoint.tradingTime,
+      tradingdate: datapoint.tradingDate,
+    })
+
+    return { value: buffer }
   })
 
   await producer.send({
