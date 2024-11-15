@@ -4,7 +4,11 @@ import sys
 from datetime import datetime
 from pyflink.common import Duration, Time, Types
 from pyflink.common.watermark_strategy import TimestampAssigner, WatermarkStrategy
-from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
+from pyflink.datastream import (
+    StreamExecutionEnvironment,
+    TimeCharacteristic,
+    FlatMapFunction,
+)
 from pyflink.datastream.connectors.kafka import (
     FlinkKafkaConsumer,
     FlinkKafkaProducer,
@@ -48,12 +52,14 @@ BUYSELL_EVENT_SCHEMA = """
   "type": "record",
   "name": "BuySellEvent",
   "fields": [
-    { "name": "id", "type": "string" },
     { "name": "symbol", "type": "string" },
-    { "name": "exchange", "type": "string" },
     {
       "name": "buy_or_sell_action",
       "type": "string"
+    },
+    {
+      "name": "window_end",
+      "type": "long"
     }
   ]
 }
@@ -80,6 +86,32 @@ EMA_RESULT_EVENT_SCHEMA = """
   ]
 }
 """
+
+
+class FilterAndMapToBuySellEventFunction(FlatMapFunction):
+    def flat_map(self, value):
+        # Filter condition: keep only elements where "amount" > 10
+        buy_or_sell_action = None
+
+        if (
+            value["emaj_38"] > value["emaj_100"]
+            and value["prev_emaj_38"] <= value["prev_emaj_100"]
+        ):
+            buy_or_sell_action = "BUY"
+
+        if (
+            value["emaj_38"] < value["emaj_100"]
+            and value["prev_emaj_38"] >= value["prev_emaj_100"]
+        ):
+            buy_or_sell_action = "SELL"
+
+        if buy_or_sell_action is not None:
+            row = Row(
+                symbol=value["symbol"],
+                buy_or_sell_action=buy_or_sell_action,
+                window_end=value["window_end"],
+            )
+            yield row
 
 
 def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
@@ -147,20 +179,6 @@ class TradeDataTimestampAssigner(TimestampAssigner):
         return timestamp_in_ms
 
 
-def map_trade_to_buysell(trade_event):
-    # Define a mapping from "I" -> "B" and "E" -> "S" as an example
-    buy_or_sell_action_map = {"I": "B", "E": "S"}
-
-    # Transform TradeEvent to BuySellEvent
-
-    return Row(
-        id=trade_event["id"],
-        symbol=trade_event["symbol"],
-        exchange=trade_event["exchange"],
-        buy_or_sell_action=buy_or_sell_action_map.get(trade_event["sectype"], "B"),
-    )
-
-
 if __name__ == "__main__":
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(message)s")
 
@@ -208,15 +226,6 @@ if __name__ == "__main__":
         producer_config=kafka_properties,
     )
 
-    # Map data from TradeEvent to BuySellEvent
-    mapped_stream = data_source.map(
-        map_trade_to_buysell,
-        output_type=Types.ROW_NAMED(
-            ["id", "symbol", "exchange", "buy_or_sell_action"],
-            [Types.STRING(), Types.STRING(), Types.STRING(), Types.STRING()],
-        ),
-    )
-
     windowed_stream = (
         data_source.key_by(lambda x: x["symbol"])
         .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
@@ -248,7 +257,23 @@ if __name__ == "__main__":
 
     windowed_stream.add_sink(ema_kafka_producer)
 
+    buy_sell_events_stream = windowed_stream.flat_map(
+        FilterAndMapToBuySellEventFunction(),
+        output_type=Types.ROW_NAMED(
+            [
+                "symbol",
+                "buy_or_sell_action",
+                "window_end",
+            ],
+            [
+                Types.STRING(),
+                Types.STRING(),
+                Types.LONG(),
+            ],
+        ),
+    )
+
     # Produce mapped data to Kafka
-    mapped_stream.add_sink(buy_sell_kafka_producer)
+    buy_sell_events_stream.add_sink(buy_sell_kafka_producer)
 
     env.execute()
