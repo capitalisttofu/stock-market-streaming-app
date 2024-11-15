@@ -57,7 +57,7 @@ BUYSELL_EVENT_SCHEMA = """
 """
 
 
-class FirstElementTimestampAssigner(TimestampAssigner):
+class TradeDataTimestampAssigner(TimestampAssigner):
 
     def extract_timestamp(self, value, record_timestamp):
         # Avro serialization converts to datetime object
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     watermark_strategy = WatermarkStrategy.for_bounded_out_of_orderness(
         Duration.of_seconds(20)
-    ).with_timestamp_assigner(FirstElementTimestampAssigner())
+    ).with_timestamp_assigner(TradeDataTimestampAssigner())
 
     data_source = env.add_source(consumer).assign_timestamps_and_watermarks(
         watermark_strategy
