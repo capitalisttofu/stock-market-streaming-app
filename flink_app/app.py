@@ -273,14 +273,24 @@ if __name__ == "__main__":
         FilterAndMapToBuySellEventFunction(),
         output_type=Types.ROW_NAMED(
             [
+                "emaj_38",
+                "emaj_100",
+                "prev_emaj_38",
+                "prev_emaj_100",
                 "symbol",
-                "buy_or_sell_action",
+                "window_start",
                 "window_end",
+                "buy_or_sell_action",
             ],
             [
-                Types.STRING(),
+                Types.FLOAT(),
+                Types.FLOAT(),
+                Types.FLOAT(),
+                Types.FLOAT(),
                 Types.STRING(),
                 Types.LONG(),
+                Types.LONG(),
+                Types.STRING(),
             ],
         ),
     )

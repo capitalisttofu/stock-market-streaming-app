@@ -2,7 +2,7 @@ import { BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro } from '../lib/avro'
 import { getConsumer, producer } from '../lib/kafka'
 
-const CONSUMER_GROUP_ID = 'test_buy_sell_consumer'
+const CONSUMER_GROUP_ID = 'test_buy_sell_consumer2'
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
