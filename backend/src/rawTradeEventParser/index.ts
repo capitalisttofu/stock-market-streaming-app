@@ -1,13 +1,10 @@
-import {
-  REALTIME_DATA_PRODUCTION_END_HOUR,
-  REALTIME_DATA_PRODUCTION_START_HOUR,
-  SORTED_RAW_TRADE_DATA_TOPIC,
-} from '../constants'
+import { SORTED_RAW_TRADE_DATA_TOPIC } from '../constants'
 import { RawTradeEventAvro } from '../lib/avro'
 import { getConsumer, producer } from '../lib/kafka'
 import { SecType } from '../secType'
 import { produceDiscardedData } from './produceDiscardedData'
 import { produceTradeData } from './produceTradeData'
+import { waitEventTimeDifference } from './waitEventTimeDifference'
 
 export type RawTradeEvent = {
   id: string
@@ -29,11 +26,6 @@ export type ParsedTradeEvent = {
 
 const CONSUMER_ID = 'raw_trade_event_parser'
 let lastTradingTime: number | undefined = undefined
-
-const millisecondsToHours = (milliseconds: number) => {
-  return Math.floor(milliseconds / 3_600_000)
-}
-
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_ID)
@@ -57,7 +49,9 @@ export const main = async () => {
         }
         messageCounter++
 
-        const decoded: RawTradeEvent = RawTradeEventAvro.fromBuffer(message.value)
+        const decoded: RawTradeEvent = RawTradeEventAvro.fromBuffer(
+          message.value,
+        )
 
         // Check that tradingTime, tradingDate and lastTradePrice exist
         if (
@@ -65,30 +59,10 @@ export const main = async () => {
           decoded.lasttradeprice !== null &&
           decoded.tradingtime !== null
         ) {
-          const timeMillis = decoded.tradingtime
-
-          if (timeMillis > 0) {
-            if (lastTradingTime !== undefined) {
-              const timeDifference = timeMillis - lastTradingTime
-
-              if (timeDifference < 0) {
-                console.log('Events are in incorrect order')
-              }
-
-              const timeHour = millisecondsToHours(timeMillis)
-              // timeHour is between REALTIME_DATA_PRODUCTION_START_HOUR and REALTIME_DATA_PRODUCTION_END_HOUR
-              if (
-                timeHour >= REALTIME_DATA_PRODUCTION_START_HOUR &&
-                timeHour < REALTIME_DATA_PRODUCTION_END_HOUR
-              ) {
-                // Wait the time difference
-                await new Promise((resolve) =>
-                  setTimeout(resolve, timeDifference),
-                )
-              }
-            }
-            lastTradingTime = timeMillis
-          }
+          lastTradingTime = await waitEventTimeDifference(
+            decoded.tradingtime,
+            lastTradingTime,
+          )
 
           const [symbol, exchange] = decoded.id.split('.')
           const tradeEvent: ParsedTradeEvent = {
@@ -105,7 +79,7 @@ export const main = async () => {
           tradeEventCounter++
         } else {
           // Discard data point
-          produceDiscardedData(decoded)
+          produceDiscardedData(message.value)
           discardedCounter++
         }
 

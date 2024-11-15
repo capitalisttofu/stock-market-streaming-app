@@ -14,13 +14,18 @@ export const RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION = env
   .default('false')
   .asBool()
 
+export const WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS = env
+  .get('WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS')
+  .default('false')
+  .asBool()
+
 export const REALTIME_DATA_PRODUCTION_START_HOUR = env
-  .get("REALTIME_DATA_PRODUCTION_START_HOUR")
+  .get('REALTIME_DATA_PRODUCTION_START_HOUR')
   .default(0)
   .asInt()
 
 export const REALTIME_DATA_PRODUCTION_END_HOUR = env
-  .get("REALTIME_DATA_PRODUCTION_END_HOUR")
+  .get('REALTIME_DATA_PRODUCTION_END_HOUR')
   .default(24)
   .asInt()
 

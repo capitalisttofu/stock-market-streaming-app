@@ -67,9 +67,11 @@ After consuming the messages, `raw_trade_event_parser` can similate the datasour
 - Send the events immediately after each other
 - Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
 
-The similation can be controlled with two environmental variables: `REALTIME_DATA_PRODUCTION_START_HOUR`
-and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. As the event frequency varies during the day, it is often
-beneficial to limit the real event producer simulation to specific hours.
+The similation can be controlled with three environmental variables: `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS`, `REALTIME_DATA_PRODUCTION_START_HOUR`
+and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` determines if the program waits
+the time difference between the events. If `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` is set to `true`, the event simulation can be controlled with
+`REALTIME_DATA_PRODUCTION_START_HOUR` and `REALTIME_DATA_PRODUCTION_END_HOUR`.
+As the event frequency varies during the day, it is often beneficial to limit the real event producer simulation to specific hours.
 `REALTIME_DATA_PRODUCTION_START_HOUR` defines when real event production begins. Before this time, events are processed continuously. `REALTIME_DATA_PRODUCTION_END_HOUR` marks when real-time processing stops for the day. After this time, events are processed immediately after each other.
 The values for these environment variables should be specified as an hour between 0 and 24.
 For example, if `REALTIME_DATA_PRODUCTION_START_HOUR` is set to 7 and `REALTIME_DATA_PRODUCTION_END_HOUR` to 20, the real event producer simulation runs between 7 a.m. and 8 p.m. Outside of these hours (from midnight to 7 a.m. and after 8 p.m.), events are processed immediately, without observing
