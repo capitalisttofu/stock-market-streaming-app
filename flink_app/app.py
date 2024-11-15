@@ -8,15 +8,18 @@ from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
 from pyflink.datastream.connectors.kafka import (
     FlinkKafkaConsumer,
     FlinkKafkaProducer,
-    KafkaOffsetsInitializer,
-    KafkaSource,
 )
 from pyflink.datastream.formats.avro import (
     AvroRowDeserializationSchema,
     AvroRowSerializationSchema,
 )
+from pyflink.datastream.state import ValueStateDescriptor
 from pyflink.datastream.window import TumblingEventTimeWindows
 from pyflink.table import Row
+from pyflink.datastream.functions import (
+    ProcessWindowFunction,
+    RuntimeContext,
+)
 
 TRADE_EVENT_SCHEMA = """
 {
@@ -55,6 +58,84 @@ BUYSELL_EVENT_SCHEMA = """
   ]
 }
 """
+
+EMA_EVENT_SCHEMA = """
+{
+  "type": "record",
+  "name": "BuySellEvent",
+  "fields": [
+    { "name": "emaj_38", "type": "float" },
+    { "name": "emaj_100", "type": "float" },
+    { "name": "prev_emaj_38", "type": "float" },
+    { "name": "prev_emaj_100", "type": "float" },
+    { "name": "symbol", "type": "string" },
+    {
+      "name": "window_start",
+      "type": { "type": "long", "logicalType": "timestamp-millis" }
+    }
+    {
+      "name": "window_end",
+      "type": { "type": "long", "logicalType": "timestamp-millis" }
+    }
+  ]
+}
+"""
+
+
+class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
+    def open(self, runtime_context: RuntimeContext):
+        # First ema value in tuple is for smaller j, second is larger j (example 38 and 100)
+        self.previous_window_ema_state = runtime_context.get_state(
+            ValueStateDescriptor(
+                "previous_window_ema_state", Types.TUPLE([Types.FLOAT(), Types.FLOAT()])
+            )
+        )
+
+    def process(self, key, ctx: ProcessWindowFunction.Context, elements):
+
+        prev_window_state = self.previous_window_ema_state.value()
+
+        # Happens at init where we define the emaj = 0
+        if prev_window_state is None:
+            prev_window_state = (0.0, 0.0)
+
+        prev_win_emaj_38, prev_win_emaj_100 = prev_window_state
+
+        latest_trade_timestamp = 0
+        latest_trade_price = 0
+
+        for element in elements:
+            timestamp = element["timestamp"].timestamp()
+            if timestamp > latest_trade_timestamp:
+                latest_trade_timestamp = timestamp
+                latest_trade_price = element["lasttradeprice"]
+
+        curr_win_emaj_38 = calulcate_EMA(latest_trade_price, 38, prev_win_emaj_38)
+        curr_win_emaj_100 = calulcate_EMA(latest_trade_price, 100, prev_win_emaj_100)
+
+        self.previous_window_ema_state.update((curr_win_emaj_38, curr_win_emaj_100))
+
+        window_start_time = ctx.window().start  # Start of the window
+        window_end_time = ctx.window().end  # End of the window
+
+        row = Row(
+            emaj_38=curr_win_emaj_38,
+            emaj_100=curr_win_emaj_100,
+            prev_emaj_38=prev_win_emaj_38,
+            prev_emaj_100=prev_win_emaj_100,
+            symbol=key,  # We keyBy symbol
+            window_start=window_start_time,
+            window_end=window_end_time,
+        )
+
+        yield row
+
+
+def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
+    smoothing_factor_multiplier = 2 / (1 + j)
+    return last_price * smoothing_factor_multiplier + prev_window_ema_for_j * (
+        1 - smoothing_factor_multiplier
+    )
 
 
 class TradeDataTimestampAssigner(TimestampAssigner):
@@ -133,15 +214,28 @@ if __name__ == "__main__":
     windowed_stream = (
         data_source.key_by(lambda x: x["symbol"])
         .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
-        .reduce(
-            lambda a, b: Row(
-                id=a["id"],
-                symbol=a["symbol"],
-                exchange=a["exchange"],
-                sectype=a["sectype"],
-                lasttradeprice=a["lasttradeprice"],
-                timestamp=a["timestamp"],
-            )
+        .process(
+            EMACalulaterProcessWindowFunction(),
+            output_type=Types.ROW_NAMED(
+                [
+                    "emaj_38",
+                    "emaj_100",
+                    "prev_emaj_38",
+                    "prev_emaj_100",
+                    "symbol",
+                    "window_start",
+                    "window_end",
+                ],
+                [
+                    Types.FLOAT(),
+                    Types.FLOAT(),
+                    Types.FLOAT(),
+                    Types.FLOAT(),
+                    Types.STRING(),
+                    Types.SQL_TIMESTAMP(),
+                    Types.SQL_TIMESTAMP(),
+                ],
+            ),
         )
     )
     windowed_stream.print()
