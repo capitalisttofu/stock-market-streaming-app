@@ -63,3 +63,23 @@ export const BuySellEventAvro = avro.Type.forSchema({
     },
   ],
 })
+
+export const EMAResultEventAvro = avro.Type.forSchema({
+  type: 'record',
+  name: 'EMAResultEvent',
+  fields: [
+    { name: 'emaj_38', type: 'float' },
+    { name: 'emaj_100', type: 'float' },
+    { name: 'prev_emaj_38', type: 'float' },
+    { name: 'prev_emaj_100', type: 'float' },
+    { name: 'symbol', type: 'string' },
+    {
+      name: 'window_start',
+      type: 'long',
+    },
+    {
+      name: 'window_end',
+      type: 'long',
+    },
+  ],
+})

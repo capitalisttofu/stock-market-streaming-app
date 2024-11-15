@@ -59,10 +59,10 @@ BUYSELL_EVENT_SCHEMA = """
 }
 """
 
-EMA_EVENT_SCHEMA = """
+EMA_RESULT_EVENT_SCHEMA = """
 {
   "type": "record",
-  "name": "BuySellEvent",
+  "name": "EMAResultEvent",
   "fields": [
     { "name": "emaj_38", "type": "float" },
     { "name": "emaj_100", "type": "float" },
@@ -71,11 +71,11 @@ EMA_EVENT_SCHEMA = """
     { "name": "symbol", "type": "string" },
     {
       "name": "window_start",
-      "type": { "type": "long", "logicalType": "timestamp-millis" }
-    }
+      "type": "long"
+    },
     {
       "name": "window_end",
-      "type": { "type": "long", "logicalType": "timestamp-millis" }
+      "type": "long"
     }
   ]
 }
@@ -192,13 +192,19 @@ if __name__ == "__main__":
         watermark_strategy
     )
 
-    serialization_schema = AvroRowSerializationSchema(
-        avro_schema_string=BUYSELL_EVENT_SCHEMA
+    buy_sell_kafka_producer = FlinkKafkaProducer(
+        topic="buy_sell_advice",
+        serialization_schema=AvroRowSerializationSchema(
+            avro_schema_string=BUYSELL_EVENT_SCHEMA
+        ),
+        producer_config=kafka_properties,
     )
 
-    kafka_producer = FlinkKafkaProducer(
-        topic="buy_sell_advice",
-        serialization_schema=serialization_schema,
+    ema_kafka_producer = FlinkKafkaProducer(
+        topic="ema_results",
+        serialization_schema=AvroRowSerializationSchema(
+            avro_schema_string=EMA_RESULT_EVENT_SCHEMA
+        ),
         producer_config=kafka_properties,
     )
 
@@ -232,15 +238,17 @@ if __name__ == "__main__":
                     Types.FLOAT(),
                     Types.FLOAT(),
                     Types.STRING(),
-                    Types.SQL_TIMESTAMP(),
-                    Types.SQL_TIMESTAMP(),
+                    Types.LONG(),
+                    Types.LONG(),
                 ],
             ),
         )
     )
-    windowed_stream.print()
+    # windowed_stream.print()
+
+    windowed_stream.add_sink(ema_kafka_producer)
 
     # Produce mapped data to Kafka
-    mapped_stream.add_sink(kafka_producer)
+    mapped_stream.add_sink(buy_sell_kafka_producer)
 
     env.execute()
