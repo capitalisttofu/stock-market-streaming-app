@@ -1,12 +1,8 @@
-import { RawTradeEvent } from '../../generatedProto/compiled'
 import { DISCARDED_DATA_TOPIC } from '../constants'
 import { producer } from '../lib/kafka'
 
-export const produceDiscardedData = (datapoint: RawTradeEvent) => {
+export const produceDiscardedData = (buffer: Buffer) => {
   try {
-    const encoded = RawTradeEvent.encode(datapoint).finish()
-    const buffer = Buffer.from(encoded)
-
     producer.send({
       topic: DISCARDED_DATA_TOPIC,
       messages: [{ value: buffer }],

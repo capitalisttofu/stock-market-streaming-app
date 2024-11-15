@@ -25,15 +25,10 @@ If you want to recreate it, set `RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION` to 
 To provision the kafka instance, make sure you are running the cluster according to the instructions in the root of this repository (using the docker-compose file)
 and then inside this backend folder run `npm run provision:kafka`
 
-### Generating Proto definitions
+### Avro definitions
 
-We share our proto definitions within our nodejs code and the pyflink app.
-The proto definitions can be found in the root of this repository in the `proto/messages.proto` file.
-To use these defintions in an easy way in typescript, we compile them to a js and .d.ts file found in
-`backend/generatedProto` directory. The script to do this can be found in the package.json
-`npm run gen-proto-ts-files`. We have committed the compiled proto def files to git for easier setup,
-but if there are changes done to the raw proto files found in the `proto` directory, then the compile script must be
-re-ran and the new definitions committed to git.
+We share our Avro definitions within our nodejs code and the pyflink app.
+The Avro definitions can be found in the `src/lib/avro.ts` file.
 
 # Running the application
 
@@ -50,7 +45,7 @@ of the data. After processing the header, each row of the file is parsed by extr
 - `Trading time` is the time of last update (bid / ask / trade) in HH-MM-SS.sss or HH-MM-SS.ssss. This attribute is optional
 - `Trading date` is the date of last trade in DD-MM-YYYY. This attribute is optional
 
-After preprocessing, the data is converted into a `RawTradeEvent` protobuf. Finally, `csv-to-raw-trade-stream`
+After preprocessing, the data is converted into a `RawTradeEvent` Avro. Finally, `csv-to-raw-trade-stream`
 produces new messages in the `sorted_raw_trade_data` topic with the financial data.
 
 Running the script can be done with `npm run csv-to-raw-trade-stream`
@@ -72,9 +67,11 @@ After consuming the messages, `raw_trade_event_parser` can similate the datasour
 - Send the events immediately after each other
 - Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
 
-The similation can be controlled with two environmental variables: `REALTIME_DATA_PRODUCTION_START_HOUR`
-and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. As the event frequency varies during the day, it is often
-beneficial to limit the real event producer simulation to specific hours.
+The similation can be controlled with three environmental variables: `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS`, `REALTIME_DATA_PRODUCTION_START_HOUR`
+and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` determines if the program waits
+the time difference between the events. If `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` is set to `true`, the event simulation can be controlled with
+`REALTIME_DATA_PRODUCTION_START_HOUR` and `REALTIME_DATA_PRODUCTION_END_HOUR`.
+As the event frequency varies during the day, it is often beneficial to limit the real event producer simulation to specific hours.
 `REALTIME_DATA_PRODUCTION_START_HOUR` defines when real event production begins. Before this time, events are processed continuously. `REALTIME_DATA_PRODUCTION_END_HOUR` marks when real-time processing stops for the day. After this time, events are processed immediately after each other.
 The values for these environment variables should be specified as an hour between 0 and 24.
 For example, if `REALTIME_DATA_PRODUCTION_START_HOUR` is set to 7 and `REALTIME_DATA_PRODUCTION_END_HOUR` to 20, the real event producer simulation runs between 7 a.m. and 8 p.m. Outside of these hours (from midnight to 7 a.m. and after 8 p.m.), events are processed immediately, without observing
@@ -90,3 +87,10 @@ If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_pa
 
 We have a simple test script to log every 1000th buy or sell advice event
 that the pyflink app produces. It can be run with `npm run test-buy-sell-consumer`
+
+## Trade Data API
+
+The trade data api consumes two Kafka topics: `trade_data` and `buy_sell_advice`, and sends the events with WebSockets
+to the frontend. It consists of an express API, which listens on port 3000. The API uses Socket.io for managing the
+WebSockets.
+The trade data API can be run with `npm run trade-data-api`.

@@ -22,7 +22,15 @@ TRADE_EVENT_SCHEMA = """
       "name": "sectype",
       "type": "string"
     },
-    { "name": "lasttradeprice", "type": "float" }
+    { "name": "lasttradeprice", "type": "float" },
+    {
+      "name": "lastupdatetime",
+      "type": { "type": "int", "logicalType": "time-millis" }
+    },
+    {
+      "name": "lasttradedate",
+      "type": { "type": "int", "logicalType": "date" }
+    }
   ]
 }
 """
