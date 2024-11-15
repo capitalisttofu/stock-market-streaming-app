@@ -1,19 +1,21 @@
 import logging
 import sys
-from pyflink.datastream.window import TumblingEventTimeWindows
+
+from datetime import datetime
+from pyflink.common import Duration, Time, Types
+from pyflink.common.watermark_strategy import TimestampAssigner, WatermarkStrategy
 from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
 from pyflink.datastream.connectors.kafka import (
     FlinkKafkaConsumer,
     FlinkKafkaProducer,
-    KafkaSource,
     KafkaOffsetsInitializer,
+    KafkaSource,
 )
-from pyflink.common.watermark_strategy import WatermarkStrategy, TimestampAssigner
 from pyflink.datastream.formats.avro import (
     AvroRowDeserializationSchema,
     AvroRowSerializationSchema,
 )
-from pyflink.common import Types, Duration, Time
+from pyflink.datastream.window import TumblingEventTimeWindows
 from pyflink.table import Row
 
 TRADE_EVENT_SCHEMA = """
@@ -30,12 +32,8 @@ TRADE_EVENT_SCHEMA = """
     },
     { "name": "lasttradeprice", "type": "float" },
     {
-      "name": "lastupdatetime",
-      "type": { "type": "int", "logicalType": "time-millis" }
-    },
-    {
-      "name": "lasttradedate",
-      "type": { "type": "int", "logicalType": "date" }
+      "name": "timestamp",
+      "type": { "type": "long", "logicalType": "timestamp-millis" }
     }
   ]
 }
@@ -62,8 +60,10 @@ BUYSELL_EVENT_SCHEMA = """
 class FirstElementTimestampAssigner(TimestampAssigner):
 
     def extract_timestamp(self, value, record_timestamp):
-        print("EXTRACTARINIO")
-        return value["lasttradeprice"]
+        # Avro serialization converts to datetime object
+        dt = value["timestamp"]
+        timestamp_in_ms = dt.timestamp() * 1000
+        return timestamp_in_ms
 
 
 def map_trade_to_buysell(trade_event):
@@ -103,11 +103,13 @@ if __name__ == "__main__":
 
     consumer.set_start_from_earliest()
 
-    data_source = env.add_source(consumer)
-
     watermark_strategy = WatermarkStrategy.for_bounded_out_of_orderness(
         Duration.of_seconds(20)
     ).with_timestamp_assigner(FirstElementTimestampAssigner())
+
+    data_source = env.add_source(consumer).assign_timestamps_and_watermarks(
+        watermark_strategy
+    )
 
     serialization_schema = AvroRowSerializationSchema(
         avro_schema_string=BUYSELL_EVENT_SCHEMA
@@ -120,19 +122,17 @@ if __name__ == "__main__":
     )
 
     # Map data from TradeEvent to BuySellEvent
-    #  mapped_stream = data_source.map(
-    #     map_trade_to_buysell,
-    #     output_type=Types.ROW_NAMED(
-    #         ["id", "symbol", "exchange", "buy_or_sell_action"],
-    #         [Types.STRING(), Types.STRING(), Types.STRING(), Types.STRING()],
-    #     ),
-    # )
-
-    e = data_source.assign_timestamps_and_watermarks(watermark_strategy)
+    mapped_stream = data_source.map(
+        map_trade_to_buysell,
+        output_type=Types.ROW_NAMED(
+            ["id", "symbol", "exchange", "buy_or_sell_action"],
+            [Types.STRING(), Types.STRING(), Types.STRING(), Types.STRING()],
+        ),
+    )
 
     windowed_stream = (
-        e.key_by(lambda x: x["symbol"])
-        .window(TumblingEventTimeWindows.of(Time.seconds(10)))
+        data_source.key_by(lambda x: x["symbol"])
+        .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
         .reduce(
             lambda a, b: Row(
                 id=a["id"],
@@ -140,12 +140,13 @@ if __name__ == "__main__":
                 exchange=a["exchange"],
                 sectype=a["sectype"],
                 lasttradeprice=a["lasttradeprice"],
+                timestamp=a["timestamp"],
             )
         )
     )
-    # windowed_stream.print()
-    # mapped_stream.print()
+    windowed_stream.print()
+
     # Produce mapped data to Kafka
-    #     mapped_stream.add_sink(kafka_producer)
+    mapped_stream.add_sink(kafka_producer)
 
     env.execute()
