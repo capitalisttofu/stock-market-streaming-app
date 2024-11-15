@@ -59,10 +59,12 @@ export const main = async () => {
           decoded.lasttradeprice !== null &&
           decoded.tradingtime !== null
         ) {
+          /*
           lastTradingTime = await waitEventTimeDifference(
             decoded.tradingtime,
             lastTradingTime,
           )
+          */
 
           const [symbol, exchange] = decoded.id.split('.')
           const tradeEvent: ParsedTradeEvent = {

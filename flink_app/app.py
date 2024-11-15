@@ -52,14 +52,22 @@ BUYSELL_EVENT_SCHEMA = """
   "type": "record",
   "name": "BuySellEvent",
   "fields": [
+    { "name": "emaj_38", "type": "float" },
+    { "name": "emaj_100", "type": "float" },
+    { "name": "prev_emaj_38", "type": "float" },
+    { "name": "prev_emaj_100", "type": "float" },
     { "name": "symbol", "type": "string" },
     {
-      "name": "buy_or_sell_action",
-      "type": "string"
+      "name": "window_start",
+      "type": "long"
     },
     {
       "name": "window_end",
       "type": "long"
+    },
+    {
+      "name": "buy_or_sell_action",
+      "type": "string"
     }
   ]
 }
@@ -90,7 +98,6 @@ EMA_RESULT_EVENT_SCHEMA = """
 
 class FilterAndMapToBuySellEventFunction(FlatMapFunction):
     def flat_map(self, value):
-        # Filter condition: keep only elements where "amount" > 10
         buy_or_sell_action = None
 
         if (
@@ -107,9 +114,14 @@ class FilterAndMapToBuySellEventFunction(FlatMapFunction):
 
         if buy_or_sell_action is not None:
             row = Row(
+                emaj_38=value["emaj_38"],
+                emaj_100=value["emaj_100"],
+                prev_emaj_38=value["prev_emaj_38"],
+                prev_emaj_100=value["prev_emaj_100"],
                 symbol=value["symbol"],
-                buy_or_sell_action=buy_or_sell_action,
+                window_start=value["window_start"],
                 window_end=value["window_end"],
+                buy_or_sell_action=buy_or_sell_action,
             )
             yield row
 
