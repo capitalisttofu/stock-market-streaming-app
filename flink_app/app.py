@@ -82,6 +82,13 @@ EMA_RESULT_EVENT_SCHEMA = """
 """
 
 
+def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
+    smoothing_factor_multiplier = 2 / (1 + j)
+    return last_price * smoothing_factor_multiplier + prev_window_ema_for_j * (
+        1 - smoothing_factor_multiplier
+    )
+
+
 class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
     def open(self, runtime_context: RuntimeContext):
         # First ema value in tuple is for smaller j, second is larger j (example 38 and 100)
@@ -129,13 +136,6 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
         )
 
         yield row
-
-
-def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
-    smoothing_factor_multiplier = 2 / (1 + j)
-    return last_price * smoothing_factor_multiplier + prev_window_ema_for_j * (
-        1 - smoothing_factor_multiplier
-    )
 
 
 class TradeDataTimestampAssigner(TimestampAssigner):
