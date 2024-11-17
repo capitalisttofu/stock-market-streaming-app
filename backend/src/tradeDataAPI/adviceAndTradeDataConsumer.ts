@@ -2,14 +2,16 @@ import { getConsumer } from '../lib/kafka'
 import { TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro, TradeEventAvro } from '../lib/avro'
 
-const CONSUMER_ID = 'trade_data_and_buy_sell_advice'
+const CONSUMER_GROUP_ID = 'trade_data_and_buy_sell_advice'
 
 export const consumeTradeEvents = async () => {
-  const consumer = getConsumer(CONSUMER_ID)
+  const consumer = getConsumer(CONSUMER_GROUP_ID)
 
   try {
     await consumer.connect()
-    await consumer.subscribe({ topics: [TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC] })
+    await consumer.subscribe({
+      topics: [TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC],
+    })
 
     let tradeEventMessageCounter = 0
     let adviceMessageCounter = 0
@@ -49,9 +51,7 @@ export const consumeTradeEvents = async () => {
             )
           }
         }
-      }
-
-
+      },
     })
   } catch (e) {
     console.log(`Error in consumer`)

@@ -17,18 +17,12 @@ export const RawTradeEventAvro = avro.Type.forSchema({
     },
     {
       name: 'tradingtime',
-      type: [
-        'null',
-        { type: 'int', logicalType: 'time-millis' },
-      ],
+      type: ['null', { type: 'int', logicalType: 'time-millis' }],
       default: null,
     },
     {
       name: 'tradingdate',
-      type: [
-        'null',
-        { type: 'int', logicalType: 'date' },
-      ],
+      type: ['null', { type: 'int', logicalType: 'date' }],
       default: null,
     },
   ],
@@ -50,12 +44,8 @@ export const TradeEventAvro = avro.Type.forSchema({
       type: 'float',
     },
     {
-      name: 'lastupdatetime',
-      type: { type: 'int', logicalType: 'time-millis' },
-    },
-    {
-      name: 'lasttradedate',
-      type: { type: 'int', logicalType: 'date' },
+      name: 'timestamp',
+      type: { type: 'long', logicalType: 'timestamp-millis' },
     },
   ],
 })
@@ -70,6 +60,26 @@ export const BuySellEventAvro = avro.Type.forSchema({
     {
       name: 'buy_or_sell_action',
       type: 'string',
+    },
+  ],
+})
+
+export const EMAResultEventAvro = avro.Type.forSchema({
+  type: 'record',
+  name: 'EMAResultEvent',
+  fields: [
+    { name: 'emaj_38', type: 'float' },
+    { name: 'emaj_100', type: 'float' },
+    { name: 'prev_emaj_38', type: 'float' },
+    { name: 'prev_emaj_100', type: 'float' },
+    { name: 'symbol', type: 'string' },
+    {
+      name: 'window_start',
+      type: 'long',
+    },
+    {
+      name: 'window_end',
+      type: 'long',
     },
   ],
 })

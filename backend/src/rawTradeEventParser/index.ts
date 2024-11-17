@@ -24,11 +24,11 @@ export type ParsedTradeEvent = {
   lastTradeDate: number
 }
 
-const CONSUMER_ID = 'raw_trade_event_parser'
+const CONSUMER_GROUP_ID = 'raw_trade_event_parser'
 let lastTradingTime: number | undefined = undefined
 
 export const main = async () => {
-  const consumer = getConsumer(CONSUMER_ID)
+  const consumer = getConsumer(CONSUMER_GROUP_ID)
   await consumer.connect()
   await producer.connect()
 
