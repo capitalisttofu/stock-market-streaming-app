@@ -54,9 +54,19 @@ export const BuySellEventAvro = avro.Type.forSchema({
   type: 'record',
   name: 'BuySellEvent',
   fields: [
-    { name: 'id', type: 'string' },
+    { name: 'emaj_38', type: 'float' },
+    { name: 'emaj_100', type: 'float' },
+    { name: 'prev_emaj_38', type: 'float' },
+    { name: 'prev_emaj_100', type: 'float' },
     { name: 'symbol', type: 'string' },
-    { name: 'exchange', type: 'string' },
+    {
+      name: 'window_start',
+      type: 'long',
+    },
+    {
+      name: 'window_end',
+      type: 'long',
+    },
     {
       name: 'buy_or_sell_action',
       type: 'string',
