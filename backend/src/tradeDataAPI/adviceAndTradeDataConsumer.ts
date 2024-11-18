@@ -1,6 +1,7 @@
 import { getConsumer } from '../lib/kafka'
 import { TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro, TradeEventAvro } from '../lib/avro'
+import { broadcastEvent } from './socket'
 
 const CONSUMER_GROUP_ID = 'trade_data_and_buy_sell_advice'
 
@@ -28,11 +29,9 @@ export const consumeTradeEvents = async () => {
           tradeEventMessageCounter += 1
 
           const decoded = TradeEventAvro.fromBuffer(message.value)
-          console.log(`${JSON.stringify(decoded)}`)
+          broadcastEvent("trade-event-message", decoded)
 
-          // TODO: send event with websockets to the frontend
-
-          if (tradeEventMessageCounter % 10_000 === 0) {
+          if (tradeEventMessageCounter % 1_000 === 0) {
             console.log(
               `Processed messages from ${topic}: ${tradeEventMessageCounter}`,
             )
@@ -41,11 +40,9 @@ export const consumeTradeEvents = async () => {
           adviceMessageCounter += 1
 
           const decoded = BuySellEventAvro.fromBuffer(message.value)
-          console.log(`${JSON.stringify(decoded)}`)
+          broadcastEvent("buy-sell-advice-message", decoded)
 
-          // TODO: send event with websockets to the frontend
-
-          if (adviceMessageCounter % 10_000 === 0) {
+          if (adviceMessageCounter % 100 === 0) {
             console.log(
               `Processed messages from ${topic}: ${adviceMessageCounter}`,
             )
