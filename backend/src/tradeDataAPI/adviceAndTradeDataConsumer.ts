@@ -3,6 +3,10 @@ import { TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro, TradeEventAvro } from '../lib/avro'
 import { broadcastEvent } from './socket'
 
+const avroTimestampToDate = (avroTimestamp: number) => {
+  return new Date(avroTimestamp);
+}
+
 const CONSUMER_GROUP_ID = 'trade_data_and_buy_sell_advice'
 
 export const consumeTradeEvents = async () => {
@@ -29,6 +33,11 @@ export const consumeTradeEvents = async () => {
           tradeEventMessageCounter += 1
 
           const decoded = TradeEventAvro.fromBuffer(message.value)
+
+          // Conver timestamp to date
+          decoded.timestamp = avroTimestampToDate(decoded.timestamp)
+
+          // Broadcast event with websockets to the frontend
           broadcastEvent("trade-event-message", decoded)
 
           if (tradeEventMessageCounter % 1_000 === 0) {

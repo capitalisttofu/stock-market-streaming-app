@@ -4,7 +4,7 @@ export interface TradeEvent {
   exchange: string
   sectype: string
   lasttradeprice: number
-  timestamp: number
+  timestamp: Date
 }
 
 export interface BuySellEvent {
@@ -20,6 +20,6 @@ export interface EMAResultEvent {
   emaj_100: number
   prev_emaj_38: number
   prev_emaj_100: number
-  window_start: number
-  window_end: number
+  window_start: Date
+  window_end: Date
 }
