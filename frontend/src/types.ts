@@ -23,3 +23,9 @@ export interface EMAResultEvent {
   window_start: number
   window_end: number
 }
+
+export interface Stock {
+  symbol: string
+  selected: boolean
+  advice?: string
+}

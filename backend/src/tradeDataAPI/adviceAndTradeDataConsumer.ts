@@ -31,7 +31,7 @@ export const consumeTradeEvents = async () => {
           const decoded = TradeEventAvro.fromBuffer(message.value)
 
           // Broadcast event with websockets to the frontend
-          broadcastEvent("trade-event-message", decoded)
+          broadcastEvent('trade-event-message', decoded.symbol, decoded)
 
           if (tradeEventMessageCounter % 1_000 === 0) {
             console.log(
@@ -42,7 +42,7 @@ export const consumeTradeEvents = async () => {
           adviceMessageCounter += 1
 
           const decoded = BuySellEventAvro.fromBuffer(message.value)
-          broadcastEvent("buy-sell-advice-message", decoded)
+          broadcastEvent('buy-sell-advice-message', decoded.symbol, decoded)
 
           if (adviceMessageCounter % 100 === 0) {
             console.log(
