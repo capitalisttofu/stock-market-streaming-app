@@ -5,6 +5,14 @@ import StockTable from './StockTable'
 import { BuySellEvent, EMAResultEvent, TradeEvent } from '../types'
 import { useStockData } from '../state/useStockData'
 import { handleSubscribe, handleUnsubscribe, initializeSocket } from '../socket'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+const adviceToString = (adviceString: string) => {
+  if (adviceString === 'S') return 'SELL'
+  if (adviceString === 'B') return 'BUY'
+  return ''
+}
 
 const App = () => {
   const {
@@ -34,18 +42,21 @@ const App = () => {
   useEffect(() => {
     if (buyAndSellEvents.length < 1) return
     const lastBuySellEvent = buyAndSellEvents[buyAndSellEvents.length - 1]
+    const adviceString = adviceToString(lastBuySellEvent.buy_or_sell_action)
 
     // If user is subscribed to stock
-    if (
-      setStockAdvice(
-        lastBuySellEvent.symbol,
-        lastBuySellEvent.buy_or_sell_action,
-      )
-    ) {
-      // TODO: Toast
+    if (setStockAdvice(lastBuySellEvent.symbol, adviceString)) {
+      toast.info(`${adviceString} event from symbol ${lastBuySellEvent.symbol}`)
 
       // Remove advice after 10 seconds
-      setTimeout(() => removeStockAdvice(lastBuySellEvent.symbol), 10000)
+      const timer = setTimeout(
+        () => removeStockAdvice(lastBuySellEvent.symbol),
+        10000,
+      )
+
+      return () => {
+        clearTimeout(timer)
+      }
     }
   }, [buyAndSellEvents])
 
@@ -84,6 +95,17 @@ const App = () => {
         selectAllStocks={selectAllStocks}
         selectNoStocks={selectNoStocks}
         selectStock={selectStock}
+      />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
       />
     </>
   )

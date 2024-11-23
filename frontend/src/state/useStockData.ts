@@ -1,19 +1,6 @@
 import { useState } from 'react'
 import { Stock } from '../types'
 
-const stockStringToStock = (stockString: string, selected: boolean) => {
-  return {
-    symbol: stockString,
-    selected: selected,
-  } as Stock
-}
-
-const adviceToString = (adviceString: string) => {
-  if (adviceString === 'S') return 'SELL'
-  if (adviceString === 'B') return 'BUY'
-  return ''
-}
-
 export const useStockData = () => {
   const [stocks, setStockData] = useState<Stock[]>([])
 
@@ -24,9 +11,9 @@ export const useStockData = () => {
   const setStocks = (stockStrings: string[]) => {
     // Stock is selected if all current stocks are also selected
     const selectNewStock = allStocksSelected()
-    const newStocks = stockStrings.map((str) =>
-      stockStringToStock(str, selectNewStock),
-    )
+    const newStocks = stockStrings.map((str) => {
+      return { symbol: str, selected: selectNewStock } as Stock
+    })
 
     setStockData((prev) => {
       // Remove duplicates
@@ -69,9 +56,7 @@ export const useStockData = () => {
 
     setStockData(
       stocks.map((stock) =>
-        stock.symbol === symbol
-          ? { ...stock, advice: adviceToString(advice) }
-          : stock,
+        stock.symbol === symbol ? { ...stock, advice } : stock,
       ),
     )
 
