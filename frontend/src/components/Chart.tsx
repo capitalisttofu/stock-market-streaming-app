@@ -30,7 +30,6 @@ const Chart = (props: ChartProps) => {
 
   // Default is 15 minutes in milliseconds
   const [timeInterval, setTimeInterval] = useState(15 * 60 * 1000)
-  const [showEMA, setShowEMA] = useState(false) // False shows price
 
   const getDatapointsPrice = () => {
     const sameSymbol = props.tradeEvents.filter(
@@ -44,15 +43,21 @@ const Chart = (props: ChartProps) => {
       (event) => event.symbol === props.visualizedSymbol,
     )
 
-    return sameSymbol.map((event) => [
+    const curEvents = sameSymbol.map((event) => [
       event.window_end,
       emaJ == 38 ? event.emaj_38 : event.emaj_100,
     ])
+    const prevEvents = sameSymbol.map((event) => [
+      event.window_start,
+      emaJ == 38 ? event.prev_emaj_38 : event.prev_emaj_100,
+    ])
+
+    return prevEvents.concat(curEvents)
   }
 
   // Update lastEventMillis and add datapoint to chart whenever a new TradeEvent happens
   useEffect(() => {
-    if (chartComponentRef.current && props.tradeEvents.length > 0 && !showEMA) {
+    if (chartComponentRef.current && props.tradeEvents.length > 0) {
       const newTradeEvent = props.tradeEvents[props.tradeEvents.length - 1]
       const newPoint = [newTradeEvent.timestamp, newTradeEvent.lasttradeprice]
 
@@ -68,7 +73,7 @@ const Chart = (props: ChartProps) => {
 
   // Update lastEventMillis and add datapoint to chart whenever a new EMAEvent happens
   useEffect(() => {
-    if (chartComponentRef.current && props.EMAEvents.length > 0 && showEMA) {
+    if (chartComponentRef.current && props.EMAEvents.length > 0) {
       const newEmaEvent = props.EMAEvents[props.EMAEvents.length - 1]
 
       const newPoint38Start = [
@@ -114,51 +119,104 @@ const Chart = (props: ChartProps) => {
     scrollbar: {
       enabled: false,
     },
-    series: showEMA
-      ? [
-          {
-            name: 'EMA 38',
-            data: getDatapointsEMA(38),
-            type: 'line',
-          },
-          {
-            name: 'EMA 100',
-            data: getDatapointsEMA(100),
-            type: 'line',
-          },
-        ]
-      : [
-          {
-            name: 'Trade data',
-            data: getDatapointsPrice(),
-            type: 'line',
-          },
-        ],
+    series: [
+      {
+        name: 'EMA 38',
+        data: getDatapointsEMA(38),
+        type: 'line',
+        color: '#4682B4',
+        yAxis: 1,
+      },
+      {
+        name: 'EMA 100',
+        data: getDatapointsEMA(100),
+        type: 'line',
+        color: '#FF0000',
+        yAxis: 1,
+      },
+      {
+        name: 'Trade price',
+        data: getDatapointsPrice(),
+        type: 'line',
+        color: '#4B0082',
+        yAxis: 0,
+      },
+    ],
     xAxis: {
       type: 'datetime',
       min: lastEventMillis - timeInterval,
       // Leave some space on the right hand side of the data curve
       max: lastEventMillis + timeInterval * 0.1,
       ordinal: false,
+      plotBands: props.EMAEvents.map((event, index) => {
+        return {
+          from: event.window_start,
+          to: event.window_end,
+          color: index % 2 == 0 ? '#f0f0f0' : '#f5f5dc',
+          label: {
+            text: `window ${index}`,
+            align: 'center',
+            verticalAlign: 'bottom',
+            y: 20, // Position the label below
+          },
+        }
+      }),
     },
-    yAxis: {
-      type: 'linear',
-      title: {
-        text: showEMA ? 'EMA' : 'Price',
+    annotations: [
+      {
+        labels: [
+          {
+            point: {
+              x: Date.UTC(2021, 10, 8, 9, 3),
+              y: 6.5,
+              xAxis: 0,
+              yAxis: 0,
+            },
+            text: 'Sell Event Triggered',
+            align: 'right',
+            verticalAlign: 'bottom',
+          },
+        ],
+        shapes: [
+          {
+            type: 'path',
+
+            stroke: 'gray',
+          },
+        ],
       },
-      labels: {
-        format: '{value:.0f}', // round to the nearest integer
+    ],
+    yAxis: [
+      {
+        type: 'linear',
+        title: {
+          text: 'Price',
+        },
+        labels: {
+          format: '{value:.0f}', // round to the nearest integer
+        },
+        opposite: true,
       },
-      opposite:true
-    },
+      {
+        type: 'linear',
+        title: {
+          text: 'EMA',
+        },
+        labels: {
+          format: '{value:.0f}', // round to the nearest integer
+        },
+      },
+    ],
     legend: {
-      enabled: showEMA,
       align: 'right',
       verticalAlign: 'middle',
       layout: 'vertical',
     },
     accessibility: {
       enabled: false, // Disable an accessibility warning
+    },
+    tooltip: {
+      shared: true, // Allow comparison of values in the same tooltip
     },
   }
 
@@ -168,20 +226,6 @@ const Chart = (props: ChartProps) => {
         <h2 className="title">
           {props.visualizedSymbol}, {new Date(lastEventMillis).toDateString()}
         </h2>
-        <div className="buttons">
-          <button
-            onClick={() => setShowEMA(true)}
-            className={`action-button ${showEMA ? 'active' : ''}`}
-          >
-            EMA
-          </button>
-          <button
-            onClick={() => setShowEMA(false)}
-            className={`action-button ${!showEMA ? 'active' : ''}`}
-          >
-            Price
-          </button>
-        </div>
       </div>
       <div className="chart-wrapper">
         <HighchartsReact
