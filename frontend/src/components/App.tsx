@@ -15,15 +15,7 @@ const adviceToString = (adviceString: string) => {
 }
 
 const App = () => {
-  const {
-    stocks,
-    setStocks,
-    selectAllStocks,
-    selectNoStocks,
-    selectStock,
-    setStockAdvice,
-    removeStockAdvice,
-  } = useStockData()
+  const stockState = useStockData()
 
   const [visualizedSymbol, setVisualizedSymbol] = useState<string | undefined>()
   const [tradeEvents, setTradeEvents] = useState<TradeEvent[]>([])
@@ -32,7 +24,7 @@ const App = () => {
 
   useEffect(() => {
     return initializeSocket(
-      setStocks,
+      stockState.setStocks,
       setTradeEvents,
       setEMAEvents,
       setBuyAndSellEvents,
@@ -45,12 +37,12 @@ const App = () => {
     const adviceString = adviceToString(lastBuySellEvent.buy_or_sell_action)
 
     // If user is subscribed to stock
-    if (setStockAdvice(lastBuySellEvent.symbol, adviceString)) {
+    if (stockState.setStockAdvice(lastBuySellEvent.symbol, adviceString)) {
       toast.info(`${adviceString} event from symbol ${lastBuySellEvent.symbol}`)
 
       // Remove advice after 10 seconds
       const timer = setTimeout(
-        () => removeStockAdvice(lastBuySellEvent.symbol),
+        () => stockState.removeStockAdvice(lastBuySellEvent.symbol),
         10000,
       )
 
@@ -61,7 +53,7 @@ const App = () => {
   }, [buyAndSellEvents])
 
   const loadPastEvents = async () => {
-    // TODO: load events from database here:
+    // TODO: load events from database here
     //const eventsFromDatabase = Database.fetch({ symbol: visualizedSymbol })
     //setTradeEvents(prev => [...prev, eventsFromDatabase])
     //setEMAEvents(prev => [...prev, eventsFromDatabase])
@@ -91,10 +83,7 @@ const App = () => {
       <StockTable
         visualizedSymbol={visualizedSymbol}
         setVisualizedSymbol={setVisualizedSymbol}
-        stocks={stocks}
-        selectAllStocks={selectAllStocks}
-        selectNoStocks={selectNoStocks}
-        selectStock={selectStock}
+        {...stockState}
       />
       <ToastContainer
         position="top-right"
