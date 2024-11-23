@@ -4,10 +4,9 @@ import { Server as HttpServer } from 'http'
 type EventName =
   | 'buy-sell-advice-message'
   | 'trade-event-message'
-  | 'ema-result-event'
+  | 'ema-result-event-message'
 
 const symbols = new Set()
-const subscribeAllRoom = 'all' // No conflicts as symbols are upper-case characters
 
 let io:
   | Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap, any>
@@ -26,21 +25,11 @@ export const initializeSocket = (server: HttpServer) => {
     console.log('New user connected:', socket.id)
 
     // Send all symbols to a new user
-    socket.emit('all-symbols', JSON.stringify([...symbols]))
+    socket.emit('all-symbols', [...symbols])
 
     socket.on('subscribe', (symbol) => {
       socket.join(symbol)
       console.log(`User ${socket.id} subscribed to ${symbol}`)
-    })
-
-    socket.on('subscribe-all', () => {
-      socket.join(subscribeAllRoom)
-      console.log(`User ${socket.id} subscribed to all events`)
-    })
-
-    socket.on('unsubscribe-all', () => {
-      socket.leave(subscribeAllRoom)
-      console.log(`User ${socket.id} unsubscribed from all events`)
     })
 
     socket.on('unsubscribe', (symbol) => {
@@ -54,7 +43,7 @@ export const initializeSocket = (server: HttpServer) => {
   })
 }
 
-export const broadcastEvent = (
+export const broadcastEventToSubscribers = (
   eventName: EventName,
   messageSymbol: string,
   message: any,
@@ -67,6 +56,10 @@ export const broadcastEvent = (
     }
 
     // Broadcast event to users, which have subscribed to the symbol
-    io.to(subscribeAllRoom).to(messageSymbol).emit(eventName, message)
+    io.to(messageSymbol).emit(eventName, message)
   }
+}
+
+export const broadcastEventToAll = (eventName: EventName, message: any) => {
+  io?.emit(eventName, message) // Broadcast event to all users
 }

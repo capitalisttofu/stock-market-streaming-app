@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts/highstock'
-import { TradeEvent } from '../types'
+import { EMAResultEvent, TradeEvent } from '../types'
 import './Chart.css'
-
-//const tumblingWindowSizeMillis = 5 * 60 * 1000
 
 const intervalButtons = [
   { text: '15 min', timeInMillis: 15 * 60 * 1000 },
@@ -20,10 +18,11 @@ const intervalButtons = [
 
 interface ChartProps {
   tradeEvents: TradeEvent[]
+  EMAEvents: EMAResultEvent[]
   visualizedSymbol: string
 }
 
-const Chart = ({ tradeEvents, visualizedSymbol }: ChartProps) => {
+const Chart = (props: ChartProps) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null)
 
   // Simulating the current date. Start with the earliest date possible
@@ -34,19 +33,27 @@ const Chart = ({ tradeEvents, visualizedSymbol }: ChartProps) => {
   const [showEMA, setShowEMA] = useState(false) // False shows price
 
   const getDatapointsPrice = () => {
-    return tradeEvents
-      .filter((event) => event.symbol === visualizedSymbol)
-      .map((event) => [event.timestamp, event.lasttradeprice])
+    const sameSymbol = props.tradeEvents.filter(
+      (event) => event.symbol === props.visualizedSymbol,
+    )
+    return sameSymbol.map((event) => [event.timestamp, event.lasttradeprice])
   }
 
   const getDatapointsEMA = (emaJ: 38 | 100) => {
-    // TODO: implement this
-    return []
+    const sameSymbol = props.EMAEvents.filter(
+      (event) => event.symbol === props.visualizedSymbol,
+    )
+
+    return sameSymbol.map((event) => [
+      event.window_end,
+      emaJ == 38 ? event.emaj_38 : event.emaj_100,
+    ])
   }
 
+  // Update lastEventMillis and add datapoint to chart whenever a new TradeEvent happens
   useEffect(() => {
-    if (chartComponentRef.current && tradeEvents.length > 0) {
-      const newTradeEvent = tradeEvents[tradeEvents.length - 1]
+    if (chartComponentRef.current && props.tradeEvents.length > 0 && !showEMA) {
+      const newTradeEvent = props.tradeEvents[props.tradeEvents.length - 1]
       const newPoint = [newTradeEvent.timestamp, newTradeEvent.lasttradeprice]
 
       // lastEventMillis is the current time; hence, the latest event is chosen
@@ -57,20 +64,38 @@ const Chart = ({ tradeEvents, visualizedSymbol }: ChartProps) => {
       const series = chartComponentRef.current.chart.series
       series[0].addPoint(newPoint, true, false, true)
     }
-  }, [tradeEvents])
+  }, [props.tradeEvents])
 
-  /*useEffect(() => {
-    if (chartComponentRef.current && emaEvents.length > 0) {
-      const newEmaEvent = emaEvents[emaEvents.length - 1]
-      const newPoint = [newEmaEvent.timestamp, newEmaEvent.lasttradeprice]
+  // Update lastEventMillis and add datapoint to chart whenever a new EMAEvent happens
+  useEffect(() => {
+    if (chartComponentRef.current && props.EMAEvents.length > 0 && showEMA) {
+      const newEmaEvent = props.EMAEvents[props.EMAEvents.length - 1]
 
-      setLastEventMillis(newEmaEvent.timestamp)
+      const newPoint38Start = [
+        newEmaEvent.window_start,
+        newEmaEvent.prev_emaj_38,
+      ]
+      const newPoint100Start = [
+        newEmaEvent.window_start,
+        newEmaEvent.prev_emaj_100,
+      ]
+
+      const newPoint38End = [newEmaEvent.window_end, newEmaEvent.emaj_38]
+      const newPoint100End = [newEmaEvent.window_end, newEmaEvent.emaj_100]
+
+      // lastEventMillis is the current time; hence, the latest event is chosen
+      if (newEmaEvent.window_end > lastEventMillis) {
+        setLastEventMillis(newEmaEvent.window_end)
+      }
 
       const series = chartComponentRef.current.chart.series
-      series[0].addPoint(, true, false, false)
-      series[1].addPoint(, true, false, false)
+      series[0].addPoint(newPoint38Start, true, false, true)
+      series[0].addPoint(newPoint38End, true, false, true)
+
+      series[1].addPoint(newPoint100Start, true, false, true)
+      series[1].addPoint(newPoint100End, true, false, true)
     }
-  }, [emaEvents])*/
+  }, [props.EMAEvents])
 
   const options: Highcharts.Options = {
     chart: {
@@ -124,6 +149,7 @@ const Chart = ({ tradeEvents, visualizedSymbol }: ChartProps) => {
       labels: {
         format: '{value:.0f}', // round to the nearest integer
       },
+      opposite:true
     },
     legend: {
       enabled: showEMA,
@@ -140,13 +166,19 @@ const Chart = ({ tradeEvents, visualizedSymbol }: ChartProps) => {
     <div className="container">
       <div className="header">
         <h2 className="title">
-          {visualizedSymbol}, {new Date(lastEventMillis).toDateString()}
+          {props.visualizedSymbol}, {new Date(lastEventMillis).toDateString()}
         </h2>
         <div className="buttons">
-          <button onClick={() => setShowEMA(true)} className="action-button">
+          <button
+            onClick={() => setShowEMA(true)}
+            className={`action-button ${showEMA ? 'active' : ''}`}
+          >
             EMA
           </button>
-          <button onClick={() => setShowEMA(false)} className="action-button">
+          <button
+            onClick={() => setShowEMA(false)}
+            className={`action-button ${!showEMA ? 'active' : ''}`}
+          >
             Price
           </button>
         </div>

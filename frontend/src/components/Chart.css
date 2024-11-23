@@ -16,15 +16,25 @@
 }
 
 .action-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
 }
 
 .action-button:hover {
+  background-color: #e0e0e0;
+}
+
+.action-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.action-button.active:hover {
   background-color: #0056b3;
 }
 

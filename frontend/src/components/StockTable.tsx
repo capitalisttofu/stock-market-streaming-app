@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { handleSubscribe, handleUnsubscribe } from '../socket'
 import { Stock } from '../types'
 import './StockTable.css'
 
@@ -17,49 +15,20 @@ interface StockTableProps {
 }
 
 const StockTable = (props: StockTableProps) => {
-  const [subscribeAll, setSubscribeAll] = useState(false)
-
-  const visualizeStock = (symbol: string) => {
-    props.setVisualizedSymbol(symbol)
-  }
-
-  const handleSelection = (stock: Stock) => {
-    if (stock.selected) {
-      handleUnsubscribe(stock.symbol)
-    } else {
-      handleSubscribe(stock.symbol)
-    }
-
-    props.selectStock(stock.symbol)
-  }
-
-  const handleSubscribeAll = () => {
-    setSubscribeAll(true)
-    handleSubscribe()
-    props.selectAllStocks()
-  }
-
-  const handleSubscribeNone = () => {
-    setSubscribeAll(false)
-    handleUnsubscribe()
-    props.selectNoStocks()
-  }
-
   return (
     <div className="container">
       <div className="header-container">
         <div className="header-text">
           <h2>Stocks</h2>
           <p className="description">
-            Choose stocks to visualize and get buy and sell recommendations. If
-            one wishes to select a subset of stocks, choose "Subscribe to None"
-            and choose the stocks manually. New stocks are added to the list
-            loaded whenever they events start appearing
+            Select stocks to receive buy and sell recommendations.
+            New stocks are automatically added to the list whenever an event
+            involving their symbol occurs. You can also visualize stocks.
           </p>
         </div>
         <div className="table-controls">
-          <button onClick={handleSubscribeAll}>Subscribe to All</button>
-          <button onClick={handleSubscribeNone}>Subscribe to None</button>
+          <button onClick={props.selectAllStocks}>Subscribe to All</button>
+          <button onClick={props.selectNoStocks}>Subscribe to None</button>
         </div>
       </div>
       <table className="stocks-table">
@@ -77,16 +46,15 @@ const StockTable = (props: StockTableProps) => {
               <td>
                 <input
                   type="checkbox"
-                  checked={subscribeAll || stock.selected}
-                  onChange={() => handleSelection(stock)}
-                  disabled={subscribeAll}
+                  checked={stock.selected}
+                  onChange={() => props.selectStock(stock.symbol)}
                 />
               </td>
               <td>{stock.symbol}</td>
-              <td>{stock.advice}</td>
+              <td className="table-advice">{stock.advice}</td>
               <td>
                 <button
-                  onClick={() => visualizeStock(stock.symbol)}
+                  onClick={() => props.setVisualizedSymbol(stock.symbol)}
                   disabled={stock.symbol == props.visualizedSymbol}
                 >
                   Visualize

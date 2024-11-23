@@ -76,3 +76,7 @@
   box-shadow: none;
   cursor: default;
 }
+
+.table-advice {
+  color: red;
+}

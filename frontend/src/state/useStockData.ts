@@ -1,18 +1,32 @@
 import { useState } from 'react'
 import { Stock } from '../types'
 
-const stockStringToStock = (stockString: string) => {
+const stockStringToStock = (stockString: string, selected: boolean) => {
   return {
     symbol: stockString,
-    selected: false,
+    selected: selected,
   } as Stock
+}
+
+const adviceToString = (adviceString: string) => {
+  if (adviceString === 'S') return 'SELL'
+  if (adviceString === 'B') return 'BUY'
+  return ''
 }
 
 export const useStockData = () => {
   const [stocks, setStockData] = useState<Stock[]>([])
 
+  const allStocksSelected = () => {
+    return stocks.length > 0 && stocks.every((stock) => stock.selected)
+  }
+
   const setStocks = (stockStrings: string[]) => {
-    const newStocks: Stock[] = stockStrings.map(stockStringToStock)
+    // Stock is selected if all current stocks are also selected
+    const selectNewStock = allStocksSelected()
+    const newStocks = stockStrings.map((str) =>
+      stockStringToStock(str, selectNewStock),
+    )
 
     setStockData((prev) => {
       // Remove duplicates
@@ -47,5 +61,38 @@ export const useStockData = () => {
     setStockData(stocks.map((stock) => ({ ...stock, selected: false })))
   }
 
-  return { stocks, setStocks, selectAllStocks, selectNoStocks, selectStock }
+  const setStockAdvice = (symbol: string, advice: string) => {
+    // Returns false if symbol does not exist or stock is not selected
+    if (!stocks.some((stock) => stock.symbol === symbol && stock.selected)) {
+      return false
+    }
+
+    setStockData(
+      stocks.map((stock) =>
+        stock.symbol === symbol
+          ? { ...stock, advice: adviceToString(advice) }
+          : stock,
+      ),
+    )
+
+    return true
+  }
+
+  const removeStockAdvice = (symbol: string) => {
+    setStockData(
+      stocks.map((stock) =>
+        stock.symbol === symbol ? { ...stock, advice: undefined } : stock,
+      ),
+    )
+  }
+
+  return {
+    stocks,
+    setStocks,
+    selectAllStocks,
+    selectNoStocks,
+    selectStock,
+    setStockAdvice,
+    removeStockAdvice,
+  }
 }
