@@ -162,30 +162,6 @@ const Chart = (props: ChartProps) => {
         }
       }),
     },
-    annotations: [
-      {
-        labels: [
-          {
-            point: {
-              x: Date.UTC(2021, 10, 8, 9, 3),
-              y: 6.5,
-              xAxis: 0,
-              yAxis: 0,
-            },
-            text: 'Sell Event Triggered',
-            align: 'right',
-            verticalAlign: 'bottom',
-          },
-        ],
-        shapes: [
-          {
-            type: 'path',
-
-            stroke: 'gray',
-          },
-        ],
-      },
-    ],
     yAxis: [
       {
         type: 'linear',
