@@ -90,7 +90,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
         yield row
 
 
-def handle_trade_event_stream(tradeEventStream: DataStream):
+def handle_trade_event_stream(trade_event_stream: DataStream):
     from utils import avro, kafka
 
     buy_sell_kafka_producer = FlinkKafkaProducer(
@@ -102,7 +102,7 @@ def handle_trade_event_stream(tradeEventStream: DataStream):
     )
 
     ema_kafka_producer = FlinkKafkaProducer(
-        topic="ema_results",
+        topic=kafka.EMA_RESULTS_TOPIC,
         serialization_schema=AvroRowSerializationSchema(
             avro_schema_string=avro.EMA_RESULT_EVENT_SCHEMA
         ),
@@ -110,7 +110,7 @@ def handle_trade_event_stream(tradeEventStream: DataStream):
     )
 
     ema_windowed_stream = (
-        tradeEventStream.key_by(lambda x: x["symbol"])
+        trade_event_stream.key_by(lambda x: x["symbol"])
         .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
         .process(
             EMACalulaterProcessWindowFunction(),

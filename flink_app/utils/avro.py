@@ -13,11 +13,44 @@ TRADE_EVENT_SCHEMA = """
     { "name": "lasttradeprice", "type": "float" },
     {
       "name": "timestamp",
-      "type": { "type": "long", "logicalType": "timestamp-millis" }
+      "type": { "type": "long"}
     }
   ]
 }
 """
+
+RAW_TRADE_EVENT_SCHEMA = """
+{
+  "type": "record",
+  "name": "RawTradeEvent",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "sectype",
+      "type": "string"
+    },
+    {
+      "name": "lasttradeprice",
+      "type": ["null", "float"],
+      "default": null
+    },
+    {
+      "name": "tradingtime",
+      "type": ["null", "int"],
+      "default": null
+    },
+    {
+      "name": "tradingdate",
+      "type": ["null", "int"],
+      "default": null
+    }
+  ]
+}
+"""
+
 
 BUYSELL_EVENT_SCHEMA = """
 {

@@ -17,12 +17,12 @@ export const RawTradeEventAvro = avro.Type.forSchema({
     },
     {
       name: 'tradingtime',
-      type: ['null', 'int'],
+      type: ['null', { type: 'int', logicalType: 'time-millis' }],
       default: null,
     },
     {
       name: 'tradingdate',
-      type: ['null', 'int'],
+      type: ['null', { type: 'int', logicalType: 'date' }],
       default: null,
     },
   ],

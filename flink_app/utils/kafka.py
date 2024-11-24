@@ -3,6 +3,7 @@ KAFKA_PROPERTIES = {
     "group.id": "flink_consumer_group",
 }
 
+SORTED_RAW_TRADE_DATA_TOPIC = "sorted_raw_trade_data"
 TRADE_DATA_TOPIC = "trade_data"
 BUY_SELL_ADVICE_TOPIC = "buy_sell_advice"
 DISCARDED_DATA_TOPIC = "discarded_data"
