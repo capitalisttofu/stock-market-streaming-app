@@ -25,29 +25,35 @@ interface ChartProps {
 const Chart = (props: ChartProps) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null)
 
-  // Simulating the current date. Start with the earliest date possible
-  const [lastEventMillis, setLastEventMillis] = useState(0)
+  // Two sets to keep track of which events have happened
+  const prevTradeEventsSetRef = useRef<Set<TradeEvent>>(new Set())
+  const prevEMAEventsSetRef = useRef<Set<EMAResultEvent>>(new Set())
 
-  // Default is 15 minutes in milliseconds
+  // Determines how long of a time the chart shows. Defaults to 15 minutes in milliseconds
   const [timeInterval, setTimeInterval] = useState(15 * 60 * 1000)
 
+  // Simulating the current date. Start with the earliest date possible
+  const findLastEventTime = () => {
+    const tradeEventTimes = props.tradeEvents.map((event) => event.timestamp)
+    const emaEventTimes = props.EMAEvents.map((event) => event.window_end)
+
+    if (tradeEventTimes.length === 0 && emaEventTimes.length === 0) return 0
+    return Math.max(...tradeEventTimes.concat(emaEventTimes))
+  }
+
   const getDatapointsPrice = () => {
-    const sameSymbol = props.tradeEvents.filter(
-      (event) => event.symbol === props.visualizedSymbol,
-    )
-    return sameSymbol.map((event) => [event.timestamp, event.lasttradeprice])
+    return props.tradeEvents.map((event) => [
+      event.timestamp,
+      event.lasttradeprice,
+    ])
   }
 
   const getDatapointsEMA = (emaJ: 38 | 100) => {
-    const sameSymbol = props.EMAEvents.filter(
-      (event) => event.symbol === props.visualizedSymbol,
-    )
-
-    const curEvents = sameSymbol.map((event) => [
+    const curEvents = props.EMAEvents.map((event) => [
       event.window_end,
       emaJ == 38 ? event.emaj_38 : event.emaj_100,
     ])
-    const prevEvents = sameSymbol.map((event) => [
+    const prevEvents = props.EMAEvents.map((event) => [
       event.window_start,
       emaJ == 38 ? event.prev_emaj_38 : event.prev_emaj_100,
     ])
@@ -58,47 +64,39 @@ const Chart = (props: ChartProps) => {
   // Update lastEventMillis and add datapoint to chart whenever a new TradeEvent happens
   useEffect(() => {
     if (chartComponentRef.current && props.tradeEvents.length > 0) {
-      const newTradeEvent = props.tradeEvents[props.tradeEvents.length - 1]
-      const newPoint = [newTradeEvent.timestamp, newTradeEvent.lasttradeprice]
-
-      // lastEventMillis is the current time; hence, the latest event is chosen
-      if (newTradeEvent.timestamp > lastEventMillis) {
-        setLastEventMillis(newTradeEvent.timestamp)
-      }
-
       const series = chartComponentRef.current.chart.series
-      series[0].addPoint(newPoint, true, false, true)
+
+      for (const event of props.tradeEvents) {
+        if (!prevTradeEventsSetRef.current.has(event)) {
+          prevTradeEventsSetRef.current.add(event)
+
+          const newPoint = [event.timestamp, event.lasttradeprice]
+          series[2].addPoint(newPoint, true, false, true) // Price series
+        }
+      }
     }
   }, [props.tradeEvents])
 
   // Update lastEventMillis and add datapoint to chart whenever a new EMAEvent happens
   useEffect(() => {
     if (chartComponentRef.current && props.EMAEvents.length > 0) {
-      const newEmaEvent = props.EMAEvents[props.EMAEvents.length - 1]
-
-      const newPoint38Start = [
-        newEmaEvent.window_start,
-        newEmaEvent.prev_emaj_38,
-      ]
-      const newPoint100Start = [
-        newEmaEvent.window_start,
-        newEmaEvent.prev_emaj_100,
-      ]
-
-      const newPoint38End = [newEmaEvent.window_end, newEmaEvent.emaj_38]
-      const newPoint100End = [newEmaEvent.window_end, newEmaEvent.emaj_100]
-
-      // lastEventMillis is the current time; hence, the latest event is chosen
-      if (newEmaEvent.window_end > lastEventMillis) {
-        setLastEventMillis(newEmaEvent.window_end)
-      }
-
       const series = chartComponentRef.current.chart.series
-      series[0].addPoint(newPoint38Start, true, false, true)
-      series[0].addPoint(newPoint38End, true, false, true)
 
-      series[1].addPoint(newPoint100Start, true, false, true)
-      series[1].addPoint(newPoint100End, true, false, true)
+      for (const event of props.EMAEvents) {
+        if (!prevEMAEventsSetRef.current.has(event)) {
+          prevEMAEventsSetRef.current.add(event)
+
+          const newPoint38Start = [event.window_start, event.prev_emaj_38]
+          const newPoint100Start = [event.window_start, event.prev_emaj_100]
+          const newPoint38End = [event.window_end, event.emaj_38]
+          const newPoint100End = [event.window_end, event.emaj_100]
+
+          series[0].addPoint(newPoint38Start, true, false, true) // EMA 38 series
+          series[0].addPoint(newPoint38End, true, false, true) // EMA 38 series
+          series[1].addPoint(newPoint100Start, true, false, true) // EMA 100 series
+          series[1].addPoint(newPoint100End, true, false, true) // EMA 100 series
+        }
+      }
     }
   }, [props.EMAEvents])
 
@@ -126,6 +124,9 @@ const Chart = (props: ChartProps) => {
         type: 'line',
         color: '#4682B4',
         yAxis: 1,
+        marker: {
+          symbol: 'circle',
+        },
       },
       {
         name: 'EMA 100',
@@ -133,6 +134,9 @@ const Chart = (props: ChartProps) => {
         type: 'line',
         color: '#FF0000',
         yAxis: 1,
+        marker: {
+          symbol: 'circle',
+        },
       },
       {
         name: 'Trade price',
@@ -140,13 +144,16 @@ const Chart = (props: ChartProps) => {
         type: 'line',
         color: '#4B0082',
         yAxis: 0,
+        marker: {
+          symbol: 'circle',
+        },
       },
     ],
     xAxis: {
       type: 'datetime',
-      min: lastEventMillis - timeInterval,
+      min: findLastEventTime() - timeInterval,
       // Leave some space on the right hand side of the data curve
-      max: lastEventMillis + timeInterval * 0.1,
+      max: findLastEventTime() + timeInterval * 0.1,
       ordinal: false,
       plotBands: props.EMAEvents.map((event, index) => {
         return {
@@ -200,7 +207,8 @@ const Chart = (props: ChartProps) => {
     <div className="container">
       <div className="header">
         <h2 className="title">
-          {props.visualizedSymbol}, {new Date(lastEventMillis).toDateString()}
+          {props.visualizedSymbol},{' '}
+          {new Date(findLastEventTime()).toDateString()}
         </h2>
       </div>
       <div className="chart-wrapper">

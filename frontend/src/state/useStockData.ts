@@ -4,13 +4,10 @@ import { Stock } from '../types'
 export const useStockData = () => {
   const [stocks, setStockData] = useState<Stock[]>([])
 
-  const allStocksSelected = () => {
-    return stocks.length > 0 && stocks.every((stock) => stock.selected)
-  }
-
   const setStocks = (stockStrings: string[]) => {
-    // Stock is selected if all current stocks are also selected
-    const selectNewStock = allStocksSelected()
+    // Stock is selected if all current stocks are also selected.
+    // If there are no stocks, the new stock is selected
+    const selectNewStock = stocks.every((stock) => stock.selected)
     const newStocks = stockStrings.map((str) => {
       return { symbol: str, selected: selectNewStock } as Stock
     })

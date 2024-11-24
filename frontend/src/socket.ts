@@ -30,12 +30,10 @@ export const initializeSocket = (
   })
 
   socket.on(TRADE_EVENT_MESSAGE_NAME, (event: TradeEvent) => {
-    console.log(event)
     setTradeEvents((prevEvents) => [...prevEvents, event])
   })
 
   socket.on(EMA_RESULT_MESSAGE_NAME, (event: EMAResultEvent) => {
-    console.log(event)
     setEMAEvents((prevEvents) => [...prevEvents, event])
   })
 
