@@ -17,7 +17,7 @@ export const initializeSocket = (
   setStocks: (stockStrings: string[]) => void,
   setTradeEvents: React.Dispatch<React.SetStateAction<TradeEvent[]>>,
   setEMAEvents: React.Dispatch<React.SetStateAction<EMAResultEvent[]>>,
-  setBuyAndSellEvents: React.Dispatch<React.SetStateAction<BuySellEvent[]>>,
+  setBuyAndSellEvents: (event: BuySellEvent) => void,
 ) => {
   socket = io(BACKEND_URI)
 
@@ -38,7 +38,7 @@ export const initializeSocket = (
   })
 
   socket.on(BUY_SELL_ADVICE_MESSAGE_NAME, (event: BuySellEvent) => {
-    setBuyAndSellEvents((prevEvents) => [...prevEvents, event])
+    setBuyAndSellEvents(event)
   })
 
   return () => {

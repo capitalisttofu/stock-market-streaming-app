@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Chart from './Chart'
 import StockTable from './StockTable'
@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css'
 const adviceToString = (adviceString: string) => {
   if (adviceString === 'S') return 'SELL'
   if (adviceString === 'B') return 'BUY'
-  return ''
 }
 
 const App = () => {
@@ -20,37 +19,42 @@ const App = () => {
   const [visualizedSymbol, setVisualizedSymbol] = useState<string | undefined>()
   const [tradeEvents, setTradeEvents] = useState<TradeEvent[]>([])
   const [EMAEvents, setEMAEvents] = useState<EMAResultEvent[]>([])
-  const [buyAndSellEvents, setBuyAndSellEvents] = useState<BuySellEvent[]>([])
+  const timersRef = useRef<number[]>([])
+
+  const handleBuySellEvent = (event: BuySellEvent) => {
+    const adviceString = adviceToString(event.buy_or_sell_action)
+    if (adviceString === undefined) return
+
+    if (stockState.setStockAdvice(event.symbol, adviceString)) {
+      toast.info(`${adviceString} event from symbol ${event.symbol}`)
+
+      const timer = setTimeout(() => {
+        // Remove advice after 10 seconds
+        stockState.removeStockAdvice(event.symbol)
+
+        // Remove timer from Ref
+        timersRef.current = timersRef.current.filter((id) => id !== timer)
+      }, 10000)
+
+      timersRef.current.push(timer)
+    }
+  }
 
   useEffect(() => {
     return initializeSocket(
       stockState.setStocks,
       setTradeEvents,
       setEMAEvents,
-      setBuyAndSellEvents,
+      handleBuySellEvent,
     )
   }, [])
 
   useEffect(() => {
-    if (buyAndSellEvents.length < 1) return
-    const lastBuySellEvent = buyAndSellEvents[buyAndSellEvents.length - 1]
-    const adviceString = adviceToString(lastBuySellEvent.buy_or_sell_action)
-
-    // If user is subscribed to stock
-    if (stockState.setStockAdvice(lastBuySellEvent.symbol, adviceString)) {
-      toast.info(`${adviceString} event from symbol ${lastBuySellEvent.symbol}`)
-
-      // Remove advice after 10 seconds
-      const timer = setTimeout(
-        () => stockState.removeStockAdvice(lastBuySellEvent.symbol),
-        10000,
-      )
-
-      return () => {
-        clearTimeout(timer)
-      }
+    return () => {
+      timersRef.current.forEach((id) => clearTimeout(id))
+      timersRef.current = []
     }
-  }, [buyAndSellEvents])
+  }, [])
 
   const loadPastEvents = async () => {
     // TODO: load events from database here
