@@ -8,27 +8,27 @@ const daysToMilliseconds = (days: number) => {
 }
 
 export const produceTradeData = (datapoint: ParsedTradeEvent) => {
-  try {
-    const timestamp = new Date(
-      datapoint.lastUpdateTime + daysToMilliseconds(datapoint.lastTradeDate),
-    ).getTime()
+  const timestamp = new Date(
+    datapoint.lastUpdateTime + daysToMilliseconds(datapoint.lastTradeDate),
+  ).getTime()
 
-    const buffer = TradeEventAvro.toBuffer({
-      id: datapoint.id,
-      symbol: datapoint.symbol,
-      exchange: datapoint.exchange,
-      sectype: datapoint.sectype,
-      lasttradeprice: datapoint.lastTradePrice,
-      timestamp,
-    })
+  const buffer = TradeEventAvro.toBuffer({
+    id: datapoint.id,
+    symbol: datapoint.symbol,
+    exchange: datapoint.exchange,
+    sectype: datapoint.sectype,
+    lasttradeprice: datapoint.lastTradePrice,
+    timestamp,
+  })
 
-    producer.send({
+  producer
+    .send({
       topic: TRADE_DATA_TOPIC,
       // All messages with same symbol go to the same partition
       messages: [{ value: buffer, key: datapoint.symbol }],
     })
-  } catch (e) {
-    console.log('Error occured')
-    console.log(e)
-  }
+    .catch((e) => {
+      console.log('Error occured')
+      console.log(e)
+    })
 }
