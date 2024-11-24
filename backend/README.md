@@ -90,7 +90,20 @@ that the pyflink app produces. It can be run with `npm run test-buy-sell-consume
 
 ## Trade Data API
 
-The trade data api consumes two Kafka topics: `trade_data` and `buy_sell_advice`, and sends the events with WebSockets
-to the frontend. It consists of an express API, which listens on port 3000. The API uses Socket.io for managing the
-WebSockets.
+The trade data api consumes three Kafka topics: `trade_data`, `ema_results`, and `buy_sell_advice`, and sends the events with WebSockets
+to the frontend. It consists of an express API, which listens on port `3000`. The API uses Socket.io for managing the WebSockets.
+Socket.io rooms are used for events subscriptions from `trade_data`, and `ema_results` topics. The rooms are based on the symbols; therefore,
+the user subsribes to all events from a symbol. Events from the `buy_sell_advice` topic are always sent to the frontend.
+
 The trade data API can be run with `npm run trade-data-api`.
+
+The trade data API sends messages with websockets with the following event names:
+- `buy-sell-advice-message` send `BUY` and `SELL` advices from `buy_sell_advice` topic
+- `trade-event-message` sends the trade events from `trade_data` topic
+- `ema-result-event-message` to send events from the `ema_results` topic
+- `new-symbol` alerts the frontend that a new symbol is observed. The backend keeps track of previous symbols with a set
+- `all-symbols` is used to send all symbols whenever the frontend connects to the API for the first time
+
+The trade data API receives messages with websockets with the following event names:
+- `subscribe` to subscribe to new price and EMA events
+- `unsubscribe` to unsubscribe from new price and EMA events
