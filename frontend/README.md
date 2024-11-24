@@ -3,24 +3,25 @@
 React frontend is setup with Vite. Socket.IO is used to fetch events from the backend trade data API.
 Install dependencies with `npm install`. Start the frontend with `npm run dev`. The frontend starts on port `5000`.
 
-The frontend consists of a graph, which can be used to visualize price, EMA38, and EMA100 values. Furthermore,
-it includes a table in which the user can choose the visualized event, and subscribe to `BUY` and `SELL` events
-from stocks. New stocks are added to the table whenever the backend find an event with such a symbol.
-The frotnend receives events that a new symbol has been observed via websockets, and appends them to the table.
+The frontend consists of a graph, which can be used to visualize price, EMA38, and EMA100 values, and
+includes a table in which the user can choose the visualized event. The table can also be used to subscribe to `BUY`
+and `SELL` events from stocks. New stocks are added to the table whenever a WebSocket message with the event name
+`new-symbol` or `all-symbols` is received. The frotnend receives events that a new symbol has been observed via
+websockets, and appends them to the table.
 
 
 ## Visualize Events
 
 The user can subscribe to a single symbol to visualize the price, EMA38, and EMA100 values of the symbol. 
-Once a user chooses to visualize the event, the latest events from the symbol are fetched from the database
+Once a user chooses to visualize the event, the latest events from the symbol are fetched from the database,
 and shown to the user. The frontend sends a WebSocket subscription message to the backend to receive live event
 updates for the specified symbol.
 
 
 ## BUY and SELL Events
 
-The frontend is sent all `BUY` and `SELL` events. The user can subscribe to all events or choose a subset of the events.
-The frontend filters and shows them to the user based on the users preference.
+The frontend is sent all `BUY` and `SELL` events. The frontend filters and shows them to the user based on the
+preference of the user. The user can subscribe to all events or choose a subset of the events.
 If the user has not subscribed to the symbol, the alert is not shown.
 The alert is displayed using a toast notification, and the event type (`BUY` or `SELL`) is shown in the table.
 
