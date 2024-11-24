@@ -50,6 +50,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
     def process(self, key, ctx: ProcessWindowFunction.Context, elements):
         from utils import EMA
 
+        print("Process  EMA", ctx.window().start)
         prev_window_state = self.previous_window_ema_state.value()
 
         # Happens at init where we define the emaj = 0

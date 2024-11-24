@@ -1,6 +1,9 @@
 import { ParsedRawData } from '.'
 import { validateSecType } from '../secType'
-import { dateStringToAvroDate, timeStringToAvroTime } from './timeStringToTimestamp'
+import {
+  dateStringToAvroDate,
+  timeStringToAvroTime,
+} from './timeStringToTimestamp'
 
 /**
  * Parses a row of a trade data csv file
@@ -19,10 +22,14 @@ export const parseTradeData = (
 
   // Validata index and secType
   const index = row[idIndex]
-  const secType = row[secTypeIndex] ? validateSecType(row[secTypeIndex]) : undefined
+  const secType = row[secTypeIndex]
+    ? validateSecType(row[secTypeIndex])
+    : undefined
 
   if (!secType || !index) {
-    console.log(`Invalid index or secType. Index: ${index}. Sectype: ${secType}`)
+    console.log(
+      `Invalid index or secType. Index: ${index}. Sectype: ${secType}`,
+    )
     return
   }
 
@@ -30,20 +37,24 @@ export const parseTradeData = (
   const tradingDateIndex = headersToIndex['Trading date']
   const tradingTimeIndex = headersToIndex['Trading time']
   const lastTradeIndex = headersToIndex['Last']
-  const lastTradePrice = lastTradeIndex ? row[lastTradeIndex] : undefined
+  const lastTradePrice = lastTradeIndex
+    ? Number(row[lastTradeIndex])
+    : undefined
 
   return {
     id: index,
     secType: secType,
-    lastTradePrice: lastTradePrice ? parseInt(lastTradePrice) : undefined,
+    lastTradePrice:
+      lastTradePrice && !isNaN(lastTradePrice) ? lastTradePrice : undefined,
     tradingDate:
       tradingDateIndex && row[tradingDateIndex]
         ? dateStringToAvroDate(row[tradingDateIndex])
         : undefined,
-    tradingTime: tradingTimeIndex && row[tradingTimeIndex]
-      ? timeStringToAvroTime(row[tradingTimeIndex])
-      : undefined,
-  } as ParsedRawData
+    tradingTime:
+      tradingTimeIndex && row[tradingTimeIndex]
+        ? timeStringToAvroTime(row[tradingTimeIndex])
+        : undefined,
+  } satisfies ParsedRawData
 }
 
 /**

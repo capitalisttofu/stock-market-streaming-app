@@ -1,0 +1,66 @@
+
+> backend@1.0.0 test-trade-data-consumer
+> ts-node-transpile-only -r ./src/testTradeDataConsumer/index.ts
+
+> {
+  message: 'Consumer connected',
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732490633915
+}
+{
+  message: "Received rebalance event with message: 'Local: Assign partitions' and 3 partition(s), isLost: false",
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732490636945
+}
+last recieved message value TradeEvent {
+  id: 'AALB.NL',
+  symbol: 'AALB',
+  exchange: 'NL',
+  sectype: 'E',
+  lasttradeprice: 48,
+  timestamp: 1636364787653
+}
+Total count 50000
+Processed messages: 50000 2024-11-24T23:23:57.511Z
+last recieved message value TradeEvent {
+  id: 'ADP.FR',
+  symbol: 'ADP',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 125,
+  timestamp: 1636362703913
+}
+Total count 100000
+Processed messages: 100000 2024-11-24T23:23:57.844Z
+last recieved message value TradeEvent {
+  id: 'FGR.FR',
+  symbol: 'FGR',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 93,
+  timestamp: 1636362008708
+}
+Total count 150000
+Processed messages: 150000 2024-11-24T23:23:58.193Z
+last recieved message value TradeEvent {
+  id: 'VLA.FR',
+  symbol: 'VLA',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 18,
+  timestamp: 1636362829085
+}
+Total count 200000
+Processed messages: 200000 2024-11-24T23:23:58.532Z
+last recieved message value TradeEvent {
+  id: 'AF.FR',
+  symbol: 'AF',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 4,
+  timestamp: 1636362601314
+}
+Total count 250000
+Processed messages: 250000 2024-11-24T23:23:58.879Z

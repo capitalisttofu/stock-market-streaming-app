@@ -58,8 +58,6 @@ class ProcessRawTradeEvent(ProcessFunction):
         symbol, exchange = value["id"].split(".")
         timestamp = compute_timestamp(value["tradingtime"], value["tradingdate"])
 
-        print("timestamp", timestamp)
-
         row = Row(
             id=value["id"],
             symbol=symbol,
