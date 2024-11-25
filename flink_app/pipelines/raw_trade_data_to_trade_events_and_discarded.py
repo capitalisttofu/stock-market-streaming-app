@@ -56,28 +56,11 @@ class ProcessRawTradeEvent(ProcessFunction):
 
 
 def handle_stream(raw_data_event_stream: DataStream) -> DataStream:
-    from utils import avro, kafka
+    from utils import avro, kafka, flink_types
 
     trade_event_stream = raw_data_event_stream.process(
         ProcessRawTradeEvent(),
-        output_type=Types.ROW_NAMED(
-            [
-                "id",
-                "symbol",
-                "exchange",
-                "sectype",
-                "lasttradeprice",
-                "timestamp",
-            ],
-            [
-                Types.STRING(),
-                Types.STRING(),
-                Types.STRING(),
-                Types.STRING(),
-                Types.FLOAT(),
-                Types.LONG(),
-            ],
-        ),
+        output_type=flink_types.TRADE_EVENT_TYPE,
     )
 
     discarded_event_stream = trade_event_stream.get_side_output(

@@ -254,3 +254,157 @@ last recieved message value TradeEvent {
 }
 Total count 1200000
 Processed messages: 1200000 2024-11-25T01:35:42.130Z
+{
+  message: "Received rebalance event with message: 'Local: Revoke partitions' and 3 partition(s), isLost: true",
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732538240793
+}
+{
+  message: "Received rebalance event with message: 'Local: Assign partitions' and 3 partition(s), isLost: false",
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732538268271
+}
+last recieved message value TradeEvent {
+  id: 'VPK.NL',
+  symbol: 'VPK',
+  exchange: 'NL',
+  sectype: 'E',
+  lasttradeprice: 34.15999984741211,
+  timestamp: 1636362023699
+}
+Total count 1250000
+Processed messages: 1250000 2024-11-25T12:52:47.860Z
+last recieved message value TradeEvent {
+  id: 'TKWY.NL',
+  symbol: 'TKWY',
+  exchange: 'NL',
+  sectype: 'E',
+  lasttradeprice: 60.91999816894531,
+  timestamp: 1636362679423
+}
+Total count 1300000
+Processed messages: 1300000 2024-11-25T12:53:16.068Z
+last recieved message value TradeEvent {
+  id: 'AF.FR',
+  symbol: 'AF',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 4.699999809265137,
+  timestamp: 1636363947445
+}
+Total count 1350000
+Processed messages: 1350000 2024-11-25T12:54:05.288Z
+{
+  message: '[thrd:localhost:9096/bootstrap]: localhost:9096/2: Disconnected (after 7582335ms in state UP)',
+  fac: 'FAIL',
+  timestamp: 1732545823138,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:localhost:9096/bootstrap]: localhost:9096/2: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 9ms in state APIVERSION_QUERY)',
+  fac: 'FAIL',
+  timestamp: 1732545823150,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:GroupCoordinator]: GroupCoordinator: localhost:9094: Disconnected (after 48861252ms in state UP)',
+  fac: 'FAIL',
+  timestamp: 1732545823152,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:GroupCoordinator]: GroupCoordinator: localhost:9094: Disconnected (after 2ms in state APIVERSION_QUERY, 1 identical error(s) suppressed)',
+  fac: 'FAIL',
+  timestamp: 1732545823158,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:localhost:9094/bootstrap]: localhost:9094/0: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 3ms in state APIVERSION_QUERY)',
+  fac: 'FAIL',
+  timestamp: 1732545823160,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:localhost:9096/bootstrap]: localhost:9096/2: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 1ms in state APIVERSION_QUERY, 1 identical error(s) suppressed)',
+  fac: 'FAIL',
+  timestamp: 1732545823308,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:localhost:9094/bootstrap]: localhost:9094/0: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 1ms in state APIVERSION_QUERY, 1 identical error(s) suppressed)',
+  fac: 'FAIL',
+  timestamp: 1732545823321,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: "Received rebalance event with message: 'Local: Revoke partitions' and 3 partition(s), isLost: true",
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732545852297
+}
+{
+  message: '[thrd:localhost:9096/bootstrap]: localhost:9096/2: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 2ms in state APIVERSION_QUERY)',
+  fac: 'FAIL',
+  timestamp: 1732548775382,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:localhost:9094/bootstrap]: localhost:9094/0: Disconnected while requesting ApiVersion: might be caused by incorrect security.protocol configuration (connecting to a SSL listener?) or broker version is < 0.10 (see api.version.request) (after 2ms in state APIVERSION_QUERY)',
+  fac: 'FAIL',
+  timestamp: 1732548778361,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: '[thrd:GroupCoordinator]: GroupCoordinator: localhost:9094: Disconnected (after 0ms in state APIVERSION_QUERY)',
+  fac: 'FAIL',
+  timestamp: 1732548782371,
+  name: 'rdkafka#consumer-1'
+}
+{
+  message: "Received rebalance event with message: 'Local: Assign partitions' and 3 partition(s), isLost: false",
+  name: 'rdkafka#consumer-1',
+  fac: 'BINDING',
+  timestamp: 1732548814554
+}
+last recieved message value TradeEvent {
+  id: 'ALGAU.FR',
+  symbol: 'ALGAU',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 6.599999904632568,
+  timestamp: 1636362088425
+}
+Total count 1400000
+Processed messages: 1400000 2024-11-25T15:42:24.068Z
+last recieved message value TradeEvent {
+  id: 'PRX.NL',
+  symbol: 'PRX',
+  exchange: 'NL',
+  sectype: 'E',
+  lasttradeprice: 72.54000091552734,
+  timestamp: 1636363078620
+}
+Total count 1450000
+Processed messages: 1450000 2024-11-25T15:43:07.718Z
+last recieved message value TradeEvent {
+  id: 'ASM.NL',
+  symbol: 'ASM',
+  exchange: 'NL',
+  sectype: 'E',
+  lasttradeprice: 424.6000061035156,
+  timestamp: 1636364240928
+}
+Total count 1500000
+Processed messages: 1500000 2024-11-25T15:44:03.312Z
+last recieved message value TradeEvent {
+  id: 'ALPHA.FR',
+  symbol: 'ALPHA',
+  exchange: 'FR',
+  sectype: 'E',
+  lasttradeprice: 0.14000000059604645,
+  timestamp: 1636362027601
+}
+Total count 1550000
+Processed messages: 1550000 2024-11-25T16:00:47.274Z

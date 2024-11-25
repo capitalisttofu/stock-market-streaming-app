@@ -1,8 +1,12 @@
 from pyflink.common import Time, Types
-from pyflink.datastream import DataStream, FlatMapFunction
+from pyflink.datastream import DataStream, FlatMapFunction, MapFunction
 from pyflink.datastream.connectors.kafka import FlinkKafkaProducer
 from pyflink.datastream.formats.avro import AvroRowSerializationSchema
-from pyflink.datastream.functions import ProcessWindowFunction, RuntimeContext
+from pyflink.datastream.functions import (
+    ProcessWindowFunction,
+    RuntimeContext,
+    ReduceFunction,
+)
 from pyflink.datastream.state import ValueStateDescriptor
 from pyflink.datastream.window import TumblingEventTimeWindows
 from pyflink.table import Row
@@ -13,6 +17,12 @@ def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
     return last_price * smoothing_factor_multiplier + prev_window_ema_for_j * (
         1 - smoothing_factor_multiplier
     )
+
+
+class LatestEventReducer(ReduceFunction):
+    def reduce(self, value1, value2):
+        # Compare timestamps and return the latest event
+        return value1 if value1["timestamp"] > value2["timestamp"] else value2
 
 
 class FilterAndMapToBuySellEventFunction(FlatMapFunction):
@@ -54,7 +64,9 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
             )
         )
 
-    def process(self, key, ctx: ProcessWindowFunction.Context, elements):
+    def process(
+        self, key, ctx: ProcessWindowFunction.Context, latest_trade_event_iterable
+    ):
 
         prev_window_state = self.previous_window_ema_state.value()
 
@@ -64,14 +76,14 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 
         prev_win_emaj_38, prev_win_emaj_100 = prev_window_state
 
-        latest_trade_timestamp = 0
         latest_trade_price = 0
+        try:
+            # Attempt to retrieve the first (and only) element from the iterable
+            latest_trade_event = next(iter(latest_trade_event_iterable))
+            latest_trade_price = latest_trade_event["lasttradeprice"]
 
-        for element in elements:
-            timestamp = element["timestamp"]
-            if timestamp > latest_trade_timestamp:
-                latest_trade_timestamp = timestamp
-                latest_trade_price = element["lasttradeprice"]
+        except StopIteration:
+            latest_trade_price = 0
 
         curr_win_emaj_38 = calulcate_EMA(latest_trade_price, 38, prev_win_emaj_38)
         curr_win_emaj_100 = calulcate_EMA(latest_trade_price, 100, prev_win_emaj_100)
@@ -80,6 +92,8 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 
         window_start_time = ctx.window().start  # Start of the window
         window_end_time = ctx.window().end  # End of the window
+
+        print("key", key, "window_start_time", window_start_time)
 
         row = Row(
             emaj_38=curr_win_emaj_38,
@@ -95,33 +109,15 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 
 
 def handle_stream(trade_event_stream: DataStream):
-    from utils import avro, kafka
+    from utils import avro, kafka, flink_types
 
     ema_windowed_stream = (
         trade_event_stream.key_by(lambda x: x["symbol"])
         .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
-        .process(
-            EMACalulaterProcessWindowFunction(),
-            output_type=Types.ROW_NAMED(
-                [
-                    "emaj_38",
-                    "emaj_100",
-                    "prev_emaj_38",
-                    "prev_emaj_100",
-                    "symbol",
-                    "window_start",
-                    "window_end",
-                ],
-                [
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.STRING(),
-                    Types.LONG(),
-                    Types.LONG(),
-                ],
-            ),
+        .reduce(
+            LatestEventReducer(),
+            window_function=EMACalulaterProcessWindowFunction(),
+            output_type=flink_types.EMA_EVENT_TYPE,
         )
     )
 
@@ -168,5 +164,4 @@ def handle_stream(trade_event_stream: DataStream):
             ],
         ),
     )
-
     buy_sell_events_stream.add_sink(buy_sell_kafka_producer)

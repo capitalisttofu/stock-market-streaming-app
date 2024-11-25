@@ -83,8 +83,7 @@ services:
         taskmanager.numberOfTaskSlots: 2
         taskmanager.memory.task.off-heap.size: 128m
         taskmanager.memory.network.fraction: 0.10
-        taskmanager.memory.managed.size: 4g
-        taskmanager.memory.process.size: 8g
+        taskmanager.memory.process.size: 10g
 
 
 volumes:
