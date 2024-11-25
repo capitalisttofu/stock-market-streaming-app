@@ -93,8 +93,6 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
         window_start_time = ctx.window().start  # Start of the window
         window_end_time = ctx.window().end  # End of the window
 
-        print("key", key, "window_start_time", window_start_time)
-
         row = Row(
             emaj_38=curr_win_emaj_38,
             emaj_100=curr_win_emaj_100,
