@@ -6,17 +6,17 @@
     "build": "tsc",
     "provision:kafka": "ts-node-transpile-only -r tsconfig-paths/register -r dotenv/config ./src/provisionKafka.ts",
     "csv-to-raw-trade-stream": "ts-node-transpile-only -r ./src/csvToStream/index.ts",
-    "raw-trade-event-parser": "ts-node-transpile-only -r ./src/rawTradeEventParser/index.ts",
     "trade-data-api": "ts-node-transpile-only -r ./src/tradeDataAPI/index.ts",
     "test-buy-sell-consumer": "ts-node-transpile-only -r ./src/testBuySellConsumer/index.ts",
     "test-ema-consumer": "ts-node-transpile-only -r ./src/testEMAConsumer/index.ts",
-    "reset-kafka-raw-trade-event-parser-offset": "docker exec -it stock-market-kafka-0 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-0:9092 --group raw_trade_event_parser --reset-offsets --to-earliest --topic sorted_raw_trade_data --execute",
-    "reset-kafka-flink-app-offset": "docker exec -it stock-market-kafka-0 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-0:9092 --group flink_consumer_group --reset-offsets --to-earliest --topic trade_data --execute"
+    "test-discarded-consumer": "ts-node-transpile-only -r ./src/testDiscardedConsumer/index.ts",
+    "test-trade-data-consumer": "ts-node-transpile-only -r ./src/testTradeDataConsumer/index.ts",
+    "reset-kafka-flink-app-offset": "docker exec -it stock-market-kafka-0 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-0:9092 --group flink_consumer_group --reset-offsets --to-earliest --topic sorted_raw_trade_data --execute"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@confluentinc/kafka-javascript": "^0.3.0",
+    "@confluentinc/kafka-javascript": "^0.5.2",
     "avsc": "^5.7.7",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
