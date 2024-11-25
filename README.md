@@ -13,18 +13,20 @@ The specifics and requirements of the course project can be found in the pdf
 ### Kafka Cluster
 
 We use Kafka as our message stream.
-There are four relevant Kafka topics
+There are five relevant Kafka topics
 
 - `sorted_raw_trade_data`
 - `trade_data`
 - `buy_sell_advice`
 - `discarded_data`
+- `ema_results`
 
-`sorted_raw_trade_data` topic has all trade data sorted in the correct order based off Trading Date and Trading Time.
+`sorted_raw_trade_data` topic has all trade data sorted in (mostly) the correct order based off Trading Date and Trading Time.
 This is a simplification to how the actual data would be recieved in this type of application due to the fact
-that events can come out of order and so forth.As per the original competition, the data is stored in the stream
-in Avro format for space efficiency and serialization/deserialization efficiency. Only the relevant fields
-from the given data csv's is injected into this topic. We consider this kafka topic to be outside of our application and handle it
+that events can come out of order and so forth. As per the original competition, the data is not stored in csv format but stored in the stream
+in Avro format for space efficiency and serialization/deserialization efficiency. Protobuffer was not used as there were challenges involved in the
+serialisation and deserialisation in PyFlink.
+Only the relevant fields from the given data csv's is injected into this topic. We consider this kafka topic to be outside of our application and handle it
 as a "mocked data source". The relevant code to fill this topic is found in this repository. The raw csv data used to populate the `sorted_raw_trade_data` topic can be found at https://zenodo.org/records/6382482.
 
 `trade_data` topic consists of all the trade data that is read from `sorted_raw_trade_data` except with the addition
@@ -35,6 +37,9 @@ the performance of our Apache Flink application.
 `buy_sell_advice` topic consists of `Buy` or `Sell` advice as described in the challenge and Course Project pdf. The Apache Flink application produces messages to this topic based off the calculations being run in the Apache Flink application.
 
 `discarded_data` contains data points, which have been discarded due to not having values for the required attributes. The data points are discarded in `raw_trade_event_parser`. Currently, the discarded data points are not consumed. However, a consumer could easily be created if the missing data needs to be analyzed.
+
+`ema_results` contains the ema calculation events produced in the end of each tumbling window per symbol, if the tumbling window
+contains any trade events.
 
 ## Setup
 
