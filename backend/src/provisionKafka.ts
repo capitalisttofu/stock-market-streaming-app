@@ -45,7 +45,7 @@ export const main = async () => {
         topics: [
           {
             topic: SORTED_RAW_TRADE_DATA_TOPIC,
-            numPartitions: 1,
+            numPartitions: 2,
             replicationFactor: 1,
           },
         ],
@@ -104,7 +104,7 @@ export const main = async () => {
         },
         {
           topic: DISCARDED_DATA_TOPIC,
-          numPartitions: 1,
+          numPartitions: 2,
           // For development, use only replication factor of 1 due to saving on storage
           replicationFactor: 1,
         },

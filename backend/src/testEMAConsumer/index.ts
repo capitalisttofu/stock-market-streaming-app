@@ -2,7 +2,7 @@ import { EMA_RESULTS_TOPIC } from '../constants'
 import { EMAResultEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 
-const CONSUMER_GROUP_ID = 'test_ema_consumer'
+const CONSUMER_GROUP_ID = 'test_ema_consumer2323'
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
