@@ -45,13 +45,15 @@ export const parseTradeData = (
     id: index,
     secType: secType,
     lastTradePrice:
-      lastTradePrice && !isNaN(lastTradePrice) ? lastTradePrice : undefined,
+      lastTradePrice !== undefined && !isNaN(lastTradePrice)
+        ? lastTradePrice
+        : undefined,
     tradingDate:
-      tradingDateIndex && row[tradingDateIndex]
+      tradingDateIndex && row[tradingDateIndex] !== undefined
         ? dateStringToAvroDate(row[tradingDateIndex])
         : undefined,
     tradingTime:
-      tradingTimeIndex && row[tradingTimeIndex]
+      tradingTimeIndex && row[tradingTimeIndex] !== undefined
         ? timeStringToAvroTime(row[tradingTimeIndex])
         : undefined,
   } satisfies ParsedRawData
