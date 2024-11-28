@@ -8,10 +8,7 @@ import { handleSubscribe, handleUnsubscribe, initializeSocket } from '../socket'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-const adviceToString = (adviceString: string) => {
-  if (adviceString === 'S') return 'SELL'
-  if (adviceString === 'B') return 'BUY'
-}
+const REMOVE_BUY_SELL_EVENT_AFTER_MILLIS = 30000
 
 const App = () => {
   const stockState = useStockData()
@@ -22,19 +19,25 @@ const App = () => {
   const timersRef = useRef<number[]>([])
 
   const handleBuySellEvent = (event: BuySellEvent) => {
-    const adviceString = adviceToString(event.buy_or_sell_action)
-    if (adviceString === undefined) return
+    const dateString = new Date(event.window_end).toISOString()
 
-    if (stockState.setStockAdvice(event.symbol, adviceString)) {
-      toast.info(`${adviceString} event from symbol ${event.symbol}`)
+    if (
+      stockState.setStockAdvice(
+        event.symbol,
+        `${event.buy_or_sell_action} (${dateString})`,
+      )
+    ) {
+      toast.info(
+        `${event.buy_or_sell_action} event from symbol ${event.symbol} at ${dateString}`,
+      )
 
       const timer = setTimeout(() => {
-        // Remove advice after 10 seconds
+        // Remove advice after REMOVE_BUY_SELL_EVENT_AFTER_MILLIS has passed
         stockState.removeStockAdvice(event.symbol)
 
         // Remove timer from Ref
         timersRef.current = timersRef.current.filter((id) => id !== timer)
-      }, 10000)
+      }, REMOVE_BUY_SELL_EVENT_AFTER_MILLIS)
 
       timersRef.current.push(timer)
     }

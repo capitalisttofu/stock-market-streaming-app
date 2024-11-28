@@ -12,6 +12,8 @@ export interface BuySellEvent {
   symbol: string
   exchange: string
   buy_or_sell_action: string
+  window_start: number
+  window_end: number
 }
 
 export interface EMAResultEvent {
