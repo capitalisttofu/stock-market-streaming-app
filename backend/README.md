@@ -27,7 +27,6 @@ and then inside this backend folder run `npm run provision:kafka`
 
 ### Avro definitions
 
-We share our Avro definitions within our nodejs code and the pyflink app.
 The Avro definitions can be found in the `src/lib/avro.ts` file.
 
 # Running the application
@@ -52,41 +51,12 @@ Running the script can be done with `npm run csv-to-raw-trade-stream`
 If when developing you need to clear the stream due to broken data
 please follow the provisioning instructions above (and setting correct .env value)
 
-## Parsing Raw Trade Events
-
-To run our `sorted_raw_trade_data` consumer that parses the messages run the script
-`npm run raw-trade-event-parser`. The program does not autoshutdown but remains listening to events.
-If you want to rerun ALL data available in the `sorted_raw_trade_data` (and not just latest data that has not yet been parsed) please run the script
-`npm run reset-kafka-raw-trade-event-parser-offset`. **NOTE** force closing the `raw-trade-event-parser`
-leaves the consumer running for a while due to not disconnecting it, so you might need to wait
-a minute or two before you can run the script.
-The parser can be run after, before, or during running the `csv-to-raw-trade-stream`
-
-After consuming the messages, `raw_trade_event_parser` can similate the datasource in two different ways:
-
-- Send the events immediately after each other
-- Simulate a real event producer by waiting the `Trading time` difference of current and next event before sending the next event
-
-The similation can be controlled with three environmental variables: `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS`, `REALTIME_DATA_PRODUCTION_START_HOUR`
-and `REALTIME_DATA_PRODUCTION_END_HOUR` in the `.env` file. `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` determines if the program waits
-the time difference between the events. If `WAIT_TIME_DIFFERENCE_BETWEEN_EVENTS` is set to `true`, the event simulation can be controlled with
-`REALTIME_DATA_PRODUCTION_START_HOUR` and `REALTIME_DATA_PRODUCTION_END_HOUR`.
-As the event frequency varies during the day, it is often beneficial to limit the real event producer simulation to specific hours.
-`REALTIME_DATA_PRODUCTION_START_HOUR` defines when real event production begins. Before this time, events are processed continuously. `REALTIME_DATA_PRODUCTION_END_HOUR` marks when real-time processing stops for the day. After this time, events are processed immediately after each other.
-The values for these environment variables should be specified as an hour between 0 and 24.
-For example, if `REALTIME_DATA_PRODUCTION_START_HOUR` is set to 7 and `REALTIME_DATA_PRODUCTION_END_HOUR` to 20, the real event producer simulation runs between 7 a.m. and 8 p.m. Outside of these hours (from midnight to 7 a.m. and after 8 p.m.), events are processed immediately, without observing
-the usual time intervals between them.
-
-If the `Last`, and `Trading time` variables of the datapoint are defined,
-`raw_trade_event_parser` produces a new messages to the `trade_data` topic.
-The messages are sent to different partitions based on the symbol of the trade data.
-If the datapoint is missing `Last` or `Trading time` values, `raw_trade_event_parser` produces a new messages to the
-`discarded_data` topic.
-
-## Testing output of buy_sell_advice topic
+## Testing output of buy_sell_advice topic (and other topics)
 
 We have a simple test script to log every 1000th buy or sell advice event
-that the pyflink app produces. It can be run with `npm run test-buy-sell-consumer`
+that the pyflink app produces. It can be run with `npm run test-buy-sell-consumer`.
+
+Scripts to consume other topics can also be found in the `package.json`
 
 ## Trade Data API
 

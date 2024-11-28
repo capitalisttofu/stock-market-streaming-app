@@ -1,164 +1,44 @@
 import logging
 import sys
+from datetime import datetime, timedelta
 
-from datetime import datetime
-from pyflink.common import Duration, Time, Types
+from pipelines import (
+    raw_trade_data_to_trade_events_and_discarded,
+    trade_data_to_ema_and_buy_sell_advice,
+)
+from pyflink.common import Duration
 from pyflink.common.watermark_strategy import TimestampAssigner, WatermarkStrategy
 from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
-from pyflink.datastream.connectors.kafka import (
-    FlinkKafkaConsumer,
-    FlinkKafkaProducer,
-)
-from pyflink.datastream.formats.avro import (
-    AvroRowDeserializationSchema,
-    AvroRowSerializationSchema,
-)
-from pyflink.datastream.state import ValueStateDescriptor
-from pyflink.datastream.window import TumblingEventTimeWindows
-from pyflink.table import Row
-from pyflink.datastream.functions import (
-    ProcessWindowFunction,
-    RuntimeContext,
-)
-
-TRADE_EVENT_SCHEMA = """
-{
-  "type": "record",
-  "name": "TradeEvent",
-  "fields": [
-    { "name": "id", "type": "string" },
-    { "name": "symbol", "type": "string" },
-    { "name": "exchange", "type": "string" },
-    {
-      "name": "sectype",
-      "type": "string"
-    },
-    { "name": "lasttradeprice", "type": "float" },
-    {
-      "name": "timestamp",
-      "type": { "type": "long", "logicalType": "timestamp-millis" }
-    }
-  ]
-}
-"""
-
-# TODO: Fill in once we actually know what we want
-BUYSELL_EVENT_SCHEMA = """
-{
-  "type": "record",
-  "name": "BuySellEvent",
-  "fields": [
-    { "name": "id", "type": "string" },
-    { "name": "symbol", "type": "string" },
-    { "name": "exchange", "type": "string" },
-    {
-      "name": "buy_or_sell_action",
-      "type": "string"
-    }
-  ]
-}
-"""
-
-EMA_RESULT_EVENT_SCHEMA = """
-{
-  "type": "record",
-  "name": "EMAResultEvent",
-  "fields": [
-    { "name": "emaj_38", "type": "float" },
-    { "name": "emaj_100", "type": "float" },
-    { "name": "prev_emaj_38", "type": "float" },
-    { "name": "prev_emaj_100", "type": "float" },
-    { "name": "symbol", "type": "string" },
-    {
-      "name": "window_start",
-      "type": "long"
-    },
-    {
-      "name": "window_end",
-      "type": "long"
-    }
-  ]
-}
-"""
+from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
+from pyflink.datastream.formats.avro import AvroRowDeserializationSchema
+from utils import avro, kafka
 
 
-def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
-    smoothing_factor_multiplier = 2 / (1 + j)
-    return last_price * smoothing_factor_multiplier + prev_window_ema_for_j * (
-        1 - smoothing_factor_multiplier
-    )
+def compute_timestamp(last_update_time: int, last_trade_date: int):
+    # Convert lastTradeDate (days since epoch) to a datetime
+    trade_date = datetime(1970, 1, 1) + timedelta(days=last_trade_date)
+
+    # Convert lastUpdateTime (milliseconds since midnight) to a timedelta
+    update_time = timedelta(milliseconds=last_update_time)
+
+    # Combine the date and time to create the final datetime
+    combined_datetime = trade_date + update_time
+
+    # Return the Unix timestamp (milliseconds since epoch)
+    return int(combined_datetime.timestamp() * 1000)
 
 
-class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
-    def open(self, runtime_context: RuntimeContext):
-        # First ema value in tuple is for smaller j, second is larger j (example 38 and 100)
-        self.previous_window_ema_state = runtime_context.get_state(
-            ValueStateDescriptor(
-                "previous_window_ema_state", Types.TUPLE([Types.FLOAT(), Types.FLOAT()])
-            )
-        )
-
-    def process(self, key, ctx: ProcessWindowFunction.Context, elements):
-
-        prev_window_state = self.previous_window_ema_state.value()
-
-        # Happens at init where we define the emaj = 0
-        if prev_window_state is None:
-            prev_window_state = (0.0, 0.0)
-
-        prev_win_emaj_38, prev_win_emaj_100 = prev_window_state
-
-        latest_trade_timestamp = 0
-        latest_trade_price = 0
-
-        for element in elements:
-            timestamp = element["timestamp"].timestamp()
-            if timestamp > latest_trade_timestamp:
-                latest_trade_timestamp = timestamp
-                latest_trade_price = element["lasttradeprice"]
-
-        curr_win_emaj_38 = calulcate_EMA(latest_trade_price, 38, prev_win_emaj_38)
-        curr_win_emaj_100 = calulcate_EMA(latest_trade_price, 100, prev_win_emaj_100)
-
-        self.previous_window_ema_state.update((curr_win_emaj_38, curr_win_emaj_100))
-
-        window_start_time = ctx.window().start  # Start of the window
-        window_end_time = ctx.window().end  # End of the window
-
-        row = Row(
-            emaj_38=curr_win_emaj_38,
-            emaj_100=curr_win_emaj_100,
-            prev_emaj_38=prev_win_emaj_38,
-            prev_emaj_100=prev_win_emaj_100,
-            symbol=key,  # We keyBy symbol
-            window_start=window_start_time,
-            window_end=window_end_time,
-        )
-
-        yield row
-
-
-class TradeDataTimestampAssigner(TimestampAssigner):
+class RawTradeDataTimestampAssigner(TimestampAssigner):
 
     def extract_timestamp(self, value, record_timestamp):
-        # Avro serialization converts to datetime object
-        dt = value["timestamp"]
-        timestamp_in_ms = dt.timestamp() * 1000
-        return timestamp_in_ms
 
+        if value["tradingdate"] is None or value["tradingtime"] is None:
+            # We discard these later in the side output so doesnt matter
+            # That they will all be considered late
+            return 0
 
-def map_trade_to_buysell(trade_event):
-    # Define a mapping from "I" -> "B" and "E" -> "S" as an example
-    buy_or_sell_action_map = {"I": "B", "E": "S"}
-
-    # Transform TradeEvent to BuySellEvent
-
-    return Row(
-        id=trade_event["id"],
-        symbol=trade_event["symbol"],
-        exchange=trade_event["exchange"],
-        buy_or_sell_action=buy_or_sell_action_map.get(trade_event["sectype"], "B"),
-    )
+        timestamp = compute_timestamp(value["tradingtime"], value["tradingdate"])
+        return timestamp
 
 
 if __name__ == "__main__":
@@ -167,88 +47,30 @@ if __name__ == "__main__":
     env = StreamExecutionEnvironment.get_execution_environment()
     env.set_stream_time_characteristic(TimeCharacteristic.EventTime)
 
-    kafka_properties = {
-        "bootstrap.servers": "kafka-0:9092",
-        "group.id": "flink_consumer_group",
-    }
-
     deserialization_schema = AvroRowDeserializationSchema(
-        avro_schema_string=TRADE_EVENT_SCHEMA
+        avro_schema_string=avro.RAW_TRADE_EVENT_SCHEMA
     )
 
-    consumer = FlinkKafkaConsumer(
-        topics="trade_data",
+    raw_trade_event_consumer = FlinkKafkaConsumer(
+        topics=kafka.SORTED_RAW_TRADE_DATA_TOPIC,
         deserialization_schema=deserialization_schema,
-        properties=kafka_properties,
+        properties=kafka.KAFKA_PROPERTIES,
     )
-
-    consumer.set_start_from_earliest()
 
     watermark_strategy = WatermarkStrategy.for_bounded_out_of_orderness(
         Duration.of_seconds(20)
-    ).with_timestamp_assigner(TradeDataTimestampAssigner())
+    ).with_timestamp_assigner(RawTradeDataTimestampAssigner())
 
-    data_source = env.add_source(consumer).assign_timestamps_and_watermarks(
-        watermark_strategy
+    raw_trade_event_consumer.set_start_from_earliest()
+
+    data_source = env.add_source(
+        raw_trade_event_consumer
+    ).assign_timestamps_and_watermarks(watermark_strategy)
+
+    trade_event_stream = raw_trade_data_to_trade_events_and_discarded.handle_stream(
+        data_source
     )
 
-    buy_sell_kafka_producer = FlinkKafkaProducer(
-        topic="buy_sell_advice",
-        serialization_schema=AvroRowSerializationSchema(
-            avro_schema_string=BUYSELL_EVENT_SCHEMA
-        ),
-        producer_config=kafka_properties,
-    )
-
-    ema_kafka_producer = FlinkKafkaProducer(
-        topic="ema_results",
-        serialization_schema=AvroRowSerializationSchema(
-            avro_schema_string=EMA_RESULT_EVENT_SCHEMA
-        ),
-        producer_config=kafka_properties,
-    )
-
-    # Map data from TradeEvent to BuySellEvent
-    mapped_stream = data_source.map(
-        map_trade_to_buysell,
-        output_type=Types.ROW_NAMED(
-            ["id", "symbol", "exchange", "buy_or_sell_action"],
-            [Types.STRING(), Types.STRING(), Types.STRING(), Types.STRING()],
-        ),
-    )
-
-    windowed_stream = (
-        data_source.key_by(lambda x: x["symbol"])
-        .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
-        .process(
-            EMACalulaterProcessWindowFunction(),
-            output_type=Types.ROW_NAMED(
-                [
-                    "emaj_38",
-                    "emaj_100",
-                    "prev_emaj_38",
-                    "prev_emaj_100",
-                    "symbol",
-                    "window_start",
-                    "window_end",
-                ],
-                [
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.FLOAT(),
-                    Types.STRING(),
-                    Types.LONG(),
-                    Types.LONG(),
-                ],
-            ),
-        )
-    )
-    # windowed_stream.print()
-
-    windowed_stream.add_sink(ema_kafka_producer)
-
-    # Produce mapped data to Kafka
-    mapped_stream.add_sink(buy_sell_kafka_producer)
+    trade_data_to_ema_and_buy_sell_advice.handle_stream(trade_event_stream)
 
     env.execute()
