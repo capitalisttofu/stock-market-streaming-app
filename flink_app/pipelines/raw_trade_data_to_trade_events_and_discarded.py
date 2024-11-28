@@ -61,7 +61,7 @@ def handle_stream(raw_data_event_stream: DataStream) -> DataStream:
     trade_event_stream = raw_data_event_stream.process(
         ProcessRawTradeEvent(),
         output_type=flink_types.TRADE_EVENT_TYPE,
-    )
+    ).name("Process: RawTradeEvents")
 
     discarded_event_stream = trade_event_stream.get_side_output(
         discarded_event_output_tag
@@ -75,7 +75,9 @@ def handle_stream(raw_data_event_stream: DataStream) -> DataStream:
         producer_config=kafka.KAFKA_PROPERTIES,
     )
 
-    discarded_event_stream.add_sink(discarded_event_kafka_producer)
+    discarded_event_stream.add_sink(discarded_event_kafka_producer).name(
+        "KafkaSink: DiscardedTradeEvents"
+    )
 
     trade_event_kafka_producer = FlinkKafkaProducer(
         topic=kafka.TRADE_DATA_TOPIC,
@@ -85,6 +87,8 @@ def handle_stream(raw_data_event_stream: DataStream) -> DataStream:
         producer_config=kafka.KAFKA_PROPERTIES,
     )
 
-    trade_event_stream.add_sink(trade_event_kafka_producer)
+    trade_event_stream.add_sink(trade_event_kafka_producer).name(
+        "KafkaSink: TradeEvents"
+    )
 
     return trade_event_stream

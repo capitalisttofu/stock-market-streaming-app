@@ -109,15 +109,15 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 def handle_stream(trade_event_stream: DataStream):
     from utils import avro, kafka, flink_types
 
-    ema_windowed_stream = (
-        trade_event_stream.key_by(lambda x: x["symbol"])
-        .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
-        .reduce(
-            LatestEventReducer(),
-            window_function=EMACalulaterProcessWindowFunction(),
-            output_type=flink_types.EMA_EVENT_TYPE,
-        )
+    windowed_stream = trade_event_stream.key_by(lambda x: x["symbol"]).window(
+        TumblingEventTimeWindows.of(Time.seconds(60 * 5))
     )
+
+    ema_windowed_stream = windowed_stream.reduce(
+        LatestEventReducer(),
+        window_function=EMACalulaterProcessWindowFunction(),
+        output_type=flink_types.EMA_EVENT_TYPE,
+    ).name("Reduce: ComputeEMA from LatestTradeEvent")
 
     buy_sell_kafka_producer = FlinkKafkaProducer(
         topic=kafka.BUY_SELL_ADVICE_TOPIC,
@@ -135,31 +135,13 @@ def handle_stream(trade_event_stream: DataStream):
         producer_config=kafka.KAFKA_PROPERTIES,
     )
 
-    ema_windowed_stream.add_sink(ema_kafka_producer)
+    ema_windowed_stream.add_sink(ema_kafka_producer).name("Kafka Sink: EMAEvents")
 
     buy_sell_events_stream = ema_windowed_stream.flat_map(
         FilterAndMapToBuySellEventFunction(),
-        output_type=Types.ROW_NAMED(
-            [
-                "emaj_38",
-                "emaj_100",
-                "prev_emaj_38",
-                "prev_emaj_100",
-                "symbol",
-                "window_start",
-                "window_end",
-                "buy_or_sell_action",
-            ],
-            [
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.STRING(),
-                Types.LONG(),
-                Types.LONG(),
-                Types.STRING(),
-            ],
-        ),
+        output_type=flink_types.BUYSELL_EVENT_TYPE,
+    ).name("FlatMap: EMA to BuySellEvents")
+
+    buy_sell_events_stream.add_sink(buy_sell_kafka_producer).name(
+        "Kafka Sink: BuySellEvents"
     )
-    buy_sell_events_stream.add_sink(buy_sell_kafka_producer)

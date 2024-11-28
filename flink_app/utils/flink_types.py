@@ -39,3 +39,26 @@ EMA_EVENT_TYPE = Types.ROW_NAMED(
         Types.LONG(),
     ],
 )
+
+BUYSELL_EVENT_TYPE = Types.ROW_NAMED(
+    [
+        "emaj_38",
+        "emaj_100",
+        "prev_emaj_38",
+        "prev_emaj_100",
+        "symbol",
+        "window_start",
+        "window_end",
+        "buy_or_sell_action",
+    ],
+    [
+        Types.FLOAT(),
+        Types.FLOAT(),
+        Types.FLOAT(),
+        Types.FLOAT(),
+        Types.STRING(),
+        Types.LONG(),
+        Types.LONG(),
+        Types.STRING(),
+    ],
+)
