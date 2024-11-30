@@ -44,6 +44,17 @@ of the data. After processing the header, each row of the file is parsed by extr
 - `Trading time` is the time of last update (bid / ask / trade) in HH-MM-SS.sss or HH-MM-SS.ssss. This attribute is optional
 - `Trading date` is the date of last trade in DD-MM-YYYY. This attribute is optional
 
+The processing is controlled with the `NOW_DATE` environmental variable in the `.env` file, which is to be given in
+the `ISO 8601` standard. If the timestamp is incorrectly formatted, the timestamp `2021-08-11T13:00:01Z` is used as default.
+The timestamp represents the data, which is to be considered the current date. Before the `NOW_DATE`,
+the events are directly are processed directly after each other. If the timestamp of the event is larger than `NOW_DATE`,
+the injector waits the time difference between the previous and current event before sending the current event.
+
+The preprocessing step involves mapping the timestamps of the events to a more appropriate time format to process the
+events in PyFlink using the current time rather than relying on a watermark. The new timestamp is calculated as follows:
+`datapoint_new_timestamp` = `script_start_timestamp` (`NOW_DATE` - `datapoint_timestamp`)
+where `script_start_timestamp` is the time whenever the `csv-to-raw-trade-stream` process began.
+
 After preprocessing, the data is converted into a `RawTradeEvent` Avro. Finally, `csv-to-raw-trade-stream`
 produces new messages in the `sorted_raw_trade_data` topic with the financial data.
 
