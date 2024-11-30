@@ -31,8 +31,8 @@ h2 {
 
 .container {
   margin-top: 20px;
-  margin-bottom: 20px;
   text-align: left;
   border: 1.5px solid;
   padding: 10px;
+  height: fit-content;
 }

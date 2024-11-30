@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
-import './App.css'
+import './app.css'
 import Chart from './Chart'
 import StockTable from './StockTable'
 import { BuySellEvent, EMAResultEvent, TradeEvent } from '../types'
 import { useStockData } from '../state/useStockData'
-import { handleSubscribe, handleUnsubscribe, initializeSocket } from '../socket'
+import { handleSubscribe, initializeSocket } from '../socket'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import BuySellEventTable from './BuySellEventTable'
 
 const REMOVE_BUY_SELL_EVENT_AFTER_MILLIS = 30000
+const MAX_TOAST_COUNT = 10
+const CLOSE_TOAST_MILLIS = 3000
 
 const App = () => {
   const stockState = useStockData()
@@ -16,10 +19,12 @@ const App = () => {
   const [visualizedSymbol, setVisualizedSymbol] = useState<string | undefined>()
   const [tradeEvents, setTradeEvents] = useState<TradeEvent[]>([])
   const [EMAEvents, setEMAEvents] = useState<EMAResultEvent[]>([])
+  const [buySellEvents, setBuySellEvents] = useState<BuySellEvent[]>([])
   const timersRef = useRef<number[]>([])
 
   const handleBuySellEvent = (event: BuySellEvent) => {
-    const dateString = new Date(event.window_end).toISOString()
+    setBuySellEvents((prev) => [...prev, event])
+    const dateString = new Date(event.window_end).toUTCString()
 
     if (
       stockState.setStockAdvice(
@@ -59,22 +64,12 @@ const App = () => {
     }
   }, [])
 
-  const loadPastEvents = async () => {
-    // TODO: load events from database here
-    //const eventsFromDatabase = Database.fetch({ symbol: visualizedSymbol })
-    //setTradeEvents(prev => [...prev, eventsFromDatabase])
-    //setEMAEvents(prev => [...prev, eventsFromDatabase])
-  }
-
   useEffect(() => {
     if (visualizedSymbol === undefined) return
 
-    handleUnsubscribe(visualizedSymbol)
     setTradeEvents([])
     setEMAEvents([])
     handleSubscribe(visualizedSymbol)
-
-    loadPastEvents()
   }, [visualizedSymbol])
 
   return (
@@ -87,14 +82,17 @@ const App = () => {
           visualizedSymbol={visualizedSymbol}
         />
       )}
-      <StockTable
-        visualizedSymbol={visualizedSymbol}
-        setVisualizedSymbol={setVisualizedSymbol}
-        {...stockState}
-      />
+      <div className="tables">
+        <StockTable
+          visualizedSymbol={visualizedSymbol}
+          setVisualizedSymbol={setVisualizedSymbol}
+          {...stockState}
+        />
+        <BuySellEventTable buySellEvents={buySellEvents} />
+      </div>
       <ToastContainer
         position="top-right"
-        autoClose={3000}
+        autoClose={CLOSE_TOAST_MILLIS}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -102,6 +100,7 @@ const App = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        limit={MAX_TOAST_COUNT}
       />
     </>
   )

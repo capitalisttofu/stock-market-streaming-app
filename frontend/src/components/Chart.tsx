@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts/highstock'
 import { EMAResultEvent, TradeEvent } from '../types'
-import './Chart.css'
+import './chart.css'
 
 const intervalButtons = [
   { text: '15 min', timeInMillis: 15 * 60 * 1000 },
@@ -45,7 +45,7 @@ const Chart = (props: ChartProps) => {
     return props.tradeEvents.map((event) => [
       event.timestamp,
       event.lasttradeprice,
-    ])
+    ]).sort()
   }
 
   const getDatapointsEMA = (emaJ: 38 | 100) => {
@@ -58,7 +58,7 @@ const Chart = (props: ChartProps) => {
       emaJ == 38 ? event.prev_emaj_38 : event.prev_emaj_100,
     ])
 
-    return prevEvents.concat(curEvents)
+    return prevEvents.concat(curEvents).sort()
   }
 
   // Update lastEventMillis and add datapoint to chart whenever a new TradeEvent happens
@@ -176,7 +176,7 @@ const Chart = (props: ChartProps) => {
           text: 'Price',
         },
         labels: {
-          format: '{value:.0f}', // round to the nearest integer
+          format: '{value:.2f}',
         },
         opposite: true,
       },
@@ -186,7 +186,7 @@ const Chart = (props: ChartProps) => {
           text: 'EMA',
         },
         labels: {
-          format: '{value:.0f}', // round to the nearest integer
+          format: '{value:.4f}',
         },
       },
     ],
@@ -199,6 +199,16 @@ const Chart = (props: ChartProps) => {
       enabled: false, // Disable an accessibility warning
     },
     tooltip: {
+      formatter: function () {
+        // Date to UTC string
+        let tooltipHtml = `<b>${new Date(Number(this.x)).toUTCString()}</b><br/>`
+        this.points?.forEach((point) => {
+          // Show EMA values with 4 decomals and trade price with 2 decimals
+          const decimals = point.series.name === 'Trade price' ? 2 : 4
+          tooltipHtml += `<span style="color:${point.color}">\u25CF</span> ${point.series.name}: <b>${point.y?.toFixed(decimals)}</b><br/>`
+        })
+        return tooltipHtml
+      },
       shared: true, // Allow comparison of values in the same tooltip
     },
   }
