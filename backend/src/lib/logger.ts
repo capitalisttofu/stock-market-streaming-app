@@ -18,7 +18,6 @@ export class EventLogger {
   windowLengthSeconds: number
   eventCount: number = 0
   windowCount: number = 0
-  delaySumMs: number = 0
   windowDelaySumMs: number = 0
   windowInterval: NodeJS.Timeout | null = null
   latestEventTime: number = 0
@@ -44,8 +43,7 @@ export class EventLogger {
     this.eventCount += 1
     this.windowCount += 1
     if (comparisonTimestamp) {
-      const diff = comparisonTimestamp - new Date().valueOf()
-      this.delaySumMs += diff
+      const diff = new Date().valueOf() - comparisonTimestamp
       this.windowDelaySumMs += diff
     }
 
@@ -68,20 +66,13 @@ export class EventLogger {
         this.windowCount / this.windowLengthSeconds
       ).toFixed(2)
 
-      let text = `TotalEvents: ${this.eventCount}. WindowEvents: ${this.windowCount}. WindowEventsPerSec ${windowEventsPerSec}`
-      if (this.delaySumMs > 0) {
-        const totalAvgDelay = calculateAvgDelay(
-          this.eventCount,
-          this.delaySumMs,
-        )
-        text += `TotalAvgDelayMs: ${totalAvgDelay} `
-      }
+      let text = `TotalEvents: ${this.eventCount}. WindowEvents: ${this.windowCount}. WindowEventsPerSec ${windowEventsPerSec} `
 
       if (this.windowDelaySumMs > 0) {
         const windowAvgDelay = calculateAvgDelay(
           this.windowCount,
           this.windowDelaySumMs,
-        )
+        ).toFixed(2)
         text += `WindowAvgDelayMs: ${windowAvgDelay}. `
       }
 

@@ -30,7 +30,6 @@ export const main = async () => {
 
         const messageValue = EMAResultEventAvro.fromBuffer(message.value)
 
-        logger.writeToLog(JSON.stringify(messageValue))
         logger.addToMetrics(
           messageValue['created_at_timestamp'],
           messageValue['window_end'],
