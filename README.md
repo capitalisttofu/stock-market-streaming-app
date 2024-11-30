@@ -57,4 +57,5 @@ Instructions on running pyflink jobs can be found in the `flink_app/README.md` f
 
 The flink dashboard is available at `http://localhost:8081/#/overview`
 
+Instructions on running the frontend can be found in the `frontend/README.md` file.
 
