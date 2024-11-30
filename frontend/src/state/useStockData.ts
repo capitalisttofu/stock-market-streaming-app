@@ -46,6 +46,9 @@ export const useStockData = () => {
   }
 
   const setStockAdvice = (symbol: string, advice: string) => {
+    // Show advice if there are no stocks
+    if (stocks.length === 0) return true
+
     // Returns false if symbol does not exist or stock is not selected
     if (!stocks.some((stock) => stock.symbol === symbol && stock.selected)) {
       return false

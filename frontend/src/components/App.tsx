@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import BuySellEventTable from './BuySellEventTable'
 
 const REMOVE_BUY_SELL_EVENT_AFTER_MILLIS = 30000
-const MAX_TOAST_COUNT = 10
+const MAX_TOAST_COUNT = 30
 const CLOSE_TOAST_MILLIS = 3000
 
 const App = () => {
@@ -23,7 +23,6 @@ const App = () => {
   const timersRef = useRef<number[]>([])
 
   const handleBuySellEvent = (event: BuySellEvent) => {
-    setBuySellEvents((prev) => [...prev, event])
     const dateString = new Date(event.window_end).toUTCString()
 
     if (
@@ -32,6 +31,7 @@ const App = () => {
         `${event.buy_or_sell_action} (${dateString})`,
       )
     ) {
+      setBuySellEvents((prev) => [...prev, event])
       toast.info(
         `${event.buy_or_sell_action} event from symbol ${event.symbol} at ${dateString}`,
       )
@@ -94,12 +94,8 @@ const App = () => {
         position="top-right"
         autoClose={CLOSE_TOAST_MILLIS}
         hideProgressBar={false}
-        newestOnTop={false}
         closeOnClick
-        rtl={false}
         pauseOnFocusLoss
-        draggable
-        pauseOnHover
         limit={MAX_TOAST_COUNT}
       />
     </>

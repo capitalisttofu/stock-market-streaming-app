@@ -28,7 +28,8 @@ const BuySellEventTable = (props: BuySellEventProps) => {
         <div className="header-text">
           <h2>Buy and Sell Events</h2>
           <p className="description">
-            The table includes all previous buy and sell events.
+            The table includes previous buy and sell events, which the user has
+            subscribed to.
           </p>
           <input
             placeholder="Search by symbol"
@@ -52,9 +53,7 @@ const BuySellEventTable = (props: BuySellEventProps) => {
             .sort(compareBuySellEvents)
             .map((event) => (
               <tr key={event.symbol + event.window_end}>
-                <td>
-                  {new Date(event.window_end).toUTCString()}
-                </td>
+                <td>{new Date(event.window_end).toUTCString()}</td>
                 <td>{event.symbol}</td>
                 <td className="table-advice">{event.buy_or_sell_action}</td>
               </tr>
