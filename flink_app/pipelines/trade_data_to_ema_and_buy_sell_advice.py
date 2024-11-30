@@ -51,6 +51,7 @@ class FilterAndMapToBuySellEventFunction(FlatMapFunction):
                 window_start=value["window_start"],
                 window_end=value["window_end"],
                 buy_or_sell_action=buy_or_sell_action,
+                ema_created_at_timestamp=value["created_at_timestamp"],
             )
             yield row
 
@@ -67,6 +68,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
     def process(
         self, key, ctx: ProcessWindowFunction.Context, latest_trade_event_iterable
     ):
+        from utils import time_helpers
 
         prev_window_state = self.previous_window_ema_state.value()
 
@@ -101,6 +103,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
             symbol=key,  # We keyBy symbol
             window_start=window_start_time,
             window_end=window_end_time,
+            created_at_timestamp=time_helpers.get_current_timestamp(),
         )
 
         yield row

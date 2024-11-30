@@ -6,6 +6,7 @@ from pyflink.datastream.formats.avro import (
 )
 from pyflink.datastream.functions import ProcessFunction
 from pyflink.table import Row
+import time
 
 discarded_event_output_tag = OutputTag(
     "discarded-event-output",
@@ -30,6 +31,8 @@ discarded_event_output_tag = OutputTag(
 
 class ProcessRawTradeEvent(ProcessFunction):
     def process_element(self, value, ctx: ProcessFunction.Context):
+        from utils import time_helpers
+
         # Missing the values we want
         if (
             value["tradingdate"] is None
@@ -42,6 +45,7 @@ class ProcessRawTradeEvent(ProcessFunction):
         symbol, exchange = value["id"].split(".")
         # Our timestamp assigner has already calcualted this
         timestamp = ctx.timestamp()
+        created_at_timestamp = time_helpers.get_current_timestamp()
 
         row = Row(
             id=value["id"],
@@ -49,6 +53,7 @@ class ProcessRawTradeEvent(ProcessFunction):
             exchange=exchange,
             sectype=value["sectype"],
             lasttradeprice=value["lasttradeprice"],
+            created_at_timestamp=created_at_timestamp,
             timestamp=timestamp,
         )
 

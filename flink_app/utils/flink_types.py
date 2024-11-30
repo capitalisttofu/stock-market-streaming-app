@@ -8,6 +8,7 @@ TRADE_EVENT_TYPE = Types.ROW_NAMED(
         "sectype",
         "lasttradeprice",
         "timestamp",
+        "created_at_timestamp",
     ],
     [
         Types.STRING(),
@@ -15,6 +16,7 @@ TRADE_EVENT_TYPE = Types.ROW_NAMED(
         Types.STRING(),
         Types.STRING(),
         Types.FLOAT(),
+        Types.LONG(),
         Types.LONG(),
     ],
 )
@@ -28,6 +30,7 @@ EMA_EVENT_TYPE = Types.ROW_NAMED(
         "symbol",
         "window_start",
         "window_end",
+        "created_at_timestamp",
     ],
     [
         Types.FLOAT(),
@@ -35,6 +38,7 @@ EMA_EVENT_TYPE = Types.ROW_NAMED(
         Types.FLOAT(),
         Types.FLOAT(),
         Types.STRING(),
+        Types.LONG(),
         Types.LONG(),
         Types.LONG(),
     ],
@@ -50,6 +54,7 @@ BUYSELL_EVENT_TYPE = Types.ROW_NAMED(
         "window_start",
         "window_end",
         "buy_or_sell_action",
+        "ema_created_at_timestamp",
     ],
     [
         Types.FLOAT(),
@@ -60,5 +65,6 @@ BUYSELL_EVENT_TYPE = Types.ROW_NAMED(
         Types.LONG(),
         Types.LONG(),
         Types.STRING(),
+        Types.LONG(),
     ],
 )

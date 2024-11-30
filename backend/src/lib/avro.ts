@@ -47,6 +47,10 @@ export const TradeEventAvro = avro.Type.forSchema({
       name: 'timestamp',
       type: 'long',
     },
+    {
+      name: 'created_at_timestamp',
+      type: 'long',
+    },
   ],
 })
 
@@ -71,6 +75,10 @@ export const BuySellEventAvro = avro.Type.forSchema({
       name: 'buy_or_sell_action',
       type: 'string',
     },
+    {
+      name: 'ema_created_at_timestamp',
+      type: 'long',
+    },
   ],
 })
 
@@ -89,6 +97,10 @@ export const EMAResultEventAvro = avro.Type.forSchema({
     },
     {
       name: 'window_end',
+      type: 'long',
+    },
+    {
+      name: 'created_at_timestamp',
       type: 'long',
     },
   ],
