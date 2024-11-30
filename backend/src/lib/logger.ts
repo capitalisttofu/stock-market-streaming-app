@@ -77,4 +77,11 @@ export class EventLogger {
       this.windowDelaySumMs = 0
     }, this.windowLengthSeconds * 1000)
   }
+
+  closeLogger() {
+    if (this.windowInterval) {
+      clearInterval(this.windowInterval)
+    }
+    this.logFile.end()
+  }
 }

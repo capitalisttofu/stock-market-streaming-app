@@ -1,19 +1,26 @@
 import { BUY_SELL_ADVICE_TOPIC } from '../constants'
 import { BuySellEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
+import { EventLogger } from '../lib/logger'
 
 const CONSUMER_GROUP_ID = 'test_buy_sell_consumer'
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
+
+  const logger = new EventLogger({
+    logFileName: CONSUMER_GROUP_ID,
+    windowLengthSeconds: 10,
+  })
+
   await consumer.connect()
+
+  logger.startWindowIntervalLogger()
 
   try {
     await consumer.subscribe({
       topic: BUY_SELL_ADVICE_TOPIC,
     })
-
-    let messageCounter = 0
 
     await consumer.run({
       // Process per message
@@ -21,20 +28,17 @@ export const main = async () => {
         if (!message.value) {
           return
         }
-        messageCounter++
 
         const messageValue = BuySellEventAvro.fromBuffer(message.value)
 
-        console.log('last recieved message value', messageValue)
-        console.log(
-          `Processed messages: ${messageCounter}`,
-          new Date().toISOString(),
-        )
+        logger.writeToLog(JSON.stringify(messageValue))
+        logger.addToMetrics(messageValue['ema_created_at_timestamp'])
       },
     })
   } catch (e) {
     console.log('Error in consumer')
     console.log(e)
+    logger.closeLogger()
   }
 }
 
