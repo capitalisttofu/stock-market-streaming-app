@@ -29,7 +29,7 @@ export const main = async () => {
           return
         }
 
-        logger.addToMetrics(null)
+        logger.addToMetrics(null, null)
       },
     })
   } catch (e) {

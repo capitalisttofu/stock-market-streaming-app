@@ -1,6 +1,7 @@
 import { TRADE_DATA_TOPIC } from '../constants'
 import { TradeEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
+import { EventLogger } from '../lib/logger'
 
 const CONSUMER_GROUP_ID = 'test_trade_data_consumer'
 
@@ -8,12 +9,17 @@ export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
   await consumer.connect()
 
+  const logger = new EventLogger({
+    logFileName: CONSUMER_GROUP_ID,
+    windowLengthSeconds: 10,
+  })
+
   try {
     await consumer.subscribe({
       topic: TRADE_DATA_TOPIC,
     })
 
-    let messageCounter = 0
+    logger.startWindowIntervalLogger()
 
     await consumer.run({
       // Process per message
@@ -21,23 +27,19 @@ export const main = async () => {
         if (!message.value) {
           return
         }
-        messageCounter++
 
         const messageValue = TradeEventAvro.fromBuffer(message.value)
 
-        if (messageCounter % 50_000 === 0) {
-          console.log('last recieved message value', messageValue)
-          console.log('Total count', messageCounter)
-          console.log(
-            `Processed messages: ${messageCounter}`,
-            new Date().toISOString(),
-          )
-        }
+        logger.addToMetrics(
+          messageValue['created_at_timestamp'],
+          messageValue['timestamp'],
+        )
       },
     })
   } catch (e) {
     console.log('Error in consumer')
     console.log(e)
+    logger.closeLogger()
   }
 }
 

@@ -32,7 +32,10 @@ export const main = async () => {
         const messageValue = BuySellEventAvro.fromBuffer(message.value)
 
         logger.writeToLog(JSON.stringify(messageValue))
-        logger.addToMetrics(messageValue['ema_created_at_timestamp'])
+        logger.addToMetrics(
+          messageValue['ema_created_at_timestamp'],
+          messageValue['window_end'],
+        )
       },
     })
   } catch (e) {
