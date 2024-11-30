@@ -60,14 +60,21 @@ export class EventLogger {
   }
 
   startWindowIntervalLogger() {
+    this.writeToLog(
+      `Starting window interval, stats every ${this.windowLengthSeconds}s`,
+    )
     this.windowInterval = setInterval(() => {
-      let text = `Total Events: ${this.eventCount}. Window (${this.windowLengthSeconds}s) events: ${this.windowCount}. `
-      if (this.eventCount > 0) {
+      const windowEventsPerSec = (
+        this.windowCount / this.windowLengthSeconds
+      ).toFixed(2)
+
+      let text = `TotalEvents: ${this.eventCount}. WindowEvents: ${this.windowCount}. WindowEventsPerSec ${windowEventsPerSec}`
+      if (this.delaySumMs > 0) {
         const totalAvgDelay = calculateAvgDelay(
           this.eventCount,
           this.delaySumMs,
         )
-        text += `Total Avg Delay ms ${totalAvgDelay} `
+        text += `TotalAvgDelayMs: ${totalAvgDelay} `
       }
 
       if (this.windowDelaySumMs > 0) {
@@ -75,11 +82,11 @@ export class EventLogger {
           this.windowCount,
           this.windowDelaySumMs,
         )
-        text += `Window (${this.windowLengthSeconds}s) Avg Delay ms ${windowAvgDelay}. `
+        text += `WindowAvgDelayMs: ${windowAvgDelay}. `
       }
 
       if (this.latestEventTime) {
-        text += `Latest event time: ${new Date(this.latestEventTime).toISOString()}`
+        text += `LatestEventTime: ${new Date(this.latestEventTime).toISOString()}`
       }
 
       this.writeToLog(text)
