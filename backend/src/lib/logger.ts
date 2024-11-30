@@ -66,14 +66,14 @@ export class EventLogger {
         this.windowCount / this.windowLengthSeconds
       ).toFixed(2)
 
-      let text = `TotalEvents: ${this.eventCount}. WindowEvents: ${this.windowCount}. WindowEventsPerSec ${windowEventsPerSec} `
+      let text = `TotalEvents: ${this.eventCount}  WindowEvents: ${this.windowCount}  WindowEventsPerSec ${windowEventsPerSec}  `
 
       if (this.windowDelaySumMs > 0) {
         const windowAvgDelay = calculateAvgDelay(
           this.windowCount,
           this.windowDelaySumMs,
         ).toFixed(2)
-        text += `WindowAvgDelayMs: ${windowAvgDelay}. `
+        text += `WindowAvgDelayMs: ${windowAvgDelay}  `
       }
 
       if (this.latestEventTime) {

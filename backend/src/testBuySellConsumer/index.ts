@@ -32,14 +32,14 @@ export const main = async () => {
         const messageValue = BuySellEventAvro.fromBuffer(message.value)
 
         const windowEnd = messageValue['window_end']
-        const symbol = messageValue['symbol']
+        const symbol = (messageValue['symbol'] as string).padEnd(8, ' ')
         const action = messageValue['buy_or_sell_action']
-        const emaj_38 = messageValue['emaj_38']
-        const emaj_100 = messageValue['emaj_100']
-        const prev_emaj_38 = messageValue['prev_emaj_38']
-        const prev_emaj_100 = messageValue['prev_emaj_100']
+        const emaj_38 = messageValue['emaj_38'].toFixed(5)
+        const emaj_100 = messageValue['emaj_100'].toFixed(5)
+        const prev_emaj_38 = messageValue['prev_emaj_38'].toFixed(5)
+        const prev_emaj_100 = messageValue['prev_emaj_100'].toFixed(5)
 
-        const BUYSELL_LOG = `Symbol: ${symbol} Action: ${action} WindowEnd: ${new Date(windowEnd).toISOString()} Emaj_38: ${emaj_38} PrevWindowEmaj_38: ${prev_emaj_38} Emaj_100: ${emaj_100} PrevWindowEmaj_100: ${prev_emaj_100}`
+        const BUYSELL_LOG = `Action: ${action}  WindowEnd: ${new Date(windowEnd).toISOString()}  Symbol: ${symbol}  Emaj_38: ${emaj_38}  PrevWindowEmaj_38: ${prev_emaj_38}  Emaj_100: ${emaj_100}  PrevWindowEmaj_100: ${prev_emaj_100}`
 
         logger.writeToLog(BUYSELL_LOG)
         logger.addToMetrics(
