@@ -1,6 +1,11 @@
 import { getConsumer } from '../lib/kafka'
-import { TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC } from '../constants'
-import { BuySellEventAvro, TradeEventAvro } from '../lib/avro'
+import {
+  TRADE_DATA_TOPIC,
+  BUY_SELL_ADVICE_TOPIC,
+  EMA_RESULTS_TOPIC,
+} from '../constants'
+import { BuySellEventAvro, EMAResultEventAvro, TradeEventAvro } from '../lib/avro'
+import { broadcastEventToAll, broadcastEventToSubscribers } from './socket'
 
 const CONSUMER_GROUP_ID = 'trade_data_and_buy_sell_advice'
 
@@ -10,11 +15,12 @@ export const consumeTradeEvents = async () => {
   try {
     await consumer.connect()
     await consumer.subscribe({
-      topics: [TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC],
+      topics: [TRADE_DATA_TOPIC, BUY_SELL_ADVICE_TOPIC, EMA_RESULTS_TOPIC],
     })
 
     let tradeEventMessageCounter = 0
     let adviceMessageCounter = 0
+    let emaMessageCounter = 0
 
     await consumer.run({
       // Process per message
@@ -28,11 +34,11 @@ export const consumeTradeEvents = async () => {
           tradeEventMessageCounter += 1
 
           const decoded = TradeEventAvro.fromBuffer(message.value)
-          console.log(`${JSON.stringify(decoded)}`)
 
-          // TODO: send event with websockets to the frontend
+          // Broadcast event with websockets to the frontend
+          broadcastEventToSubscribers('trade-event-message', decoded.symbol, decoded)
 
-          if (tradeEventMessageCounter % 10_000 === 0) {
+          if (tradeEventMessageCounter % 1_000 === 0) {
             console.log(
               `Processed messages from ${topic}: ${tradeEventMessageCounter}`,
             )
@@ -41,13 +47,24 @@ export const consumeTradeEvents = async () => {
           adviceMessageCounter += 1
 
           const decoded = BuySellEventAvro.fromBuffer(message.value)
-          console.log(`${JSON.stringify(decoded)}`)
+          broadcastEventToAll('buy-sell-advice-message', decoded)
 
-          // TODO: send event with websockets to the frontend
-
-          if (adviceMessageCounter % 10_000 === 0) {
+          if (adviceMessageCounter % 100 === 0) {
             console.log(
               `Processed messages from ${topic}: ${adviceMessageCounter}`,
+            )
+          }
+        } else if (topic === EMA_RESULTS_TOPIC) {
+          emaMessageCounter += 1
+
+          const decoded = EMAResultEventAvro.fromBuffer(message.value)
+
+          // Broadcast event with websockets to the frontend
+          broadcastEventToSubscribers('ema-result-event-message', decoded.symbol, decoded)
+
+          if (emaMessageCounter % 1_000 === 0) {
+            console.log(
+              `Processed messages from ${topic}: ${emaMessageCounter}`,
             )
           }
         }

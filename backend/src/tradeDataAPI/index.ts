@@ -1,9 +1,14 @@
 import * as express from 'express'
+import * as http from 'http'
 import { consumeTradeEvents } from './adviceAndTradeDataConsumer'
+import { initializeSocket } from './socket'
 
 const PORT = 3000
 
 const app = express()
+const server = http.createServer(app)
+
+initializeSocket(server)
 
 const main = async () => {
   await consumeTradeEvents()
@@ -14,6 +19,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(PORT, () =>
+server.listen(PORT, () =>
   console.log(`Trade data API listening on port ${PORT}`),
 )

@@ -1,0 +1,98 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-text {
+  max-width: 70%;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.filter-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.filter-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.table-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.table-controls button {
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.table-controls button:hover {
+  background-color: #0056b3;
+}
+
+.stocks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.stocks-table th, .stocks-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.stocks-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.stocks-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.stocks-table td button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.stocks-table td button:hover {
+  background-color: #218838;
+}
+.stocks-table td button:disabled {
+  background-color: #ccc;
+  color: #777;
+  box-shadow: none;
+  cursor: default;
+}
+
+.table-advice {
+  color: red;
+}
