@@ -62,11 +62,11 @@ services:
     command: jobmanager
     volumes:
       - ./flink_app:/flink_app
-      - flink_checkpoints:/flink-checkpoints 
+      - flink_checkpoints:/flink-checkpoints
     environment:
       - |
         FLINK_PROPERTIES=
-        jobmanager.rpc.address: jobmanager  
+        jobmanager.rpc.address: jobmanager
 
   taskmanager:
     container_name: stock-market-taskmanager

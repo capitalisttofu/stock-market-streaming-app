@@ -12,6 +12,7 @@ from pyflink.datastream import (
     StreamExecutionEnvironment,
     TimeCharacteristic,
     CheckpointingMode,
+    RocksDBStateBackend,
 )
 from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
 from pyflink.datastream.formats.avro import AvroRowDeserializationSchema
@@ -24,9 +25,9 @@ def enable_checkpoints(env: StreamExecutionEnvironment):
 
     # set mode to exactly-once (this is the default, but adding here for clarity)
     env.get_checkpoint_config().set_checkpointing_mode(CheckpointingMode.EXACTLY_ONCE)
+    env.set_state_backend(RocksDBStateBackend("file:///flink-checkpoints/rocksdb"))
 
-    # Flink-checkpoints configured in the docker-compose
-    env.get_checkpoint_config().set_checkpoint_storage("file:///flink-checkpoints")
+    env.get_checkpoint_config().set_checkpoint_storage_dir("file:///flink-checkpoints")
 
 
 def compute_timestamp(last_update_time: int, last_trade_date: int):
