@@ -50,6 +50,8 @@ This can be done with
 `docker build -t my-pyflink-image:latest ./pyflink_image`
 
 Then one can simplfy spin up kafka and the flink nodes with `docker-compose up`.
+IMPORTANT NOTE: We have set high memory limit for the job, it is recommended to have at least 16gb of memory
+available to docker
 
 Instructions on provisioning the partition and topics of the kafka cluster can be found in the `backend/README.md` file.
 
