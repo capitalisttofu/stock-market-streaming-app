@@ -1,4 +1,4 @@
-import { DISCARDED_DATA_TOPIC } from '../constants'
+import { DISCARDED_DATA_TOPIC, FLINK_PARALELLISM } from '../constants'
 import { RawTradeEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 import { EventLogger } from '../lib/logger'
@@ -23,6 +23,7 @@ export const main = async () => {
     })
 
     await consumer.run({
+      partitionsConsumedConcurrently: FLINK_PARALELLISM,
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {

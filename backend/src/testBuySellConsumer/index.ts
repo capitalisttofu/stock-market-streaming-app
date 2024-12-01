@@ -1,4 +1,4 @@
-import { BUY_SELL_ADVICE_TOPIC } from '../constants'
+import { BUY_SELL_ADVICE_TOPIC, FLINK_PARALELLISM } from '../constants'
 import { BuySellEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 import { EventLogger } from '../lib/logger'
@@ -23,6 +23,7 @@ export const main = async () => {
     })
 
     await consumer.run({
+      partitionsConsumedConcurrently: FLINK_PARALELLISM,
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {

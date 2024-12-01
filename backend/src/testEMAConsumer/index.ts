@@ -1,4 +1,4 @@
-import { EMA_RESULTS_TOPIC } from '../constants'
+import { EMA_RESULTS_TOPIC, FLINK_PARALELLISM } from '../constants'
 import { EMAResultEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 import { EventLogger } from '../lib/logger'
@@ -22,6 +22,7 @@ export const main = async () => {
     logger.startWindowIntervalLogger()
 
     await consumer.run({
+      partitionsConsumedConcurrently: FLINK_PARALELLISM,
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {

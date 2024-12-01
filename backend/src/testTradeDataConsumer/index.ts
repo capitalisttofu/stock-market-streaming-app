@@ -1,4 +1,4 @@
-import { TRADE_DATA_TOPIC } from '../constants'
+import { FLINK_PARALELLISM, TRADE_DATA_TOPIC } from '../constants'
 import { TradeEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 import { EventLogger } from '../lib/logger'
@@ -22,6 +22,7 @@ export const main = async () => {
     logger.startWindowIntervalLogger()
 
     await consumer.run({
+      partitionsConsumedConcurrently: FLINK_PARALELLISM,
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {
