@@ -12,7 +12,6 @@ from pyflink.datastream import (
     StreamExecutionEnvironment,
     TimeCharacteristic,
     CheckpointingMode,
-    RocksDBStateBackend,
 )
 from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
 from pyflink.datastream.formats.avro import AvroRowDeserializationSchema
@@ -20,12 +19,11 @@ from utils import avro, kafka
 
 
 def enable_checkpoints(env: StreamExecutionEnvironment):
-    # start a checkpoint every 5000 ms
-    env.enable_checkpointing(5000)
+    # start a checkpoint every 10 seconds
+    env.enable_checkpointing(10 * 1000)
 
     # set mode to exactly-once (this is the default, but adding here for clarity)
     env.get_checkpoint_config().set_checkpointing_mode(CheckpointingMode.EXACTLY_ONCE)
-    env.set_state_backend(RocksDBStateBackend("file:///flink-checkpoints/rocksdb"))
 
     env.get_checkpoint_config().set_checkpoint_storage_dir("file:///flink-checkpoints")
 
