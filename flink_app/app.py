@@ -8,10 +8,25 @@ from pipelines import (
 )
 from pyflink.common import Duration
 from pyflink.common.watermark_strategy import TimestampAssigner, WatermarkStrategy
-from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
+from pyflink.datastream import (
+    StreamExecutionEnvironment,
+    TimeCharacteristic,
+    CheckpointingMode,
+)
 from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
 from pyflink.datastream.formats.avro import AvroRowDeserializationSchema
 from utils import avro, kafka
+
+
+def enable_checkpoints(env: StreamExecutionEnvironment):
+    # start a checkpoint every 5000 ms
+    env.enable_checkpointing(5000)
+
+    # set mode to exactly-once (this is the default, but adding here for clarity)
+    env.get_checkpoint_config().set_checkpointing_mode(CheckpointingMode.EXACTLY_ONCE)
+
+    # Flink-checkpoints configured in the docker-compose
+    env.get_checkpoint_config().set_checkpoint_storage("file:///flink-checkpoints")
 
 
 def compute_timestamp(last_update_time: int, last_trade_date: int):
@@ -46,6 +61,7 @@ if __name__ == "__main__":
 
     env = StreamExecutionEnvironment.get_execution_environment()
     env.set_stream_time_characteristic(TimeCharacteristic.EventTime)
+    enable_checkpoints(env)
 
     deserialization_schema = AvroRowDeserializationSchema(
         avro_schema_string=avro.RAW_TRADE_EVENT_SCHEMA

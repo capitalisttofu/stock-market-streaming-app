@@ -62,6 +62,7 @@ services:
     command: jobmanager
     volumes:
       - ./flink_app:/flink_app
+      - flink_checkpoints:/flink-checkpoints 
     environment:
       - |
         FLINK_PROPERTIES=
@@ -74,7 +75,7 @@ services:
       - jobmanager
     command: taskmanager
     volumes:
-      - ./taskmanager_output_logs:/taskmanager_output_logs
+      - flink_checkpoints:/flink-checkpoints
     scale: 1
     environment:
       - |
@@ -92,5 +93,7 @@ volumes:
   kafka_1_data:
     driver: local
   kafka_2_data:
+    driver: local
+  flink_checkpoints:
     driver: local
 
