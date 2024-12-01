@@ -77,17 +77,13 @@ export class EventLogger {
 
       let text = `TotalEvents: ${this.eventCount}  WindowEvents: ${this.windowCount}  WindowEventsPerSec ${windowEventsPerSec}  `
 
+      // If windowDelaySum is larger than 0, then max and min delays are also defined
       if (this.windowDelaySumMs > 0) {
         const windowAvgDelay = calculateAvgDelay(
           this.windowCount,
           this.windowDelaySumMs,
         ).toFixed(2)
-        text += `WindowAvgDelayMs: ${windowAvgDelay}  `
-      }
-
-      // In this case, both max and min should be defined
-      if (this.maxWindowDelayMs > -1) {
-        text += `WindowMinDelayMs: ${this.minWindowDelayMs.toFixed(2)}  WindowMaxDelayMs: ${this.maxWindowDelayMs.toFixed(2)}`
+        text += `WindowAvgDelayMs: ${windowAvgDelay}  WindowMinDelayMs: ${this.minWindowDelayMs.toFixed(2)}  WindowMaxDelayMs: ${this.maxWindowDelayMs.toFixed(2)}  `
       }
 
       if (this.latestEventTime) {
