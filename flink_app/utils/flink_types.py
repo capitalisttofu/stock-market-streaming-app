@@ -1,4 +1,4 @@
-from pyflink.common import Time, Types
+from pyflink.common import Types
 
 TRADE_EVENT_TYPE = Types.ROW_NAMED(
     [

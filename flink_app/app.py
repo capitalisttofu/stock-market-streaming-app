@@ -77,7 +77,7 @@ if __name__ == "__main__":
     )
 
     watermark_strategy = WatermarkStrategy.for_bounded_out_of_orderness(
-        Duration.of_seconds(30)
+        Duration.of_seconds(20)
     ).with_timestamp_assigner(RawTradeDataTimestampAssigner())
 
     raw_trade_event_consumer.set_start_from_earliest()

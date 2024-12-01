@@ -1,6 +1,5 @@
 from pyflink.common import Time, Types
-from pyflink.datastream import DataStream, FlatMapFunction
-from pyflink.datastream import DataStream, OutputTag
+from pyflink.datastream import DataStream, FlatMapFunction, OutputTag
 from pyflink.datastream.connectors.kafka import FlinkKafkaProducer
 from pyflink.datastream.formats.avro import AvroRowSerializationSchema
 from pyflink.datastream.functions import (
@@ -11,6 +10,34 @@ from pyflink.datastream.functions import (
 from pyflink.datastream.state import ValueStateDescriptor
 from pyflink.datastream.window import TumblingEventTimeWindows
 from pyflink.table import Row
+
+
+# Annoyingly, need to for now copy-paste this type definition
+# as the import doesnt work nicely when not in a function
+# and pyflink errors if this is inside a function
+late_events_tag = OutputTag(
+    "late-trade-events",
+    Types.ROW_NAMED(
+        [
+            "id",
+            "symbol",
+            "exchange",
+            "sectype",
+            "lasttradeprice",
+            "timestamp",
+            "created_at_timestamp",
+        ],
+        [
+            Types.STRING(),
+            Types.STRING(),
+            Types.STRING(),
+            Types.STRING(),
+            Types.FLOAT(),
+            Types.LONG(),
+            Types.LONG(),
+        ],
+    ),
+)
 
 
 def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
@@ -112,8 +139,6 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 
 def handle_stream(trade_event_stream: DataStream):
     from utils import avro, kafka, flink_types
-
-    late_events_tag = OutputTag("late-trade-events", flink_types.TRADE_EVENT_TYPE)
 
     windowed_stream = (
         trade_event_stream.key_by(lambda x: x["symbol"])
