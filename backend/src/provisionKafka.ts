@@ -79,25 +79,21 @@ export const main = async () => {
         {
           topic: TRADE_DATA_TOPIC,
           numPartitions: FLINK_PARALELLISM,
-          // For development, use only replication factor of 1 due to saving on storage
           replicationFactor,
         },
         {
           topic: BUY_SELL_ADVICE_TOPIC,
           numPartitions: FLINK_PARALELLISM,
-          // For development, use only replication factor of 1 due to saving on storage
           replicationFactor,
         },
         {
           topic: EMA_RESULTS_TOPIC,
           numPartitions: FLINK_PARALELLISM,
-          // For development, use only replication factor of 1 due to saving on storage
           replicationFactor,
         },
         {
           topic: DISCARDED_DATA_TOPIC,
           numPartitions: FLINK_PARALELLISM,
-          // For development, use only replication factor of 1 due to saving on storage
           replicationFactor,
         },
       ],
