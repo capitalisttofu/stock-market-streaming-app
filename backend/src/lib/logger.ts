@@ -39,14 +39,11 @@ export class EventLogger {
     )
   }
 
-  addToMetrics(
-    comparisonTimestamp: number | null,
-    latestEventTime: number | null,
-  ) {
+  addToMetrics(delayComparisonTime: number | null, eventTime: number | null) {
     this.eventCount += 1
     this.windowCount += 1
-    if (comparisonTimestamp) {
-      const diff = new Date().valueOf() - comparisonTimestamp
+    if (delayComparisonTime) {
+      const diff = new Date().valueOf() - delayComparisonTime
       this.windowDelaySumMs += diff
 
       if (diff > this.maxWindowDelayMs) {
@@ -57,12 +54,12 @@ export class EventLogger {
       }
     }
 
-    if (latestEventTime) {
-      if (latestEventTime > this.latestEventTime) {
-        this.latestEventTime = latestEventTime
+    if (eventTime) {
+      if (eventTime > this.latestEventTime) {
+        this.latestEventTime = eventTime
       }
-      if (latestEventTime > this.windowLatestEventTime) {
-        this.windowLatestEventTime = latestEventTime
+      if (eventTime > this.windowLatestEventTime) {
+        this.windowLatestEventTime = eventTime
       }
     }
   }
