@@ -62,7 +62,7 @@ if __name__ == "__main__":
     # NOTE! Make sure that
     # there are at least as many kafka paritions in the consumed topic as the amount of jobs
     # you are running in parallel, otherwise there will be issues with watermarks
-    env.set_parallelism(3)
+    env.set_parallelism(2)
     env.set_stream_time_characteristic(TimeCharacteristic.EventTime)
     enable_checkpoints(env)
 
