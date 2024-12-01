@@ -21,6 +21,8 @@ export class EventLogger {
   windowDelaySumMs: number = 0
   windowInterval: NodeJS.Timeout | null = null
   latestEventTime: number = 0
+  minWindowDelayMs: number = Infinity
+  maxWindowDelayMs: number = -1
 
   constructor({
     logFileName,
@@ -45,6 +47,13 @@ export class EventLogger {
     if (comparisonTimestamp) {
       const diff = new Date().valueOf() - comparisonTimestamp
       this.windowDelaySumMs += diff
+
+      if (diff > this.maxWindowDelayMs) {
+        this.maxWindowDelayMs = diff
+      }
+      if (diff < this.minWindowDelayMs) {
+        this.minWindowDelayMs = diff
+      }
     }
 
     if (latestEventTime) {
@@ -76,6 +85,11 @@ export class EventLogger {
         text += `WindowAvgDelayMs: ${windowAvgDelay}  `
       }
 
+      // In this case, both max and min should be defined
+      if (this.maxWindowDelayMs > -1) {
+        text += `WindowMinDelayMs: ${this.minWindowDelayMs.toFixed(2)}  WindowMaxDelayMs: ${this.maxWindowDelayMs.toFixed(2)}`
+      }
+
       if (this.latestEventTime) {
         text += `LatestEventTime: ${new Date(this.latestEventTime).toISOString()}`
       }
@@ -83,6 +97,8 @@ export class EventLogger {
       this.writeToLog(text)
       this.windowCount = 0
       this.windowDelaySumMs = 0
+      this.maxWindowDelayMs = -1
+      this.minWindowDelayMs = Infinity
     }, this.windowLengthSeconds * 1000)
   }
 

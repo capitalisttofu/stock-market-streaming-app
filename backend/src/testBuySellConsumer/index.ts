@@ -32,7 +32,8 @@ export const main = async () => {
         const messageValue = BuySellEventAvro.fromBuffer(message.value)
 
         const windowEnd = messageValue['window_end']
-        const symbol = (messageValue['symbol'] as string).padEnd(8, ' ')
+        // Assume max 10 length for symbols
+        const symbol = (messageValue['symbol'] as string).padEnd(10, ' ')
         const action = messageValue['buy_or_sell_action']
         const emaj_38 = messageValue['emaj_38'].toFixed(5)
         const emaj_100 = messageValue['emaj_100'].toFixed(5)
