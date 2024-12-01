@@ -8,6 +8,9 @@ export const LOCAL_KAFKA_BROKER_LIST = [`${HOST_IP}:9094`, `${HOST_IP}:9096`]
 
 export const SORTED_RAW_TRADE_DATA_TOPIC = 'sorted_raw_trade_data'
 export const TRADE_DATA_TOPIC = 'trade_data'
+
+export const LATE_TRADE_EVENTS_TOPIC = 'late_trade_data'
+
 export const BUY_SELL_ADVICE_TOPIC = 'buy_sell_advice'
 export const DISCARDED_DATA_TOPIC = 'discarded_data'
 export const EMA_RESULTS_TOPIC = 'ema_results'

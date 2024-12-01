@@ -3,6 +3,7 @@ import {
   DISCARDED_DATA_TOPIC,
   EMA_RESULTS_TOPIC,
   FLINK_PARALELLISM,
+  LATE_TRADE_EVENTS_TOPIC,
   RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION,
   SORTED_RAW_TRADE_DATA_TOPIC,
   TRADE_DATA_TOPIC,
@@ -66,12 +67,17 @@ export const main = async () => {
     }
 
     if (existingTopicsSet.has(EMA_RESULTS_TOPIC)) {
-      console.log('Deleting Discarded Data topic')
+      console.log('Deleting Ema results topic')
       await admin.deleteTopics({ topics: [EMA_RESULTS_TOPIC] })
     }
 
+    if (existingTopicsSet.has(LATE_TRADE_EVENTS_TOPIC)) {
+      console.log('Deleting late trade data topic')
+      await admin.deleteTopics({ topics: [LATE_TRADE_EVENTS_TOPIC] })
+    }
+
     console.log(
-      `Creating topics ${TRADE_DATA_TOPIC}, ${BUY_SELL_ADVICE_TOPIC}, ${EMA_RESULTS_TOPIC} and ${DISCARDED_DATA_TOPIC}`,
+      `Creating topics ${TRADE_DATA_TOPIC}, ${BUY_SELL_ADVICE_TOPIC}, ${EMA_RESULTS_TOPIC}, ${LATE_TRADE_EVENTS_TOPIC} and ${DISCARDED_DATA_TOPIC}`,
     )
 
     await admin.createTopics({
@@ -93,6 +99,11 @@ export const main = async () => {
         },
         {
           topic: DISCARDED_DATA_TOPIC,
+          numPartitions: FLINK_PARALELLISM,
+          replicationFactor,
+        },
+        {
+          topic: LATE_TRADE_EVENTS_TOPIC,
           numPartitions: FLINK_PARALELLISM,
           replicationFactor,
         },
