@@ -16,5 +16,9 @@ export const RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION =
   process.env.RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION === 'true'
 
 export const NOW_DATE = process.env.NOW_DATE
+export const FLINK_PARALELLISM = Number(process.env.FLINK_PARALELLISM)
+if (!isNaN(FLINK_PARALELLISM)) {
+  throw new Error('FLINK PARALLEISM MUST BE NUMBER')
+}
 
 export const rawDataDirectory = 'rawData'

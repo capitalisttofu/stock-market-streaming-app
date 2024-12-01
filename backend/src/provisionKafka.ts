@@ -2,6 +2,7 @@ import {
   BUY_SELL_ADVICE_TOPIC,
   DISCARDED_DATA_TOPIC,
   EMA_RESULTS_TOPIC,
+  FLINK_PARALELLISM,
   RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION,
   SORTED_RAW_TRADE_DATA_TOPIC,
   TRADE_DATA_TOPIC,
@@ -19,15 +20,12 @@ export const main = async () => {
 
     const existingTopicsSet = new Set([...existingTopics])
 
-    // For now sorted_raw_trade_data_topic is set up with a simple
-    // 1 partition and 1 replication factor to mimick a "dumb"
-    // data source stream.
-    // In order to fine-tune our application, and avoid losing data
-    // in re-provisioning we do not recreate sorted_raw_trade_data_topic
-    // except if we want to using the .env file
     const rawTradeEventTopicExists = existingTopicsSet.has(
       SORTED_RAW_TRADE_DATA_TOPIC,
     )
+
+    // For local testing to save space and local machine io, we only have replication factor of 1
+    const replicationFactor = 1
 
     if (
       !rawTradeEventTopicExists ||
@@ -45,8 +43,8 @@ export const main = async () => {
         topics: [
           {
             topic: SORTED_RAW_TRADE_DATA_TOPIC,
-            numPartitions: 2,
-            replicationFactor: 1,
+            numPartitions: FLINK_PARALELLISM,
+            replicationFactor,
           },
         ],
       })
@@ -75,38 +73,32 @@ export const main = async () => {
     console.log(
       `Creating topics ${TRADE_DATA_TOPIC}, ${BUY_SELL_ADVICE_TOPIC}, ${EMA_RESULTS_TOPIC} and ${DISCARDED_DATA_TOPIC}`,
     )
+
     await admin.createTopics({
       topics: [
         {
           topic: TRADE_DATA_TOPIC,
-          // TODO: Decide a suitable number of partitions based off
-          // the approx number of symbols in the data source
-          // as well as how many TaskManager slots of our
-          // pyflink application we are planning on running
-          numPartitions: 3,
+          numPartitions: FLINK_PARALELLISM,
           // For development, use only replication factor of 1 due to saving on storage
-          replicationFactor: 1,
+          replicationFactor,
         },
         {
           topic: BUY_SELL_ADVICE_TOPIC,
-          // Number of paritions in BUY_SELL_ADVICE_TOPIC should not be as critical as in TRADE_DATA_TOPIC
-          // due to us expecting less number of messages being produced to the topic
-          // and no additional calculations/processing being done on this topic's data
-          numPartitions: 3,
+          numPartitions: FLINK_PARALELLISM,
           // For development, use only replication factor of 1 due to saving on storage
-          replicationFactor: 1,
+          replicationFactor,
         },
         {
           topic: EMA_RESULTS_TOPIC,
-          numPartitions: 3,
+          numPartitions: FLINK_PARALELLISM,
           // For development, use only replication factor of 1 due to saving on storage
-          replicationFactor: 1,
+          replicationFactor,
         },
         {
           topic: DISCARDED_DATA_TOPIC,
-          numPartitions: 2,
+          numPartitions: FLINK_PARALELLISM,
           // For development, use only replication factor of 1 due to saving on storage
-          replicationFactor: 1,
+          replicationFactor,
         },
       ],
     })

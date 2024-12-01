@@ -40,4 +40,4 @@ there are at least as many kafka paritions in the consumed topic as the amount o
 you are running in parallel, otherwise there will be issues with watermarks
 
 Example (two jobs running parallel)
-`docker exec -it stock-market-jobmanager  flink run -p 2 -py /flink_app/app.py --pyFiles /flink_app`
+`docker exec -it stock-market-jobmanager  flink run -p 3 -py /flink_app/app.py --pyFiles /flink_app`

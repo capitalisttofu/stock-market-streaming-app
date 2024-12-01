@@ -81,7 +81,7 @@ services:
       - |
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
-        taskmanager.numberOfTaskSlots: 2
+        taskmanager.numberOfTaskSlots: 3
         taskmanager.memory.network.fraction: 0.05
         taskmanager.memory.process.size: 12g
 
