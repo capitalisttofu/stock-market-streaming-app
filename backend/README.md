@@ -55,6 +55,9 @@ events in PyFlink using the current time rather than relying on a watermark. The
 `datapoint_new_timestamp` = `script_start_timestamp` (`NOW_DATE` - `datapoint_timestamp`)
 where `script_start_timestamp` is the time whenever the `csv-to-raw-trade-stream` process began.
 
+If you want to run all data in the csv as fast as possible updating the timestamps to real time running, set
+`SKIP_DATE_MODIFICATION` to true in the `.env` file
+
 After preprocessing, the data is converted into a `RawTradeEvent` Avro. Finally, `csv-to-raw-trade-stream`
 produces new messages in the `sorted_raw_trade_data` topic with the financial data.
 

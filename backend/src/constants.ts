@@ -16,6 +16,8 @@ export const RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION =
   process.env.RECREATE_RAW_TRADE_DATA_TOPIC_ON_PROVISION === 'true'
 
 export const NOW_DATE = process.env.NOW_DATE
+export const SKIP_DATE_MODIFICATION =
+  process.env.SKIP_DATE_MODIFICATION === 'true'
 export const FLINK_PARALELLISM = Number(process.env.FLINK_PARALELLISM)
 
 if (isNaN(FLINK_PARALELLISM)) {
