@@ -56,7 +56,7 @@ export class EventLogger {
       }
     }
 
-    if (latestEventTime) {
+    if (latestEventTime && latestEventTime > this.latestEventTime) {
       this.latestEventTime = latestEventTime
     }
   }
