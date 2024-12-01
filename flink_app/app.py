@@ -63,9 +63,12 @@ if __name__ == "__main__":
 
     raw_trade_event_consumer.set_start_from_earliest()
 
-    data_source = env.add_source(
-        raw_trade_event_consumer
-    ).assign_timestamps_and_watermarks(watermark_strategy)
+    data_source = (
+        env.add_source(raw_trade_event_consumer)
+        .name("Kafka Source: RawTradeEvents")
+        .assign_timestamps_and_watermarks(watermark_strategy)
+        .name("Assign Timestamps and Watermarks")
+    )
 
     trade_event_stream = raw_trade_data_to_trade_events_and_discarded.handle_stream(
         data_source

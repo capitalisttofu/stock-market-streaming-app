@@ -1,19 +1,25 @@
 import { EMA_RESULTS_TOPIC } from '../constants'
 import { EMAResultEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
+import { EventLogger } from '../lib/logger'
 
-const CONSUMER_GROUP_ID = 'test_ema_consumer2323'
+const CONSUMER_GROUP_ID = 'test_ema_consumer'
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
   await consumer.connect()
+
+  const logger = new EventLogger({
+    logFileName: CONSUMER_GROUP_ID,
+    windowLengthSeconds: 10,
+  })
 
   try {
     await consumer.subscribe({
       topic: EMA_RESULTS_TOPIC,
     })
 
-    let messageCounter = 0
+    logger.startWindowIntervalLogger()
 
     await consumer.run({
       // Process per message
@@ -21,20 +27,19 @@ export const main = async () => {
         if (!message.value) {
           return
         }
-        messageCounter++
 
         const messageValue = EMAResultEventAvro.fromBuffer(message.value)
 
-        console.log('last recieved message value', messageValue)
-        console.log(
-          `Processed messages: ${messageCounter}`,
-          new Date().toISOString(),
+        logger.addToMetrics(
+          messageValue['created_at_timestamp'],
+          messageValue['window_end'],
         )
       },
     })
   } catch (e) {
     console.log('Error in consumer')
     console.log(e)
+    logger.closeLogger()
   }
 }
 

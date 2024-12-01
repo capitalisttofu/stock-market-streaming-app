@@ -51,6 +51,7 @@ class FilterAndMapToBuySellEventFunction(FlatMapFunction):
                 window_start=value["window_start"],
                 window_end=value["window_end"],
                 buy_or_sell_action=buy_or_sell_action,
+                ema_created_at_timestamp=value["created_at_timestamp"],
             )
             yield row
 
@@ -67,6 +68,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
     def process(
         self, key, ctx: ProcessWindowFunction.Context, latest_trade_event_iterable
     ):
+        from utils import time_helpers
 
         prev_window_state = self.previous_window_ema_state.value()
 
@@ -101,6 +103,7 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
             symbol=key,  # We keyBy symbol
             window_start=window_start_time,
             window_end=window_end_time,
+            created_at_timestamp=time_helpers.get_current_timestamp(),
         )
 
         yield row
@@ -109,15 +112,15 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 def handle_stream(trade_event_stream: DataStream):
     from utils import avro, kafka, flink_types
 
-    ema_windowed_stream = (
-        trade_event_stream.key_by(lambda x: x["symbol"])
-        .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
-        .reduce(
-            LatestEventReducer(),
-            window_function=EMACalulaterProcessWindowFunction(),
-            output_type=flink_types.EMA_EVENT_TYPE,
-        )
+    windowed_stream = trade_event_stream.key_by(lambda x: x["symbol"]).window(
+        TumblingEventTimeWindows.of(Time.seconds(60 * 5))
     )
+
+    ema_windowed_stream = windowed_stream.reduce(
+        LatestEventReducer(),
+        window_function=EMACalulaterProcessWindowFunction(),
+        output_type=flink_types.EMA_EVENT_TYPE,
+    ).name("Reduce: ComputeEMA from LatestTradeEvent")
 
     buy_sell_kafka_producer = FlinkKafkaProducer(
         topic=kafka.BUY_SELL_ADVICE_TOPIC,
@@ -135,31 +138,13 @@ def handle_stream(trade_event_stream: DataStream):
         producer_config=kafka.KAFKA_PROPERTIES,
     )
 
-    ema_windowed_stream.add_sink(ema_kafka_producer)
+    ema_windowed_stream.add_sink(ema_kafka_producer).name("Kafka Sink: EMAEvents")
 
     buy_sell_events_stream = ema_windowed_stream.flat_map(
         FilterAndMapToBuySellEventFunction(),
-        output_type=Types.ROW_NAMED(
-            [
-                "emaj_38",
-                "emaj_100",
-                "prev_emaj_38",
-                "prev_emaj_100",
-                "symbol",
-                "window_start",
-                "window_end",
-                "buy_or_sell_action",
-            ],
-            [
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.FLOAT(),
-                Types.STRING(),
-                Types.LONG(),
-                Types.LONG(),
-                Types.STRING(),
-            ],
-        ),
+        output_type=flink_types.BUYSELL_EVENT_TYPE,
+    ).name("FlatMap: EMA to BuySellEvents")
+
+    buy_sell_events_stream.add_sink(buy_sell_kafka_producer).name(
+        "Kafka Sink: BuySellEvents"
     )
-    buy_sell_events_stream.add_sink(buy_sell_kafka_producer)

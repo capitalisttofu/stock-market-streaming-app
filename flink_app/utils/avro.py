@@ -14,6 +14,10 @@ TRADE_EVENT_SCHEMA = """
     {
       "name": "timestamp",
       "type": { "type": "long"}
+    },
+    {
+      "name": "created_at_timestamp",
+      "type": { "type": "long"}
     }
   ]
 }
@@ -73,6 +77,10 @@ BUYSELL_EVENT_SCHEMA = """
     {
       "name": "buy_or_sell_action",
       "type": "string"
+    },
+    {
+      "name": "ema_created_at_timestamp",
+      "type": { "type": "long"}
     }
   ]
 }
@@ -95,6 +103,10 @@ EMA_RESULT_EVENT_SCHEMA = """
     {
       "name": "window_end",
       "type": "long"
+    },
+    {
+      "name": "created_at_timestamp",
+      "type": { "type": "long"}
     }
   ]
 }
