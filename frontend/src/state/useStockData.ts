@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Stock } from '../types'
 
 export const useStockData = () => {
   const [stocks, setStockData] = useState<Stock[]>([])
+  const stockRef = useRef(stocks)
+
+  useEffect(() => {
+    stockRef.current = stocks
+  }, [stocks])
 
   const setStocks = (stockStrings: string[]) => {
     // Stock is selected if all current stocks are also selected.
     // If there are no stocks, the new stock is selected
     const selectNewStock = stocks.every((stock) => stock.selected)
     const newStocks = stockStrings.map((str) => {
-      return { symbol: str, selected: selectNewStock } as Stock
+      return { symbol: str, selected: selectNewStock } satisfies Stock
     })
 
     setStockData((prev) => {
@@ -50,11 +55,12 @@ export const useStockData = () => {
   }
 
   const setStockAdvice = (symbol: string, advice: string) => {
+    const curStocks = stockRef.current
     // Show advice if there are no stocks
-    if (stocks.length === 0) return true
+    if (curStocks.length === 0) return true
 
     // Returns false if symbol does not exist or stock is not selected
-    if (!stocks.some((stock) => stock.symbol === symbol && stock.selected)) {
+    if (!curStocks.some((stock) => stock.symbol === symbol && stock.selected)) {
       return false
     }
 
