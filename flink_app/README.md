@@ -34,7 +34,3 @@ Jobs can be cancelled using the web-api at `http://localhost:8081/#/overview`
 
 To rerun the FlinkJob from the start of the `sorted_raw_trade_data` topic, you can run the script found in the `backend` directory
 `npm run reset-kafka-flink-app-offset`
-
-
-Example (two jobs running parallel)
-`docker exec -it stock-market-jobmanager  flink run -py /flink_app/app.py --pyFiles /flink_app`

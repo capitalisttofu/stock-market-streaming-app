@@ -73,4 +73,4 @@ The frontend is responsible for the data visualizations. Instructions on running
 8. If a user wants to log events, run the chosen loggers in the `backend` directory. For example, `npm run test-buy-sell-consumer` runs the buy and sell event logger
 9. Install dependencies in the `frontend` directory with `npm install`
 10. Run frontend with `npm run dev` in the `frontend` directory
-10. Run the CSV parser in the `backend` directory with `npm run csv-to-raw-trade-stream`
+11. Run the CSV parser in the `backend` directory with `npm run csv-to-raw-trade-stream`
