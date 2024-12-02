@@ -28,21 +28,25 @@ export const useStockData = () => {
    * If a stock is selected, it unselects it. Otherwise it selects it
    */
   const selectStock = (symbol: string) => {
-    setStockData(
-      stocks.map((stock) =>
+    setStockData((prev) => {
+      return prev.map((stock) =>
         stock.symbol === symbol
           ? { ...stock, selected: !stock.selected }
           : stock,
-      ),
-    )
+      )
+    })
   }
 
   const selectAllStocks = () => {
-    setStockData(stocks.map((stock) => ({ ...stock, selected: true })))
+    setStockData((prev) => {
+      return prev.map((stock) => ({ ...stock, selected: true }))
+    })
   }
 
   const selectNoStocks = () => {
-    setStockData(stocks.map((stock) => ({ ...stock, selected: false })))
+    setStockData((prev) => {
+      return prev.map((stock) => ({ ...stock, selected: false }))
+    })
   }
 
   const setStockAdvice = (symbol: string, advice: string) => {
@@ -54,21 +58,21 @@ export const useStockData = () => {
       return false
     }
 
-    setStockData(
-      stocks.map((stock) =>
+    setStockData((prev) => {
+      return prev.map((stock) =>
         stock.symbol === symbol ? { ...stock, advice } : stock,
-      ),
-    )
+      )
+    })
 
     return true
   }
 
   const removeStockAdvice = (symbol: string) => {
-    setStockData(
-      stocks.map((stock) =>
+    setStockData((prev) => {
+      return prev.map((stock) =>
         stock.symbol === symbol ? { ...stock, advice: undefined } : stock,
-      ),
-    )
+      )
+    })
   }
 
   return {
