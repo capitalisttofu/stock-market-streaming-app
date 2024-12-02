@@ -11,6 +11,8 @@ import * as cors from 'cors'
 
 const PORT = 3000
 
+const MAX_ELEMENTS_RETURNED = 500
+
 const app = express()
 
 // Allow all origins as this is a test setup
@@ -32,7 +34,9 @@ app.get('/', (req, res) => {
 app.get('/trade_events/:symbol', (req, res) => {
   const symbol = req.params.symbol
 
-  const tradeEvents = tradeEventsBySymbol[symbol] ?? []
+  const tradeEvents = (tradeEventsBySymbol[symbol] ?? []).slice(
+    -MAX_ELEMENTS_RETURNED,
+  )
 
   res.send(tradeEvents)
 })
@@ -40,7 +44,9 @@ app.get('/trade_events/:symbol', (req, res) => {
 app.get('/ema_events/:symbol', (req, res) => {
   const symbol = req.params.symbol
 
-  const emajEvents = emajEventsBySymbol[symbol] ?? []
+  const emajEvents = (emajEventsBySymbol[symbol] ?? []).slice(
+    -MAX_ELEMENTS_RETURNED,
+  )
 
   res.send(emajEvents)
 })

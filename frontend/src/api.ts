@@ -26,6 +26,7 @@ export async function fetchEmaEvents(symbol: string) {
       )
     }
     const emaEvents = await response.json()
+
     return emaEvents as Array<EMAResultEvent>
   } catch (error) {
     console.error(error)
