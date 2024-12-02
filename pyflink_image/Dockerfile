@@ -60,7 +60,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 # install PyFlink
 RUN pip3 install apache-flink==1.20.0
 
-# install google-cloud-bigquery-storage (might work without this)
+# install google-cloud-bigquery-storage (to disable a warning)
 RUN pip3 install google-cloud-bigquery-storage
 
 # install kafka connector
