@@ -27,29 +27,29 @@ and then inside this backend folder run `npm run provision:kafka`
 
 The Avro definitions can be found in the `src/lib/avro.ts` file.
 
-# Running the Application
+## Running the Application
 
-## Injecting CSV Data to the Raw Data Trade Stream
+### Injecting CSV Data to the Raw Data Trade Stream
 
 Running the script can be done with `npm run csv-to-raw-trade-stream`
 If when developing you need to clear the stream due to broken data
 please follow the provisioning instructions above (and setting correct .env value)
 
-## Testing Output of the buy_sell_advice Topic (and Other Topics)
+### Testing Output of the buy_sell_advice Topic (and Other Topics)
 
 We have a simple test script to log every 1000th buy or sell advice event
 that the pyflink app produces. It can be run with `npm run test-buy-sell-consumer`.
 
 Scripts to consume other topics can also be found in the `package.json`
 
-## Trade Data API
+### Trade Data API
 
 The trade data API can be run with `npm run trade-data-api`.
 
 
-# Process Descriptions
+## Process Descriptions
 
-## Injecting CSV Data to the Raw Data Trade Stream
+### Injecting CSV Data to the Raw Data Trade Stream
 
 `csv-to-raw-trade-stream` searches for CSV files in the `backend/rawData` directory. Non CSV files are ignored.
 Each file is processed one by one in ascending order. The parser ignores lines in the csv file, which start with
@@ -79,7 +79,7 @@ If you want to run all data in the csv as fast as possible updating the timestam
 After preprocessing, the data is converted into a `RawTradeEvent` Avro. Finally, `csv-to-raw-trade-stream`
 produces new messages in the `sorted_raw_trade_data` topic with the financial data.
 
-## Trade Data API
+### Trade Data API
 
 The trade data API consumes three Kafka topics: `trade_data`, `ema_results`, and `buy_sell_advice`, and sends the events with WebSockets
 to the frontend. It consists of an express API, which listens on port `3000`. The API uses Socket.io for managing the WebSockets.
