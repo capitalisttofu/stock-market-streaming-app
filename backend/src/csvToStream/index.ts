@@ -74,15 +74,15 @@ export const main = async () => {
               data.tradingTime,
             )
 
-            // If the event has happened after the "now" time
-            if (dataMillis > CURRENT_DATE_MILLIS) {
-              PREV_EVENT_MILLIS = await waitEventTimeDifference(
-                dataMillis,
-                PREV_EVENT_MILLIS,
-              )
-            }
-
             if (!SKIP_DATE_MODIFICATION) {
+              // If the event has happened after the "now" time
+              if (dataMillis > CURRENT_DATE_MILLIS) {
+                PREV_EVENT_MILLIS = await waitEventTimeDifference(
+                  dataMillis,
+                  PREV_EVENT_MILLIS,
+                )
+              }
+
               // Modifying timestamp to use the current time in Flink instead of a watermark
               const modifiedTimestamp = modifyTimestamp(
                 dataMillis,
