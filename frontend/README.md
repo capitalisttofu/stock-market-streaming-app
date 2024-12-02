@@ -1,14 +1,22 @@
 # React Frontend
 
 React frontend is setup with Vite. Socket.IO is used to fetch events from the backend trade data API.
-Install dependencies with `npm install`. Start the frontend with `npm run dev`. The frontend starts on port `5000`.
 
 The frontend consists of a graph, which can be used to visualize price, EMA38, and EMA100 values, and
 includes two tables. In the first table, the user can choose the visualized event. The table can also be used to subscribe
-to `BUY` and `SELL` events from stocks. New stocks are added to the table whenever a WebSocket message with the event name
+to `Buy` and `Sell` events from stocks. New stocks are added to the table whenever a WebSocket message with the event name
 `new-symbol` or `all-symbols` is received. The frontend receives events that a new symbol has been observed via
-WebSockets, and appends them to the table. The second tables stores all previous `BUY` and `SELL` events.
+WebSockets, and appends them to the table. The second tables stores all previous `Buy` and `Sell` events.
 
+## Installation
+
+- npm 10.x+
+
+Install dependencies with `npm install`.
+
+## Running the Application
+
+Run the frontend with `npm run dev`. The frontend starts on port `5000`.
 
 ## Event Visualizations
 

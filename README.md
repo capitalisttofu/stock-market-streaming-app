@@ -42,7 +42,7 @@ contains any trade events.
 
 We use docker to run the Kafka Cluster as well as the Apache Flink application. 
 
-First one must build our Flink image that supports pyflink (found in the `pyflink_image` directory).
+First one must build our Flink image that supports PyFlink (found in the `pyflink_image` directory).
 This can be done with
 `docker build -t my-pyflink-image:latest ./pyflink_image`
 
@@ -58,3 +58,16 @@ The Flink dashboard is available at `http://localhost:8081/#/overview`
 
 The frontend is responsible for the data visualizations. Instructions on running the frontend can be found in the `frontend/README.md` file.
 
+
+### Running Instructions TLDR
+
+1. Build Flink image with `docker build -t my-pyflink-image:latest ./pyflink_image`
+2. Spin up Kafka and the Flink nodes with `docker-compose up`
+3. Install dependencies in the `backend` directory with `npm install`
+4. Provision Kafka in `backend` directory with `npm run provision:kafka`
+5. Make shared volume container accessible by the Flink user by running `docker exec -it stock-market-taskmanager chown -R 9999:9999 /flink-checkpoints`
+6. Run Flink app with `docker exec -it stock-market-jobmanager  flink run -py /flink_app/app.py --pyFiles /flink_app`
+7. Run the trade data API in the `backend` directory with `npm run trade-data-api`
+8. If a user wants to log events, run the chosen loggers in the `backend` directory. For example, `npm run test-buy-sell-consumer` runs the buy sell event logger
+9. Run frontend by installing dependencies in the `frontend` directory with `npm install`. After installing the dependencies, run it with `npm run dev`
+10. Run the CSV parser in the `backend` directory with `npm run csv-to-raw-trade-stream`

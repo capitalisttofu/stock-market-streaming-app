@@ -16,9 +16,9 @@ they are produced into the `buy_sell_advice` topic.
 
 ## Running app.py
 
-Setup the docker cluster as explained in the root README.md
+Setup the Docker cluster as explained in the root README.md
 
-Make sure you have provisioned kafka as explained in the `backend` README.md.
+Make sure you have provisioned Kafka as explained in the `backend` README.md.
 
 Also, you must make sure that the shared volume in the container is accessible by the Flink user, which has a uid 9999.
 This is a one time operation that can be done with 
@@ -28,9 +28,9 @@ This is a one time operation that can be done with
 Then in the root dir, run `docker exec -it stock-market-jobmanager  flink run -py /flink_app/app.py --pyFiles /flink_app`
 
 The app.py currently logs the data to the standard out of the task manager which can be accessed
-with docker, for example `docker logs -f stock-market-taskmanager`
+with Docker, for example `docker logs -f stock-market-taskmanager`
 
-Jobs can be canelled using the web-api at `http://localhost:8081/#/overview`
+Jobs can be cancelled using the web-api at `http://localhost:8081/#/overview`
 
 To rerun the FlinkJob from the start of the `sorted_raw_trade_data` topic, you can run the script found in the `backend` directory
 `npm run reset-kafka-flink-app-offset`

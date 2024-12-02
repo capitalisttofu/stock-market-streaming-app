@@ -87,7 +87,7 @@ Socket.io rooms are used for events subscriptions from `trade_data`, and `ema_re
 the user subsribes to all events from a symbol. Events from the `buy_sell_advice` topic are always sent to the frontend.
 
 The trade data API sends messages with websockets with the following event names:
-- `buy-sell-advice-message` send `BUY` and `SELL` advices from `buy_sell_advice` topic
+- `buy-sell-advice-message` send `Buy` and `Sell` advices from `buy_sell_advice` topic
 - `trade-event-message` sends the trade events from `trade_data` topic
 - `ema-result-event-message` to send events from the `ema_results` topic
 - `new-symbol` alerts the frontend that a new symbol is observed. The backend keeps track of previous symbols with a set
