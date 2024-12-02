@@ -46,7 +46,7 @@ export const initializeSocket = (
   }
 }
 
-export const handleSubscribe = (symbol: string) => {
+export const handleSubscribe = async (symbol: string) => {
   socket?.emit(SUBSCRIBE_MESSAGE_NAME, symbol)
 }
 

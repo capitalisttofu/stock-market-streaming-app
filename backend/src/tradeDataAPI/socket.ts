@@ -1,12 +1,11 @@
-import { DefaultEventsMap, Server, Socket } from 'socket.io'
 import { Server as HttpServer } from 'http'
+import { DefaultEventsMap, Server, Socket } from 'socket.io'
+import { symbols } from './adviceAndTradeDataConsumer'
 
 type EventName =
   | 'buy-sell-advice-message'
   | 'trade-event-message'
   | 'ema-result-event-message'
-
-const symbols = new Set()
 
 let io:
   | Server<DefaultEventsMap, DefaultEventsMap, DefaultEventsMap, any>
@@ -43,18 +42,18 @@ export const initializeSocket = (server: HttpServer) => {
   })
 }
 
+export const broadcastNewSymbolToSubscribers = (messageSymbol: string) => {
+  if (io) {
+    io.emit('new-symbol', messageSymbol)
+  }
+}
+
 export const broadcastEventToSubscribers = (
   eventName: EventName,
   messageSymbol: string,
   message: any,
 ) => {
   if (io) {
-    if (!symbols.has(messageSymbol)) {
-      // Broadcast to clients that a new symbol has appeared
-      io.emit('new-symbol', messageSymbol)
-      symbols.add(messageSymbol)
-    }
-
     // Broadcast event to users, which have subscribed to the symbol
     io.to(messageSymbol).emit(eventName, message)
   }
