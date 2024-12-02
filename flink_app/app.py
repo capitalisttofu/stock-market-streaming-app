@@ -8,10 +8,24 @@ from pipelines import (
 )
 from pyflink.common import Duration
 from pyflink.common.watermark_strategy import TimestampAssigner, WatermarkStrategy
-from pyflink.datastream import StreamExecutionEnvironment, TimeCharacteristic
+from pyflink.datastream import (
+    StreamExecutionEnvironment,
+    TimeCharacteristic,
+    CheckpointingMode,
+)
 from pyflink.datastream.connectors.kafka import FlinkKafkaConsumer
 from pyflink.datastream.formats.avro import AvroRowDeserializationSchema
 from utils import avro, kafka
+
+
+def enable_checkpoints(env: StreamExecutionEnvironment):
+    # start a checkpoint every 10 seconds
+    env.enable_checkpointing(10 * 1000)
+
+    # set mode to exactly-once (this is the default, but adding here for clarity)
+    env.get_checkpoint_config().set_checkpointing_mode(CheckpointingMode.EXACTLY_ONCE)
+
+    env.get_checkpoint_config().set_checkpoint_storage_dir("file:///flink-checkpoints")
 
 
 def compute_timestamp(last_update_time: int, last_trade_date: int):
@@ -45,7 +59,12 @@ if __name__ == "__main__":
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(message)s")
 
     env = StreamExecutionEnvironment.get_execution_environment()
+    # NOTE! Make sure that
+    # there are at least as many kafka paritions in the consumed topic as the amount of jobs
+    # you are running in parallel, otherwise there will be issues with watermarks
+    env.set_parallelism(3)
     env.set_stream_time_characteristic(TimeCharacteristic.EventTime)
+    enable_checkpoints(env)
 
     deserialization_schema = AvroRowDeserializationSchema(
         avro_schema_string=avro.RAW_TRADE_EVENT_SCHEMA

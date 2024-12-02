@@ -1,5 +1,5 @@
 from pyflink.common import Time, Types
-from pyflink.datastream import DataStream, FlatMapFunction, MapFunction
+from pyflink.datastream import DataStream, FlatMapFunction, OutputTag
 from pyflink.datastream.connectors.kafka import FlinkKafkaProducer
 from pyflink.datastream.formats.avro import AvroRowSerializationSchema
 from pyflink.datastream.functions import (
@@ -10,6 +10,34 @@ from pyflink.datastream.functions import (
 from pyflink.datastream.state import ValueStateDescriptor
 from pyflink.datastream.window import TumblingEventTimeWindows
 from pyflink.table import Row
+
+
+# Annoyingly, need to for now copy-paste this type definition
+# as the import doesnt work nicely when not in a function
+# and pyflink errors if this is inside a function
+late_events_tag = OutputTag(
+    "late-trade-events",
+    Types.ROW_NAMED(
+        [
+            "id",
+            "symbol",
+            "exchange",
+            "sectype",
+            "lasttradeprice",
+            "timestamp",
+            "created_at_timestamp",
+        ],
+        [
+            Types.STRING(),
+            Types.STRING(),
+            Types.STRING(),
+            Types.STRING(),
+            Types.FLOAT(),
+            Types.LONG(),
+            Types.LONG(),
+        ],
+    ),
+)
 
 
 def calulcate_EMA(last_price: float, j: int, prev_window_ema_for_j: float):
@@ -112,8 +140,10 @@ class EMACalulaterProcessWindowFunction(ProcessWindowFunction):
 def handle_stream(trade_event_stream: DataStream):
     from utils import avro, kafka, flink_types
 
-    windowed_stream = trade_event_stream.key_by(lambda x: x["symbol"]).window(
-        TumblingEventTimeWindows.of(Time.seconds(60 * 5))
+    windowed_stream = (
+        trade_event_stream.key_by(lambda x: x["symbol"])
+        .window(TumblingEventTimeWindows.of(Time.seconds(60 * 5)))
+        .side_output_late_data(late_events_tag)
     )
 
     ema_windowed_stream = windowed_stream.reduce(
@@ -147,4 +177,17 @@ def handle_stream(trade_event_stream: DataStream):
 
     buy_sell_events_stream.add_sink(buy_sell_kafka_producer).name(
         "Kafka Sink: BuySellEvents"
+    )
+
+    late_events_stream = ema_windowed_stream.get_side_output(late_events_tag)
+
+    late_events_kafka_producer = FlinkKafkaProducer(
+        topic=kafka.LATE_TRADE_EVENTS_TOPIC,
+        serialization_schema=AvroRowSerializationSchema(
+            avro_schema_string=avro.TRADE_EVENT_SCHEMA
+        ),
+        producer_config=kafka.KAFKA_PROPERTIES,
+    )
+    late_events_stream.add_sink(late_events_kafka_producer).name(
+        "Kafka Sink: LateTradeEvents"
     )

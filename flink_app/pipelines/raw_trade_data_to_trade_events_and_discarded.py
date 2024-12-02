@@ -6,7 +6,7 @@ from pyflink.datastream.formats.avro import (
 )
 from pyflink.datastream.functions import ProcessFunction
 from pyflink.table import Row
-import time
+
 
 discarded_event_output_tag = OutputTag(
     "discarded-event-output",

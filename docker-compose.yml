@@ -62,10 +62,11 @@ services:
     command: jobmanager
     volumes:
       - ./flink_app:/flink_app
+      - flink_checkpoints:/flink-checkpoints
     environment:
       - |
         FLINK_PROPERTIES=
-        jobmanager.rpc.address: jobmanager  
+        jobmanager.rpc.address: jobmanager
 
   taskmanager:
     container_name: stock-market-taskmanager
@@ -74,16 +75,14 @@ services:
       - jobmanager
     command: taskmanager
     volumes:
-      - ./taskmanager_output_logs:/taskmanager_output_logs
+      - flink_checkpoints:/flink-checkpoints
     scale: 1
     environment:
       - |
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
-        taskmanager.numberOfTaskSlots: 2
-        taskmanager.memory.task.off-heap.size: 128m
-        taskmanager.memory.network.fraction: 0.05
-        taskmanager.memory.process.size: 10g
+        taskmanager.numberOfTaskSlots: 3
+        taskmanager.memory.process.size: 12g
 
 
 volumes:
@@ -92,5 +91,7 @@ volumes:
   kafka_1_data:
     driver: local
   kafka_2_data:
+    driver: local
+  flink_checkpoints:
     driver: local
 

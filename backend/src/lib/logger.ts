@@ -21,6 +21,9 @@ export class EventLogger {
   windowDelaySumMs: number = 0
   windowInterval: NodeJS.Timeout | null = null
   latestEventTime: number = 0
+  windowLatestEventTime: number = 0
+  minWindowDelayMs: number = Infinity
+  maxWindowDelayMs: number = -1
 
   constructor({
     logFileName,
@@ -36,19 +39,28 @@ export class EventLogger {
     )
   }
 
-  addToMetrics(
-    comparisonTimestamp: number | null,
-    latestEventTime: number | null,
-  ) {
+  addToMetrics(delayComparisonTime: number | null, eventTime: number | null) {
     this.eventCount += 1
     this.windowCount += 1
-    if (comparisonTimestamp) {
-      const diff = new Date().valueOf() - comparisonTimestamp
+    if (delayComparisonTime) {
+      const diff = new Date().valueOf() - delayComparisonTime
       this.windowDelaySumMs += diff
+
+      if (diff > this.maxWindowDelayMs) {
+        this.maxWindowDelayMs = diff
+      }
+      if (diff < this.minWindowDelayMs) {
+        this.minWindowDelayMs = diff
+      }
     }
 
-    if (latestEventTime) {
-      this.latestEventTime = latestEventTime
+    if (eventTime) {
+      if (eventTime > this.latestEventTime) {
+        this.latestEventTime = eventTime
+      }
+      if (eventTime > this.windowLatestEventTime) {
+        this.windowLatestEventTime = eventTime
+      }
     }
   }
 
@@ -68,21 +80,29 @@ export class EventLogger {
 
       let text = `TotalEvents: ${this.eventCount}  WindowEvents: ${this.windowCount}  WindowEventsPerSec ${windowEventsPerSec}  `
 
+      // If windowDelaySum is larger than 0, then max and min delays are also defined
       if (this.windowDelaySumMs > 0) {
         const windowAvgDelay = calculateAvgDelay(
           this.windowCount,
           this.windowDelaySumMs,
         ).toFixed(2)
-        text += `WindowAvgDelayMs: ${windowAvgDelay}  `
+        text += `WindowAvgDelayMs: ${windowAvgDelay}  WindowMinDelayMs: ${this.minWindowDelayMs.toFixed(2)}  WindowMaxDelayMs: ${this.maxWindowDelayMs.toFixed(2)}  `
       }
 
       if (this.latestEventTime) {
-        text += `LatestEventTime: ${new Date(this.latestEventTime).toISOString()}`
+        text += `LatestEventTime: ${new Date(this.latestEventTime).toISOString()}  `
+      }
+
+      if (this.windowLatestEventTime) {
+        text += `WindowLatestEventTime: ${new Date(this.windowLatestEventTime).toISOString()}  `
       }
 
       this.writeToLog(text)
       this.windowCount = 0
       this.windowDelaySumMs = 0
+      this.maxWindowDelayMs = -1
+      this.minWindowDelayMs = Infinity
+      this.windowLatestEventTime = 0
     }, this.windowLengthSeconds * 1000)
   }
 

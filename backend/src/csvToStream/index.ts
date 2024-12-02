@@ -3,7 +3,7 @@ import { produceRawTradeData } from './produceRawTradeData'
 import { parseHeaders, parseTradeData } from './parseTradeData'
 import * as fs from 'fs'
 import * as readline from 'readline'
-import { rawDataDirectory } from '../constants'
+import { rawDataDirectory, SKIP_DATE_MODIFICATION } from '../constants'
 import * as dayjs from 'dayjs'
 import { SecType } from '../secType'
 import { parseNowDateEnv } from '../lib/parseEnvNowString'
@@ -82,14 +82,16 @@ export const main = async () => {
               )
             }
 
-            // Modifying timestamp to use the current time in Flink instead of a watermark
-            const modifiedTimestamp = modifyTimestamp(
-              dataMillis,
-              CURRENT_DATE_MILLIS,
-              scriptStartDateMillis,
-            )
-            data.tradingTime = modifiedTimestamp.time
-            data.tradingDate = modifiedTimestamp.days
+            if (!SKIP_DATE_MODIFICATION) {
+              // Modifying timestamp to use the current time in Flink instead of a watermark
+              const modifiedTimestamp = modifyTimestamp(
+                dataMillis,
+                CURRENT_DATE_MILLIS,
+                scriptStartDateMillis,
+              )
+              data.tradingTime = modifiedTimestamp.time
+              data.tradingDate = modifiedTimestamp.days
+            }
           }
 
           datapoints.push(data)

@@ -1,9 +1,13 @@
-import { EMA_RESULTS_TOPIC, FLINK_PARALELLISM } from '../constants'
-import { EMAResultEventAvro } from '../lib/avro'
+import {
+  FLINK_PARALELLISM,
+  LATE_TRADE_EVENTS_TOPIC,
+  TRADE_DATA_TOPIC,
+} from '../constants'
+import { TradeEventAvro } from '../lib/avro'
 import { getConsumer } from '../lib/kafka'
 import { EventLogger } from '../lib/logger'
 
-const CONSUMER_GROUP_ID = 'test_ema_consumer'
+const CONSUMER_GROUP_ID = 'test_late_trade_data_consumer'
 
 export const main = async () => {
   const consumer = getConsumer(CONSUMER_GROUP_ID)
@@ -16,7 +20,7 @@ export const main = async () => {
 
   try {
     await consumer.subscribe({
-      topic: EMA_RESULTS_TOPIC,
+      topic: LATE_TRADE_EVENTS_TOPIC,
     })
 
     logger.startWindowIntervalLogger()
@@ -29,11 +33,11 @@ export const main = async () => {
           return
         }
 
-        const messageValue = EMAResultEventAvro.fromBuffer(message.value)
+        const messageValue = TradeEventAvro.fromBuffer(message.value)
 
         logger.addToMetrics(
           messageValue['created_at_timestamp'],
-          messageValue['window_end'],
+          messageValue['timestamp'],
         )
       },
     })

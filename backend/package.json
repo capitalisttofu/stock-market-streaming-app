@@ -11,6 +11,7 @@
     "test-ema-consumer": "ts-node-transpile-only -r ./src/testEMAConsumer/index.ts",
     "test-discarded-consumer": "ts-node-transpile-only -r ./src/testDiscardedConsumer/index.ts",
     "test-trade-data-consumer": "ts-node-transpile-only -r ./src/testTradeDataConsumer/index.ts",
+    "test-late-trade-data-consumer": "ts-node-transpile-only -r ./src/testLateTradeDataConsumer/index.ts",
     "reset-kafka-flink-app-offset": "docker exec -it stock-market-kafka-0 /opt/bitnami/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-0:9092 --group flink_consumer_group --reset-offsets --to-earliest --topic sorted_raw_trade_data --execute"
   },
   "author": "",
