@@ -60,5 +60,7 @@ There was/is a bug in our test consumer that it might timeout and stop working a
 there are 2 files for the `test_buy_sell_consumer` and 3 files for the `test_late_trade_data_consumer`.
 Note, because of this, the totalEvents for `test_buy_sell_consumer` need to be summed from the two logs.
 There is a small chance some data is missing due to us not having time to look into the timeout issue
-of the kafka consumer, but most likely no data was missing.
+of the kafka consumer, but most likely no data was missing. HOWEVER, in the start of the second log some buy
+sell events are out of order, most likely due to racing to consume all of them from all 3 partitions
+that had been stuck there due to the `test_buy_sell_consumer` disconnecting.
 
