@@ -24,6 +24,7 @@ const App = () => {
   const timersRef = useRef<number[]>([])
 
   const handleBuySellEvent = (event: BuySellEvent) => {
+    setBuySellEvents((prev) => [...prev, event])
     const dateString = new Date(event.window_end).toUTCString()
 
     if (
@@ -32,7 +33,6 @@ const App = () => {
         `${event.buy_or_sell_action} (${dateString})`,
       )
     ) {
-      setBuySellEvents((prev) => [...prev, event])
       toast.info(
         `${event.buy_or_sell_action} event from symbol ${event.symbol} at ${dateString}`,
       )
@@ -113,7 +113,10 @@ const App = () => {
           setVisualizedSymbol={setVisualizedSymbol}
           {...stockState}
         />
-        <BuySellEventTable buySellEvents={buySellEvents} />
+        <BuySellEventTable
+          buySellEvents={buySellEvents}
+          stocks={stockState.stocks}
+        />
       </div>
       <ToastContainer
         position="top-right"
