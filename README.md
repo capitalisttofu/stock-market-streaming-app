@@ -70,7 +70,8 @@ The frontend is responsible for the data visualizations. Instructions on running
 5. Make shared volume container accessible by the Flink user by running `docker exec -it stock-market-taskmanager chown -R 9999:9999 /flink-checkpoints`
 6. Run Flink app with `docker exec -it stock-market-jobmanager  flink run -py /flink_app/app.py --pyFiles /flink_app`
 7. Run the trade data API in the `backend` directory with `npm run trade-data-api`
-8. If a user wants to log events, run the chosen loggers in the `backend` directory. For example, `npm run test-buy-sell-consumer` runs the buy and sell event logger
+8. If one wants to log the buy and sell events, the logger can be run with `npm run test-buy-sell-consumer` in the `backend` directory. If the consumer is restarted, it starts off where it was on previously
 9. Install dependencies in the `frontend` directory with `npm install`
 10. Run frontend with `npm run dev` in the `frontend` directory
 11. Run the CSV parser in the `backend` directory with `npm run csv-to-raw-trade-stream`
+12. To rerun the program using the already parsed raw data, turn off the Flink job with the Flink dashboard, and other running apps. Afterwards, run the provision script to recreate all topics except the raw trade data topic
