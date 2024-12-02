@@ -12,14 +12,14 @@ The specifics and requirements of the course project can be found in the pdf
 
 ### Kafka Cluster
 
-We use Kafka as our message stream.
-There are five relevant Kafka topics
+We use Kafka as our message stream. There are six relevant Kafka topics:
 
 - `sorted_raw_trade_data`
 - `trade_data`
 - `buy_sell_advice`
 - `discarded_data`
 - `ema_results`
+- `late_trade_data`
 
 `sorted_raw_trade_data` topic has all trade data sorted in (mostly) the correct order based off Trading Date and Trading Time.
 This is a simplification to how the actual data would be recieved in this type of application due to the fact
@@ -37,6 +37,8 @@ as a "mocked data source". The relevant code to fill this topic is found in this
 
 `ema_results` contains the ema calculation events produced in the end of each tumbling window per symbol, if the tumbling window
 contains any trade events.
+
+`late_trade_data` topic contains the events, which were late to the tumbling window.
 
 ## Setup
 
