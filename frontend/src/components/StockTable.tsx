@@ -70,7 +70,11 @@ const StockTable = (props: StockTableProps) => {
                   />
                 </td>
                 <td>{stock.symbol}</td>
-                <td className="table-advice">{stock.advice}</td>
+                {stock.advice?.includes('BUY') ? (
+                  <td className="table-advice-green">{stock.advice}</td>
+                ) : (
+                  <td className="table-advice-red">{stock.advice}</td>
+                )}
                 <td>
                   <button
                     onClick={() => {
