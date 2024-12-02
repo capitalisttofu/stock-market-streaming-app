@@ -35,10 +35,10 @@ as a "mocked data source". The relevant code to fill this topic is found in this
 
 `discarded_data` contains data points, which have been discarded due to not having values for the required attributes. The data points are discarded in `raw_trade_event_parser`. Currently, the discarded data points are consumed by a test discarded consumer located in the backend. Within this consumer, it is possible to add the functinality of storing the data elsewhere for further processing if required.
 
-`ema_results` contains the ema calculation events produced in the end of each tumbling window per symbol, if the tumbling window
+`ema_results` contains the EMA (exponential moving average) calculation events produced in the end of each tumbling window per symbol, if the tumbling window
 contains any trade events.
 
-`late_trade_data` topic contains the events, which were late to the tumbling window.
+`late_trade_data` contains the trade events, which were late to the tumbling window.
 
 ## Setup
 
