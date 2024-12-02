@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { BuySellEvent } from '../types'
+import { BuySellEvent, Stock } from '../types'
 import './table.css'
 
 const compareBuySellEvents = (
@@ -11,14 +10,14 @@ const compareBuySellEvents = (
 
 interface BuySellEventProps {
   buySellEvents: BuySellEvent[]
+  stocks: Stock[]
 }
 
 const BuySellEventTable = (props: BuySellEventProps) => {
-  const [filterText, setFilterText] = useState('')
-
-  const filterBuySellEvents = (stocks: BuySellEvent[]) => {
-    return stocks.filter((event) =>
-      event.symbol.toLocaleLowerCase().includes(filterText.toLowerCase()),
+  // Show only the events the user has subscribed to
+  const filterBuySellEvents = (buySellEvents: BuySellEvent[]) => {
+    return buySellEvents.filter(
+      (event) => props.stocks.find((e) => e.symbol === event.symbol)?.selected,
     )
   }
 
@@ -31,13 +30,6 @@ const BuySellEventTable = (props: BuySellEventProps) => {
             The table includes previous buy and sell events, which the user has
             subscribed to.
           </p>
-          <input
-            placeholder="Search by symbol"
-            type="text"
-            value={filterText}
-            onChange={(e) => setFilterText(e.target.value)}
-            className="filter-input"
-          />
         </div>
       </div>
       <table className="stocks-table">
