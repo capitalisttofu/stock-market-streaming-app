@@ -55,7 +55,15 @@ const BuySellEventTable = (props: BuySellEventProps) => {
               <tr key={event.symbol + event.window_end}>
                 <td>{new Date(event.window_end).toUTCString()}</td>
                 <td>{event.symbol}</td>
-                <td className="table-advice">{event.buy_or_sell_action}</td>
+                {event.buy_or_sell_action === 'BUY' ? (
+                  <td className="table-advice-green">
+                    {event.buy_or_sell_action}
+                  </td>
+                ) : (
+                  <td className="table-advice-red">
+                    {event.buy_or_sell_action}
+                  </td>
+                )}
               </tr>
             ))}
         </tbody>

@@ -93,6 +93,10 @@
   cursor: default;
 }
 
-.table-advice {
+.table-advice-red {
+  color: red;
+}
+
+.table-advice-green {
   color: red;
 }
