@@ -53,6 +53,7 @@ For `test_ema_consumer`, the timestamp is injected in the ProcessFunction that i
 completes and the ema value is calculated from the latest trade event for that symbol in the window.
 For `test_buy_sell_consumer` we use the value we injected into the EMAResultEvent described previously.
 
+We also provide some screenshots of the performance during the run form the Flink Web UI dashboard.
 
 In `with_paralellism_3` logs, we used 3 partitions per kafka topic with the flink job using parallism 3.
 There was/is a bug in our test consumer that it might timeout and stop working after some time, and thus
