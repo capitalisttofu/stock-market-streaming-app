@@ -64,3 +64,7 @@ of the kafka consumer, but most likely no data was missing. HOWEVER, in the star
 sell events are out of order, most likely due to racing to consume all of them from all 3 partitions
 that had been stuck there due to the `test_buy_sell_consumer` disconnecting.
 
+In `with_paralellism_1` logs, we used 1 partitions per kafka topic with the flink job using parallism 1.
+
+In `with_paralellism_3_no_discarded_data` logs, we used 3 partitions per kafka topic with the flink job using parallism 3 BUT
+we already in the csv parsing phase omit all data that would be discarded in the flink job (missing trade date or trade time or trade price)
