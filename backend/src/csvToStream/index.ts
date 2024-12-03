@@ -115,7 +115,7 @@ export const main = async () => {
                   PREV_EVENT_MILLIS,
                 )
 
-                const diffMs = currentPrevEventMillis - PREV_EVENT_MILLIS
+                const diffMs = PREV_EVENT_MILLIS - currentPrevEventMillis
                 diffMsSum += diffMs
               }
 
@@ -136,7 +136,7 @@ export const main = async () => {
         // Produce raw trade data points in given batch size or if the wait time has exceeded 500ms
         if (
           datapoints.length % PRODUCE_DATA_BATCH_SIZE === 0 ||
-          diffMsSum > 250
+          diffMsSum > 1000
         ) {
           await produceRawTradeData(datapoints)
           datapoints = []
