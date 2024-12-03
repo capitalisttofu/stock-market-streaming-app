@@ -28,3 +28,5 @@ if (isNaN(FLINK_PARALELLISM)) {
 }
 
 export const rawDataDirectory = 'rawData'
+
+export const SKIP_DISCARDED_DATA = process.env.SKIP_DISCARDED_DATA === 'true'
