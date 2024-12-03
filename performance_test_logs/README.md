@@ -68,3 +68,10 @@ In `with_paralellism_1` logs, we used 1 partitions per kafka topic with the flin
 
 In `with_paralellism_3_no_discarded_data` logs, we used 3 partitions per kafka topic with the flink job using parallism 3 BUT
 we already in the csv parsing phase omit all data that would be discarded in the flink job (missing trade date or trade time or trade price)
+
+In `with_paralellism_3_no_discarded_data_realtime` logs, we used 3 partitions per kafka topic with the flink job using parallism 3 BUT
+we already in the csv parsing phase omit all data that would be discarded in the flink job (missing trade date or trade time or trade price).
+In addition, we are using our "real time" mocking by adding delays to the consumption after the data points event time is after
+2021-11-08T11:00:00Z and changing them to be close to the userclock. However, it is not fully accurate and there is a drift.
+In the example data, at the end of the code the drift is around 53 seconds. This means when looking at the ema values in the logs,
+they come around 10 seconds after the window ends (taking the drift into account), so the delay to get results is around 10 seconds.
