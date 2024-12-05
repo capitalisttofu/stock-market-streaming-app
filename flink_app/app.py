@@ -19,6 +19,7 @@ from utils import avro, kafka
 
 
 def enable_checkpoints(env: StreamExecutionEnvironment):
+
     # start a checkpoint every 10 seconds
     env.enable_checkpointing(10 * 1000)
 
@@ -77,7 +78,7 @@ if __name__ == "__main__":
     )
 
     watermark_strategy = WatermarkStrategy.for_bounded_out_of_orderness(
-        Duration.of_seconds(20)
+        Duration.of_seconds(5)
     ).with_timestamp_assigner(RawTradeDataTimestampAssigner())
 
     raw_trade_event_consumer.set_start_from_earliest()

@@ -26,7 +26,6 @@ export const main = async () => {
     logger.startWindowIntervalLogger()
 
     await consumer.run({
-      partitionsConsumedConcurrently: FLINK_PARALELLISM,
       // Process per message
       eachMessage: async ({ message, partition, topic }) => {
         if (!message.value) {

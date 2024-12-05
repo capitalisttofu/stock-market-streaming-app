@@ -1,0 +1,609 @@
+2024-12-03T03:32:01.013Z  Starting window interval, stats every 10s
+2024-12-03T03:32:03.728Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HO          Emaj_38: 4.31385  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.66574  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.729Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CGM         Emaj_38: 1.28462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49604  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.729Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CCEP        Emaj_38: 2.43385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.93980  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.729Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LAT         Emaj_38: 0.02585  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00998  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.729Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FLY         Emaj_38: 4.00000  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.54455  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.729Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LVIDE       Emaj_38: 0.03077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01188  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AKOM        Emaj_38: 0.14462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ORA         Emaj_38: 0.49374  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19065  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPRE       Emaj_38: 0.36410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14059  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GID         Emaj_38: 0.06359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02455  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALNTG       Emaj_38: 0.07333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02832  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MMB         Emaj_38: 1.17333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.45307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ESI         Emaj_38: 3.58974  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.38614  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: UBI         Emaj_38: 2.41487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.93248  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALGTR       Emaj_38: 0.23590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.730Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SLB         Emaj_38: 1.48462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.57327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PRC         Emaj_38: 0.27282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10535  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALRPD       Emaj_38: 0.00359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: POXEL       Emaj_38: 0.29769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NHOA        Emaj_38: 1.00513  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.38812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TECBS       Emaj_38: 0.01692  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00653  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALDAR       Emaj_38: 1.11795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.43168  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MAJ         Emaj_38: 1.35897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.52475  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VLK         Emaj_38: 1.23077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.47525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SU          Emaj_38: 7.87282  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.04000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TCH         Emaj_38: 0.13590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05248  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCYB       Emaj_38: 0.01548  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00598  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALUCR       Emaj_38: 0.85128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.32871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPRI       Emaj_38: 0.52821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.20396  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MAREL       Emaj_38: 0.29744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11485  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALGEN       Emaj_38: 0.23641  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09129  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RAL         Emaj_38: 0.27179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: WKL         Emaj_38: 4.83179  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.86574  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ATE         Emaj_38: 7.69231  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.97030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMUN       Emaj_38: 0.15641  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALSPT       Emaj_38: 0.22821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.08812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BSD         Emaj_38: 0.13897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTHX       Emaj_38: 0.34513  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BBED        Emaj_38: 0.27179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPCV       Emaj_38: 0.06810  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02630  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALIKO       Emaj_38: 0.14462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALIMP       Emaj_38: 0.02436  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00941  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPAT       Emaj_38: 1.03590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.40000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SAMS        Emaj_38: 10.46154  PrevWindowEmaj_38: 0.00000  Emaj_100: 4.03960  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SCR         Emaj_38: 1.47487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.56950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.731Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CLA         Emaj_38: 0.27410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: WAVE        Emaj_38: 2.48205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.95842  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AXS         Emaj_38: 0.09641  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03723  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PROAC       Emaj_38: 0.00846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TES         Emaj_38: 8.64615  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.33861  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TFI         Emaj_38: 0.45872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RI          Emaj_38: 10.50256  PrevWindowEmaj_38: 0.00000  Emaj_100: 4.05545  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BSGR        Emaj_38: 0.40513  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCLS       Emaj_38: 0.53846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.20792  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CTPNV       Emaj_38: 0.96667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.37327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FFARM       Emaj_38: 0.19846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07663  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ORDI        Emaj_38: 0.19769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07634  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALENT       Emaj_38: 0.30256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RMS         Emaj_38: 74.89744  PrevWindowEmaj_38: 0.00000  Emaj_100: 28.92079  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: UNA         Emaj_38: 2.33308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.90089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LNA         Emaj_38: 2.63590  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.01782  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GTT         Emaj_38: 3.42051  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.32079  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCHI       Emaj_38: 0.34974  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13505  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VALUE       Emaj_38: 0.33333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SPIE        Emaj_38: 1.11487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.43050  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RDSA        Emaj_38: 1.02103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.39426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SBMO        Emaj_38: 0.71000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.27416  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GNRO        Emaj_38: 0.19795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LPE         Emaj_38: 4.82051  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.86139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALDBT       Emaj_38: 0.00290  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00112  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SWP         Emaj_38: 2.15385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.83168  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALSEI       Emaj_38: 0.02897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01119  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: KENDR       Emaj_38: 1.03077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.39802  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GPE         Emaj_38: 1.53846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.59406  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EXE         Emaj_38: 4.03077  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.55644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NEDSE       Emaj_38: 0.00938  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00362  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALVIV       Emaj_38: 1.34359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.51881  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALKEY       Emaj_38: 0.17949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06931  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMAS       Emaj_38: 0.02359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00911  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HEXA        Emaj_38: 2.18462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.84356  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALESE       Emaj_38: 0.36923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14257  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMNG       Emaj_38: 0.02728  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01053  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LSS         Emaj_38: 1.90256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.73465  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LIGHT       Emaj_38: 2.13077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.82277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VAC         Emaj_38: 0.47179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.18218  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.732Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FII         Emaj_38: 1.27949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49406  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HOLCO       Emaj_38: 9.28205  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.58416  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CAP         Emaj_38: 10.77949  PrevWindowEmaj_38: 0.00000  Emaj_100: 4.16238  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALANT       Emaj_38: 0.25231  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MUN         Emaj_38: 0.06513  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02515  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: 2CRSI       Emaj_38: 0.26359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FGR         Emaj_38: 4.78974  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.84950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ROTH        Emaj_38: 2.03846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.78713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALADO       Emaj_38: 0.00718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GVNV        Emaj_38: 1.45897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.56337  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BOL         Emaj_38: 0.26051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10059  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TOM2        Emaj_38: 0.38205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14752  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NXI         Emaj_38: 2.09026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.80713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBUD       Emaj_38: 0.27077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10455  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DSY         Emaj_38: 2.78667  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.07604  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CDA         Emaj_38: 0.82154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.31723  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FPG         Emaj_38: 0.02851  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01101  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IAM         Emaj_38: 0.68718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26535  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBIO       Emaj_38: 0.74359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.28713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTUR       Emaj_38: 0.28718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMND       Emaj_38: 0.31897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12317  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AGN         Emaj_38: 0.22159  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.08556  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCOI       Emaj_38: 0.50154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CBOT        Emaj_38: 0.19077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BAIN        Emaj_38: 3.56923  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.37822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GFC         Emaj_38: 6.41026  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.47525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VIL         Emaj_38: 0.30154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MBWS        Emaj_38: 0.07308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ERF         Emaj_38: 5.16513  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.99446  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBLU       Emaj_38: 0.17949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06931  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALDLS       Emaj_38: 0.71795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.27723  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCUR       Emaj_38: 0.14615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PERR        Emaj_38: 4.30769  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.66337  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTBG       Emaj_38: 0.05718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02208  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FTI         Emaj_38: 0.33303  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12859  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALEUA       Emaj_38: 0.20923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.08079  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DLTA        Emaj_38: 4.71282  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.81980  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RE          Emaj_38: 6.97436  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.69307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALHRS       Emaj_38: 1.68462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.65049  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EAS2P       Emaj_38: 0.14872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.733Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HEIO        Emaj_38: 4.15641  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.60495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PARP        Emaj_38: 1.07179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.41386  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IMDA        Emaj_38: 3.29231  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.27129  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALACT       Emaj_38: 0.34872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13465  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALNSE       Emaj_38: 0.94872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.36634  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ATI         Emaj_38: 0.19795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NANO        Emaj_38: 0.46667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.18020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VLA         Emaj_38: 0.87897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.33941  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EUCAR       Emaj_38: 0.02595  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01002  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BRNL        Emaj_38: 0.59487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.22970  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PAT         Emaj_38: 0.87179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.33663  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HDF         Emaj_38: 1.55897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.60198  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALADA       Emaj_38: 0.57949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.22376  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ERYP        Emaj_38: 0.11077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.04277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALQP        Emaj_38: 1.27179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LUCBS       Emaj_38: 0.00167  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00064  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GUI         Emaj_38: 0.74974  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.28950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALICR       Emaj_38: 1.33333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.51485  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PCA         Emaj_38: 0.65128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.25149  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IDL         Emaj_38: 17.02564  PrevWindowEmaj_38: 0.00000  Emaj_100: 6.57426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MDM         Emaj_38: 1.03897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.40119  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALWEC       Emaj_38: 0.92821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.35842  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALM         Emaj_38: 0.13026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BUR         Emaj_38: 34.25641  PrevWindowEmaj_38: 0.00000  Emaj_100: 13.22772  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: THEDS       Emaj_38: 0.00205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00079  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CRBN        Emaj_38: 2.12718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.82139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GOJXN       Emaj_38: 0.05974  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBFR       Emaj_38: 9.61539  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.71287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AURS        Emaj_38: 1.31282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.50693  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALKAL       Emaj_38: 1.78974  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.69109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ECP         Emaj_38: 0.04000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01545  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMLB       Emaj_38: 0.26872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10376  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALSEN       Emaj_38: 0.09744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03762  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AUB         Emaj_38: 2.86154  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.10495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BON         Emaj_38: 1.13077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.43663  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: JCQ         Emaj_38: 1.17949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.45545  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBPS       Emaj_38: 0.02667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BN          Emaj_38: 2.93436  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.13307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: WAGA        Emaj_38: 1.52308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.58812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALHYP       Emaj_38: 0.86154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.33267  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALVAL       Emaj_38: 0.35897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13861  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALESA       Emaj_38: 0.46667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.18020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CS          Emaj_38: 1.30333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.50327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BEN         Emaj_38: 0.67692  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CAFO        Emaj_38: 0.80000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.30891  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EN          Emaj_38: 1.81897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.70238  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VEON        Emaj_38: 0.08718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALINV       Emaj_38: 0.92821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.35842  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EC          Emaj_38: 7.07692  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.73267  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ERA         Emaj_38: 3.65641  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.41188  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EUR         Emaj_38: 0.14615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05644  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DVT         Emaj_38: 8.60513  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.32277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.734Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALWF        Emaj_38: 1.68205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.64950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TBGBS       Emaj_38: 0.00123  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00048  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAGR       Emaj_38: 0.01333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00515  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DSM         Emaj_38: 9.55897  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.69109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MTU         Emaj_38: 1.52564  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.58911  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GLPG        Emaj_38: 2.40359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.92812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VTR         Emaj_38: 1.82564  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.70495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SBT         Emaj_38: 0.68410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26416  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALLEC       Emaj_38: 0.38872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALD         Emaj_38: 0.70769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.27327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SLIGR       Emaj_38: 1.20000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.46337  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALUPG       Emaj_38: 0.21846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.08436  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CDI         Emaj_38: 35.79487  PrevWindowEmaj_38: 0.00000  Emaj_100: 13.82178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VLTSA       Emaj_38: 1.09487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.42277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GENX        Emaj_38: 0.46154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MRK         Emaj_38: 3.69179  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.42554  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LI          Emaj_38: 1.15385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.44554  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ACA         Emaj_38: 0.68010  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26261  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALBIZ       Emaj_38: 0.33615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12980  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CARM        Emaj_38: 0.68923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26614  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EDF         Emaj_38: 0.66308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.25604  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LTA         Emaj_38: 1.25538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.48475  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALWIT       Emaj_38: 0.36308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ASML        Emaj_38: 37.53846  PrevWindowEmaj_38: 0.00000  Emaj_100: 14.49505  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EO          Emaj_38: 2.32769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.89881  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: APAM        Emaj_38: 2.56410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.99010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: DCACS       Emaj_38: 0.50364  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19448  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: EFIC1       Emaj_38: 0.49487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: DE000A3GPSP7  Emaj_38: 1.27692  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: HDG         Emaj_38: 5.40513  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.08713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PARRO       Emaj_38: 0.24103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ENGI        Emaj_38: 0.66103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.25525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: KER         Emaj_38: 33.76410  PrevWindowEmaj_38: 0.00000  Emaj_100: 13.03762  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PROBT       Emaj_38: 0.00079  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00031  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HCO         Emaj_38: 0.27795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10733  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TKWY        Emaj_38: 3.12513  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.20673  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: STM         Emaj_38: 2.26410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.87426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ITP         Emaj_38: 3.64103  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.40594  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PSAT        Emaj_38: 0.33333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CEN         Emaj_38: 3.43590  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.32673  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALNRG       Emaj_38: 0.17333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06693  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCOG       Emaj_38: 0.46974  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.18139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: COV         Emaj_38: 3.96103  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.52950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RBO         Emaj_38: 1.85641  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.71683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALEMG       Emaj_38: 0.44821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALGIR       Emaj_38: 0.80513  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.31089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CIB         Emaj_38: 0.00544  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00210  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAIR       Emaj_38: 2.28462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.88218  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AMUN        Emaj_38: 4.05128  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.56436  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TNG         Emaj_38: 0.13179  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALREA       Emaj_38: 1.43590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.55446  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPAU       Emaj_38: 0.36410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14059  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VMX         Emaj_38: 0.05897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MEMS        Emaj_38: 0.08462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03267  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BLV         Emaj_38: 0.95333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.36812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.735Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EXN         Emaj_38: 1.01026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.39010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TKTT        Emaj_38: 0.96308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.37188  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TOUP        Emaj_38: 0.40718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15723  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: COX         Emaj_38: 0.16256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IPH         Emaj_38: 0.24410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BLC         Emaj_38: 2.16923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.83762  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: OREGE       Emaj_38: 0.06000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02317  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ELIOR       Emaj_38: 0.34077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13158  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SIGHT       Emaj_38: 0.27897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10772  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: KOF         Emaj_38: 1.81026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.69901  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALFPC       Emaj_38: 6.32821  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.44356  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EGR         Emaj_38: 0.15385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05941  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SOG         Emaj_38: 1.18462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.45743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GLO         Emaj_38: 1.01744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.39287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALX         Emaj_38: 0.04615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01782  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FALG        Emaj_38: 0.15769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCG        Emaj_38: 0.28564  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMRB       Emaj_38: 0.55385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.21386  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RIN         Emaj_38: 3.00000  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.15842  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPOU       Emaj_38: 0.24051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALONX       Emaj_38: 0.02518  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00972  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EBUS        Emaj_38: 1.49744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.57822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALECO       Emaj_38: 0.82667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.31921  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ORAP        Emaj_38: 0.30718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11861  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALNMR       Emaj_38: 0.48872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.18871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: INGA        Emaj_38: 0.68103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26297  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EL          Emaj_38: 9.62564  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.71683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AF          Emaj_38: 0.24759  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09560  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PAR         Emaj_38: 2.84615  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.09901  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IPN         Emaj_38: 4.40513  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.70099  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LIN         Emaj_38: 2.01538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.77822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TWEKA       Emaj_38: 2.62821  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.01485  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NEWAY       Emaj_38: 0.74359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.28713  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALSGD       Emaj_38: 0.06205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02396  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NSI         Emaj_38: 1.81538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.70099  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BIM         Emaj_38: 5.38974  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.08119  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MAN         Emaj_38: 3.61026  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.39406  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALDRV       Emaj_38: 0.00622  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00240  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALORA       Emaj_38: 0.09282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SAN         Emaj_38: 4.53487  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.75109  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPHS       Emaj_38: 0.08487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DPA         Emaj_38: 0.02256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALLIX       Emaj_38: 1.68205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.64950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: 2MX         Emaj_38: 0.49846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19248  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DPT         Emaj_38: 0.00721  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00278  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AKW         Emaj_38: 1.19231  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.46040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VETO        Emaj_38: 7.79487  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.00990  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PRX         Emaj_38: 3.76103  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.45228  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TTE         Emaj_38: 2.23103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.86149  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.736Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMET       Emaj_38: 0.24103  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTHE       Emaj_38: 0.07795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTER       Emaj_38: 0.07210  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02784  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALENO       Emaj_38: 0.53333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.20594  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ESG         Emaj_38: 0.49282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPRO       Emaj_38: 0.44410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17149  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GOE         Emaj_38: 0.78462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.30297  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AM          Emaj_38: 4.94359  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.90891  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ABIO        Emaj_38: 1.75282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.67683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALHIO       Emaj_38: 0.19128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07386  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SII         Emaj_38: 2.21026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.85347  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PREC        Emaj_38: 1.75436  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.67743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAGP       Emaj_38: 0.41026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15842  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DGM         Emaj_38: 0.07333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02832  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LBIRD       Emaj_38: 1.02564  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.39604  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: WHA         Emaj_38: 0.73128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.28238  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: OPN         Emaj_38: 1.22564  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.47327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTA        Emaj_38: 9.53846  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.68317  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LOUP        Emaj_38: 4.98462  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.92475  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DG          Emaj_38: 4.90974  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.89584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MAAT        Emaj_38: 0.69487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26832  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALGEC       Emaj_38: 0.00052  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ASM         Emaj_38: 21.45641  PrevWindowEmaj_38: 0.00000  Emaj_100: 8.28515  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RCO         Emaj_38: 9.15897  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.53663  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ABNX        Emaj_38: 0.08185  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03160  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMIB       Emaj_38: 0.07795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: QDT         Emaj_38: 1.09333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.42218  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALGBE       Emaj_38: 0.25538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09861  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ASRNL       Emaj_38: 2.03949  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.78752  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SOP         Emaj_38: 8.75385  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.38020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AJAX        Emaj_38: 0.78462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.30297  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALEAC       Emaj_38: 0.93333  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.36040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TEP         Emaj_38: 17.83077  PrevWindowEmaj_38: 0.00000  Emaj_100: 6.88515  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ACCEL       Emaj_38: 1.91538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.73960  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SOI         Emaj_38: 11.93846  PrevWindowEmaj_38: 0.00000  Emaj_100: 4.60990  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTEV       Emaj_38: 6.92308  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.67327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VK          Emaj_38: 0.36205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13980  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALROC       Emaj_38: 0.19487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AB          Emaj_38: 0.66821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.25802  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: OR          Emaj_38: 21.15898  PrevWindowEmaj_38: 0.00000  Emaj_100: 8.17030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALFEN       Emaj_38: 5.01282  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.93564  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GET         Emaj_38: 0.71282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.27525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALLLN       Emaj_38: 0.24590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VASTN       Emaj_38: 1.27692  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49307  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: IMCD        Emaj_38: 9.91539  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.82871  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: COFA        Emaj_38: 0.62308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.24059  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FNAC        Emaj_38: 2.96154  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.14356  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: STLA        Emaj_38: 0.90728  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.35034  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALVAP       Emaj_38: 0.68718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.26535  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LFDE        Emaj_38: 1.49744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.57822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: INPST       Emaj_38: 0.75672  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.29220  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: INEA        Emaj_38: 2.26667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.87525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALUVI       Emaj_38: 0.34359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.13267  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FATL        Emaj_38: 2.23590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.86337  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CBSM        Emaj_38: 0.49744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19208  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AC          Emaj_38: 1.72051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.66436  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALHGO       Emaj_38: 2.51308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.97040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: EKI         Emaj_38: 0.40769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NXFIL       Emaj_38: 0.60923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.23525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALATF       Emaj_38: 0.39795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.15366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: URW         Emaj_38: 3.59128  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.38673  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VIV         Emaj_38: 0.57077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.22040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.737Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALLEX       Emaj_38: 0.20256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: GNFT        Emaj_38: 0.15918  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06147  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALFOC       Emaj_38: 2.13846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.82574  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CLB         Emaj_38: 1.28205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49505  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NEOEN       Emaj_38: 1.92718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.74416  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALARF       Emaj_38: 0.14308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.05525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BOLS        Emaj_38: 0.51897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.20040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SRP         Emaj_38: 0.10667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.04119  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AMPLI       Emaj_38: 0.10769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.04158  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CAPLI       Emaj_38: 1.26667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.48911  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CGG         Emaj_38: 0.03556  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01373  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: RNO         Emaj_38: 1.65744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.64000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALUNT       Emaj_38: 0.11897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.04594  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALNLF       Emaj_38: 0.01836  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00709  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SGO         Emaj_38: 3.13436  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.21030  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SO          Emaj_38: 8.80000  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.39802  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ABVX        Emaj_38: 1.44359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.55743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CRI         Emaj_38: 1.32821  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.51287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PHIA        Emaj_38: 2.12385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.82010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTIV       Emaj_38: 1.06667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.41188  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AALB        Emaj_38: 2.51795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.97228  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCLA       Emaj_38: 3.68205  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.42178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CGGBT       Emaj_38: 0.00045  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00017  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ESP         Emaj_38: 0.00129  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00050  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MORE        Emaj_38: 0.01497  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00578  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALJXR       Emaj_38: 0.00003  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00001  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ABEO        Emaj_38: 0.74615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.28812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALINT       Emaj_38: 0.06154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.02376  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FGA         Emaj_38: 0.28923  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11168  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: XIL         Emaj_38: 2.02051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.78020  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BNP         Emaj_38: 3.05692  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.18040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPHI       Emaj_38: 0.24026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALORD       Emaj_38: 0.11590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.04475  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: BRILL       Emaj_38: 1.11795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.43168  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ADP         Emaj_38: 6.44359  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.48812  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: OSE         Emaj_38: 0.44615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17228  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SDG         Emaj_38: 2.07436  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.80099  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPHE       Emaj_38: 0.37538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.14495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.738Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAFY       Emaj_38: 0.41897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.16178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AMG         Emaj_38: 1.30769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.50495  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CGGBS       Emaj_38: 0.00032  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00012  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FLOW        Emaj_38: 1.52410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.58851  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TBIRD       Emaj_38: 0.00897  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00347  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: TFF         Emaj_38: 1.35385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.52277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALVMG       Emaj_38: 0.00615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00238  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FLO         Emaj_38: 0.82051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.31683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAGO       Emaj_38: 0.23538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09089  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PHA         Emaj_38: 5.13846  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.98416  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: REN         Emaj_38: 1.40615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.54297  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALFLE       Emaj_38: 1.14872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.44356  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ADVI        Emaj_38: 1.03590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.40000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VIE         Emaj_38: 1.52667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.58950  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALCOR       Emaj_38: 1.49744  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.57822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALPER       Emaj_38: 0.18051  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06970  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALALO       Emaj_38: 0.00010  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00004  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: FR          Emaj_38: 1.35487  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.52317  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALLGO       Emaj_38: 0.44872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.17327  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: VVY         Emaj_38: 1.03590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.40000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALEUP       Emaj_38: 0.01287  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00497  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AXW         Emaj_38: 1.45128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.56040  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LACR        Emaj_38: 1.93846  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.74851  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ATRS        Emaj_38: 0.18026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.06960  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LYS         Emaj_38: 0.10256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03960  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: SFPI        Emaj_38: 0.18795  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07257  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NACON       Emaj_38: 0.26667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10297  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALTVO       Emaj_38: 1.34359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.51881  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: AVT         Emaj_38: 0.00324  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00125  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: MC          Emaj_38: 36.54872  PrevWindowEmaj_38: 0.00000  Emaj_100: 14.11287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NEX         Emaj_38: 4.45128  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.71881  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LR          Emaj_38: 4.85538  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.87485  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALHRG       Emaj_38: 2.46154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.95050  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: DKUPL       Emaj_38: 1.03590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.40000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALDEL       Emaj_38: 2.35385  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.90891  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALMII       Emaj_38: 0.24205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09347  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: PIG         Emaj_38: 0.26359  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.10178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HOLN        Emaj_38: 2.28718  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.88317  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: HEIA        Emaj_38: 4.98462  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.92475  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALADM       Emaj_38: 0.08872  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALESK       Emaj_38: 16.00000  PrevWindowEmaj_38: 0.00000  Emaj_100: 6.17822  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: CATG        Emaj_38: 0.31436  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12139  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: LBON        Emaj_38: 4.13333  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.59604  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: ALAMG       Emaj_38: 0.00232  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00090  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: NRG         Emaj_38: 0.31077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.12000  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:25:00.000Z  Symbol: OCI         Emaj_38: 1.28615  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49663  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: LBUL        Emaj_38: 2.61538  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.00990  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: CATR        Emaj_38: 9.17949  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.54455  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: VMGBS       Emaj_38: 0.00026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: EMWE        Emaj_38: 0.94067  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.36323  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: VDOT        Emaj_38: 0.77436  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.29901  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:30:00.000Z  Symbol: ALIDS       Emaj_38: 9.74359  PrevWindowEmaj_38: 0.00000  Emaj_100: 3.76238  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: DE000A27Z304  Emaj_38: 3.29026  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.27050  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: ASOL        Emaj_38: 6.69180  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.58396  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: DE000A28M8D0  Emaj_38: 1.61026  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.62178  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:35:00.000Z  Symbol: ADOT        Emaj_38: 1.28410  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.49584  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:45:00.000Z  Symbol: DSC2        Emaj_38: 0.49231  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19010  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:45:00.000Z  Symbol: CH0454664001  Emaj_38: 1.19287  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.46061  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:45:00.000Z  Symbol: BNBA        Emaj_38: 2.13077  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.82277  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:40:00.000Z  Symbol: ALEO2       Emaj_38: 0.24256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09366  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:45:00.000Z  Symbol: ALOSM       Emaj_38: 0.29231  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.11287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:50:00.000Z  Symbol: COM         Emaj_38: 0.60256  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.23267  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:55:00.000Z  Symbol: ELEC        Emaj_38: 6.00000  PrevWindowEmaj_38: 0.00000  Emaj_100: 2.31683  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:15:00.000Z  Symbol: ALBKK       Emaj_38: 1.10769  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.42772  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:15:00.000Z  Symbol: ALTAN       Emaj_38: 0.18462  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.07129  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T01:55:00.000Z  Symbol: SNOW        Emaj_38: 0.66667  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.25743  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:05:00.000Z  Symbol: CH0496454155  Emaj_38: 2.42205  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.93525  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:15:00.000Z  Symbol: RNL         Emaj_38: 21.80256  PrevWindowEmaj_38: 0.00000  Emaj_100: 8.41881  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:20:00.000Z  Symbol: COH         Emaj_38: 0.09590  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.03703  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:20:00.000Z  Symbol: BUDBS       Emaj_38: 0.00174  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00067  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:30:00.000Z  Symbol: NVD3        Emaj_38: 15.72577  PrevWindowEmaj_38: 0.00000  Emaj_100: 6.07233  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:30:00.000Z  Symbol: AAA         Emaj_38: 0.60000  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.23168  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:30:00.000Z  Symbol: MSF3        Emaj_38: 3.86680  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.49312  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:55:00.000Z  Symbol: PACEU       Emaj_38: 0.50308  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19426  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:55:00.000Z  Symbol: AAP3        Emaj_38: 3.59517  PrevWindowEmaj_38: 0.00000  Emaj_100: 1.38823  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:40:00.000Z  Symbol: ORAPB       Emaj_38: 0.05128  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.01980  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T03:05:00.000Z  Symbol: AMDS        Emaj_38: 0.24050  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.09287  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T02:50:00.000Z  Symbol: REINA       Emaj_38: 0.81538  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.31485  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:03.740Z  Action: BUY  WindowEnd: 2024-12-03T03:20:00.000Z  Symbol: BIOBS       Emaj_38: 0.00936  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00361  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:32:11.015Z  TotalEvents: 460  WindowEvents: 460  WindowEventsPerSec 46.00  WindowAvgDelayMs: 516176.06  WindowMinDelayMs: 489478.00  WindowMaxDelayMs: 517373.00  LatestEventTime: 2024-12-03T03:20:00.000Z  WindowLatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:32:21.016Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:32:31.017Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:32:41.018Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:32:51.018Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:01.019Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:11.019Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:21.019Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:31.019Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:41.020Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:33:51.021Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:01.022Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:11.022Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:21.023Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:31.024Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:41.024Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:34:51.025Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:01.026Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:11.026Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:21.028Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:31.029Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:41.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:35:51.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:01.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:11.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:21.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:31.030Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:41.031Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:36:51.031Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:01.032Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:11.033Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:21.034Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:31.035Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:41.035Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:37:51.035Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:01.035Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:11.036Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:21.038Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:31.037Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:41.038Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:38:51.039Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:01.040Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:11.041Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:21.042Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:31.042Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:41.043Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:39:51.043Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:01.044Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:11.045Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:21.046Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:31.048Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:41.048Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:40:51.048Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:01.049Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:11.051Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:21.051Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:31.052Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:41.053Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:41:51.054Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:01.055Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:11.055Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:21.055Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:31.056Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:41.057Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:42:51.057Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:01.058Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:11.059Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:21.059Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:31.060Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:41.062Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:43:51.062Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:01.063Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:11.062Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:21.063Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:31.064Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:41.064Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:44:51.065Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:01.066Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:11.066Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:21.067Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:31.067Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:41.067Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:45:51.069Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:46:01.070Z  TotalEvents: 460  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:20:00.000Z  
+2024-12-03T03:46:03.540Z  Action: BUY  WindowEnd: 2024-12-03T03:45:00.000Z  Symbol: EFICW       Emaj_38: 0.02154  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.00832  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:46:04.378Z  Action: BUY  WindowEnd: 2024-12-03T03:45:00.000Z  Symbol: NAI         Emaj_38: 0.51282  PrevWindowEmaj_38: 0.00000  Emaj_100: 0.19802  PrevWindowEmaj_100: 0.00000
+2024-12-03T03:46:11.070Z  TotalEvents: 462  WindowEvents: 2  WindowEventsPerSec 0.20  WindowAvgDelayMs: 332.50  WindowMinDelayMs: 271.00  WindowMaxDelayMs: 394.00  LatestEventTime: 2024-12-03T03:45:00.000Z  WindowLatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:46:21.071Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:46:31.072Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:46:41.073Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:46:51.073Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:01.073Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:11.075Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:21.075Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:31.075Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:41.076Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:47:51.076Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:01.078Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:11.078Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:21.078Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:31.078Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:41.080Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:48:51.081Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:01.081Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:11.082Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:21.083Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:31.083Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:41.083Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:49:51.083Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:01.084Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:11.085Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:21.087Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:31.088Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:41.089Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:50:51.090Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:01.091Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:11.093Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:21.094Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:31.098Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:41.099Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:51:51.103Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:01.104Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:11.105Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:21.106Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:31.108Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:41.109Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:52:51.111Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:01.110Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:11.112Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:21.113Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:31.114Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:41.115Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:53:51.116Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:01.117Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:11.117Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:21.118Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:31.119Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:41.120Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:54:51.122Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:01.122Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:11.123Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:21.124Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:31.126Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:41.126Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:55:51.128Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:56:01.128Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:56:11.130Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  
+2024-12-03T03:56:21.130Z  TotalEvents: 462  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:45:00.000Z  

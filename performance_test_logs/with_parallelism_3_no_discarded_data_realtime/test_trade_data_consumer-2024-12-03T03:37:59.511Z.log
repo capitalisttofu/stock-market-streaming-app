@@ -1,0 +1,385 @@
+2024-12-03T03:37:59.512Z  Starting window interval, stats every 10s
+2024-12-03T03:38:02.546Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197012791,"created_at_timestamp":1733197045983}
+2024-12-03T03:38:02.547Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197014554,"created_at_timestamp":1733197049160}
+2024-12-03T03:38:02.547Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197014554,"created_at_timestamp":1733197049160}
+2024-12-03T03:38:02.547Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197014554,"created_at_timestamp":1733197049161}
+2024-12-03T03:38:02.547Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197014554,"created_at_timestamp":1733197049161}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197022891,"created_at_timestamp":1733197056992}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197022891,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197023196,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197023196,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197023196,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197023196,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197023196,"created_at_timestamp":1733197056993}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197023196,"created_at_timestamp":1733197056994}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197023196,"created_at_timestamp":1733197056994}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197023196,"created_at_timestamp":1733197056994}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197023196,"created_at_timestamp":1733197056994}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197024115,"created_at_timestamp":1733197058003}
+2024-12-03T03:38:02.549Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197024115,"created_at_timestamp":1733197058004}
+2024-12-03T03:38:02.551Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197027962,"created_at_timestamp":1733197061992}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034745,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034745,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034745,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034745,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197034748,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197034748,"created_at_timestamp":1733197068984}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034748,"created_at_timestamp":1733197068985}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034748,"created_at_timestamp":1733197068985}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034748,"created_at_timestamp":1733197068985}
+2024-12-03T03:38:02.553Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197034748,"created_at_timestamp":1733197068985}
+2024-12-03T03:38:08.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197052208,"created_at_timestamp":1733197087997}
+2024-12-03T03:38:09.513Z  TotalEvents: 1075  WindowEvents: 1075  WindowEventsPerSec 107.50  WindowAvgDelayMs: 18423.67  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 39558.00  LatestEventTime: 2024-12-03T03:37:34.570Z  WindowLatestEventTime: 2024-12-03T03:37:34.570Z  
+2024-12-03T03:38:19.512Z  TotalEvents: 1241  WindowEvents: 166  WindowEventsPerSec 16.60  WindowAvgDelayMs: 10.46  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 24.00  LatestEventTime: 2024-12-03T03:37:44.408Z  WindowLatestEventTime: 2024-12-03T03:37:44.408Z  
+2024-12-03T03:38:29.512Z  TotalEvents: 1461  WindowEvents: 220  WindowEventsPerSec 22.00  WindowAvgDelayMs: 11.45  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:37:53.728Z  WindowLatestEventTime: 2024-12-03T03:37:53.728Z  
+2024-12-03T03:38:29.991Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197073744,"created_at_timestamp":1733197109982}
+2024-12-03T03:38:29.991Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197073744,"created_at_timestamp":1733197109982}
+2024-12-03T03:38:39.513Z  TotalEvents: 1685  WindowEvents: 224  WindowEventsPerSec 22.40  WindowAvgDelayMs: 10.99  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 18.00  LatestEventTime: 2024-12-03T03:38:02.817Z  WindowLatestEventTime: 2024-12-03T03:38:02.817Z  
+2024-12-03T03:38:40.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197084513,"created_at_timestamp":1733197120981}
+2024-12-03T03:38:40.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197084513,"created_at_timestamp":1733197120982}
+2024-12-03T03:38:40.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197084513,"created_at_timestamp":1733197120982}
+2024-12-03T03:38:40.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197084513,"created_at_timestamp":1733197120982}
+2024-12-03T03:38:40.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197084979,"created_at_timestamp":1733197120983}
+2024-12-03T03:38:46.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089741,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089741,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089741,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089741,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089741,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197089753,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197089754,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089766,"created_at_timestamp":1733197125997}
+2024-12-03T03:38:46.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197089766,"created_at_timestamp":1733197125998}
+2024-12-03T03:38:49.514Z  TotalEvents: 1914  WindowEvents: 229  WindowEventsPerSec 22.90  WindowAvgDelayMs: 12.14  WindowMinDelayMs: 8.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:38:13.487Z  WindowLatestEventTime: 2024-12-03T03:38:13.487Z  
+2024-12-03T03:38:52.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197095085,"created_at_timestamp":1733197131994}
+2024-12-03T03:38:52.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197095085,"created_at_timestamp":1733197131994}
+2024-12-03T03:38:52.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197095085,"created_at_timestamp":1733197131994}
+2024-12-03T03:38:52.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197095085,"created_at_timestamp":1733197131994}
+2024-12-03T03:38:52.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197095085,"created_at_timestamp":1733197131994}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:53.888Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197098190,"created_at_timestamp":1733197133885}
+2024-12-03T03:38:58.993Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197101417,"created_at_timestamp":1733197138981}
+2024-12-03T03:38:59.514Z  TotalEvents: 2202  WindowEvents: 288  WindowEventsPerSec 28.80  WindowAvgDelayMs: 11.45  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:38:22.318Z  WindowLatestEventTime: 2024-12-03T03:38:22.318Z  
+2024-12-03T03:39:02.122Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197103663,"created_at_timestamp":1733197142112}
+2024-12-03T03:39:02.122Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197103663,"created_at_timestamp":1733197142112}
+2024-12-03T03:39:07.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197109258,"created_at_timestamp":1733197146998}
+2024-12-03T03:39:07.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197109258,"created_at_timestamp":1733197146998}
+2024-12-03T03:39:07.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197109258,"created_at_timestamp":1733197146998}
+2024-12-03T03:39:07.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197109258,"created_at_timestamp":1733197146998}
+2024-12-03T03:39:09.515Z  TotalEvents: 2427  WindowEvents: 225  WindowEventsPerSec 22.50  WindowAvgDelayMs: 8.82  WindowMinDelayMs: 4.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:38:32.510Z  WindowLatestEventTime: 2024-12-03T03:38:32.510Z  
+2024-12-03T03:39:17.988Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197121254,"created_at_timestamp":1733197157983}
+2024-12-03T03:39:19.516Z  TotalEvents: 2668  WindowEvents: 241  WindowEventsPerSec 24.10  WindowAvgDelayMs: 9.15  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 22.00  LatestEventTime: 2024-12-03T03:38:42.586Z  WindowLatestEventTime: 2024-12-03T03:38:42.586Z  
+2024-12-03T03:39:23.181Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197125068,"created_at_timestamp":1733197163167}
+2024-12-03T03:39:23.181Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197125068,"created_at_timestamp":1733197163167}
+2024-12-03T03:39:23.181Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197125068,"created_at_timestamp":1733197163167}
+2024-12-03T03:39:23.181Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197125068,"created_at_timestamp":1733197163167}
+2024-12-03T03:39:23.182Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197125068,"created_at_timestamp":1733197163167}
+2024-12-03T03:39:26.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197127976,"created_at_timestamp":1733197165981}
+2024-12-03T03:39:26.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197127976,"created_at_timestamp":1733197165981}
+2024-12-03T03:39:29.517Z  TotalEvents: 2919  WindowEvents: 251  WindowEventsPerSec 25.10  WindowAvgDelayMs: 15.63  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 28.00  LatestEventTime: 2024-12-03T03:38:52.156Z  WindowLatestEventTime: 2024-12-03T03:38:52.156Z  
+2024-12-03T03:39:36.003Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197137693,"created_at_timestamp":1733197175996}
+2024-12-03T03:39:39.518Z  TotalEvents: 3220  WindowEvents: 301  WindowEventsPerSec 30.10  WindowAvgDelayMs: 10.09  WindowMinDelayMs: 7.00  WindowMaxDelayMs: 14.00  LatestEventTime: 2024-12-03T03:39:00.872Z  WindowLatestEventTime: 2024-12-03T03:39:00.872Z  
+2024-12-03T03:39:43.872Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197144622,"created_at_timestamp":1733197183867}
+2024-12-03T03:39:49.519Z  TotalEvents: 3534  WindowEvents: 314  WindowEventsPerSec 31.40  WindowAvgDelayMs: 7.40  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 14.00  LatestEventTime: 2024-12-03T03:39:10.821Z  WindowLatestEventTime: 2024-12-03T03:39:10.821Z  
+2024-12-03T03:39:59.520Z  TotalEvents: 3706  WindowEvents: 172  WindowEventsPerSec 17.20  WindowAvgDelayMs: 15.97  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 22.00  LatestEventTime: 2024-12-03T03:39:19.041Z  WindowLatestEventTime: 2024-12-03T03:39:19.041Z  
+2024-12-03T03:39:59.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197159199,"created_at_timestamp":1733197199983}
+2024-12-03T03:39:59.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197159199,"created_at_timestamp":1733197199983}
+2024-12-03T03:39:59.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197159199,"created_at_timestamp":1733197199983}
+2024-12-03T03:39:59.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197159199,"created_at_timestamp":1733197199983}
+2024-12-03T03:40:04.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197166753,"created_at_timestamp":1733197204984}
+2024-12-03T03:40:04.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197166753,"created_at_timestamp":1733197204984}
+2024-12-03T03:40:04.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197166753,"created_at_timestamp":1733197204985}
+2024-12-03T03:40:04.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197166753,"created_at_timestamp":1733197204985}
+2024-12-03T03:40:09.521Z  TotalEvents: 3991  WindowEvents: 285  WindowEventsPerSec 28.50  WindowAvgDelayMs: 10.29  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 18.00  LatestEventTime: 2024-12-03T03:39:30.439Z  WindowLatestEventTime: 2024-12-03T03:39:30.439Z  
+2024-12-03T03:40:09.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197171057,"created_at_timestamp":1733197209989}
+2024-12-03T03:40:09.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197171057,"created_at_timestamp":1733197209989}
+2024-12-03T03:40:16.007Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197176755,"created_at_timestamp":1733197215996}
+2024-12-03T03:40:16.007Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197176755,"created_at_timestamp":1733197215996}
+2024-12-03T03:40:16.007Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197176755,"created_at_timestamp":1733197215996}
+2024-12-03T03:40:17.995Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197179108,"created_at_timestamp":1733197217985}
+2024-12-03T03:40:18.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197177285,"created_at_timestamp":1733197218007}
+2024-12-03T03:40:18.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197177285,"created_at_timestamp":1733197218007}
+2024-12-03T03:40:18.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197177285,"created_at_timestamp":1733197218007}
+2024-12-03T03:40:19.521Z  TotalEvents: 4212  WindowEvents: 221  WindowEventsPerSec 22.10  WindowAvgDelayMs: 10.01  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 17.00  LatestEventTime: 2024-12-03T03:39:39.276Z  WindowLatestEventTime: 2024-12-03T03:39:39.276Z  
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197188531,"created_at_timestamp":1733197228994}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197188532,"created_at_timestamp":1733197228995}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197188532,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197188532,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197188532,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197188544,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197188544,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197188549,"created_at_timestamp":1733197228997}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197188561,"created_at_timestamp":1733197228998}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197188561,"created_at_timestamp":1733197228998}
+2024-12-03T03:40:29.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197188566,"created_at_timestamp":1733197228998}
+2024-12-03T03:40:29.522Z  TotalEvents: 4473  WindowEvents: 261  WindowEventsPerSec 26.10  WindowAvgDelayMs: 12.20  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:39:49.417Z  WindowLatestEventTime: 2024-12-03T03:39:49.417Z  
+2024-12-03T03:40:33.919Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233916}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:33.920Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197194132,"created_at_timestamp":1733197233917}
+2024-12-03T03:40:39.523Z  TotalEvents: 4848  WindowEvents: 375  WindowEventsPerSec 37.50  WindowAvgDelayMs: 8.67  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:39:59.445Z  WindowLatestEventTime: 2024-12-03T03:39:59.445Z  
+2024-12-03T03:40:49.525Z  TotalEvents: 5038  WindowEvents: 190  WindowEventsPerSec 19.00  WindowAvgDelayMs: 7.85  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:40:08.484Z  WindowLatestEventTime: 2024-12-03T03:40:08.484Z  
+2024-12-03T03:40:59.524Z  TotalEvents: 5231  WindowEvents: 193  WindowEventsPerSec 19.30  WindowAvgDelayMs: 7.10  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 14.00  LatestEventTime: 2024-12-03T03:40:18.332Z  WindowLatestEventTime: 2024-12-03T03:40:18.332Z  
+2024-12-03T03:41:00.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197219636,"created_at_timestamp":1733197260982}
+2024-12-03T03:41:09.525Z  TotalEvents: 5437  WindowEvents: 206  WindowEventsPerSec 20.60  WindowAvgDelayMs: 12.46  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:40:28.335Z  WindowLatestEventTime: 2024-12-03T03:40:28.335Z  
+2024-12-03T03:41:19.526Z  TotalEvents: 5731  WindowEvents: 294  WindowEventsPerSec 29.40  WindowAvgDelayMs: 13.70  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 21.00  LatestEventTime: 2024-12-03T03:40:37.727Z  WindowLatestEventTime: 2024-12-03T03:40:37.727Z  
+2024-12-03T03:41:23.179Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197240679,"created_at_timestamp":1733197283168}
+2024-12-03T03:41:23.957Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197242982,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242982,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242982,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242982,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242999,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242999,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242999,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:23.958Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197242999,"created_at_timestamp":1733197283954}
+2024-12-03T03:41:29.527Z  TotalEvents: 5995  WindowEvents: 264  WindowEventsPerSec 26.40  WindowAvgDelayMs: 9.95  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 21.00  LatestEventTime: 2024-12-03T03:40:46.699Z  WindowLatestEventTime: 2024-12-03T03:40:46.699Z  
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197256692,"created_at_timestamp":1733197298998}
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197256692,"created_at_timestamp":1733197298998}
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197256692,"created_at_timestamp":1733197298999}
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197256709,"created_at_timestamp":1733197298999}
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197256709,"created_at_timestamp":1733197298999}
+2024-12-03T03:41:39.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197256709,"created_at_timestamp":1733197298999}
+2024-12-03T03:41:39.527Z  TotalEvents: 6357  WindowEvents: 362  WindowEventsPerSec 36.20  WindowAvgDelayMs: 12.55  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 21.00  LatestEventTime: 2024-12-03T03:40:56.847Z  WindowLatestEventTime: 2024-12-03T03:40:56.847Z  
+2024-12-03T03:41:43.870Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197262427,"created_at_timestamp":1733197303867}
+2024-12-03T03:41:43.870Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197262598,"created_at_timestamp":1733197303867}
+2024-12-03T03:41:43.870Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197262598,"created_at_timestamp":1733197303867}
+2024-12-03T03:41:43.870Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197262734,"created_at_timestamp":1733197303867}
+2024-12-03T03:41:43.870Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197262740,"created_at_timestamp":1733197303867}
+2024-12-03T03:41:46.002Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.002Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.002Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.002Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.007Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.007Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:46.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197263151,"created_at_timestamp":1733197305993}
+2024-12-03T03:41:49.529Z  TotalEvents: 6563  WindowEvents: 206  WindowEventsPerSec 20.60  WindowAvgDelayMs: 8.56  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 17.00  LatestEventTime: 2024-12-03T03:41:06.527Z  WindowLatestEventTime: 2024-12-03T03:41:06.527Z  
+2024-12-03T03:41:57.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197273357,"created_at_timestamp":1733197317009}
+2024-12-03T03:41:57.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197273359,"created_at_timestamp":1733197317009}
+2024-12-03T03:41:59.529Z  TotalEvents: 6853  WindowEvents: 290  WindowEventsPerSec 29.00  WindowAvgDelayMs: 13.89  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 25.00  LatestEventTime: 2024-12-03T03:41:14.987Z  WindowLatestEventTime: 2024-12-03T03:41:14.987Z  
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275767,"created_at_timestamp":1733197319986}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319986}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319986}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319986}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319987}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319987}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275768,"created_at_timestamp":1733197319987}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275909,"created_at_timestamp":1733197319988}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275909,"created_at_timestamp":1733197319988}
+2024-12-03T03:42:00.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197275909,"created_at_timestamp":1733197319989}
+2024-12-03T03:42:01.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197276683,"created_at_timestamp":1733197321005}
+2024-12-03T03:42:01.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197276683,"created_at_timestamp":1733197321005}
+2024-12-03T03:42:01.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197276834,"created_at_timestamp":1733197321006}
+2024-12-03T03:42:01.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197276834,"created_at_timestamp":1733197321006}
+2024-12-03T03:42:03.017Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197278737,"created_at_timestamp":1733197323011}
+2024-12-03T03:42:03.858Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197278738,"created_at_timestamp":1733197323856}
+2024-12-03T03:42:03.858Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197278738,"created_at_timestamp":1733197323856}
+2024-12-03T03:42:03.876Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197280522,"created_at_timestamp":1733197323873}
+2024-12-03T03:42:03.876Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197280522,"created_at_timestamp":1733197323873}
+2024-12-03T03:42:03.877Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197280522,"created_at_timestamp":1733197323873}
+2024-12-03T03:42:07.003Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197283149,"created_at_timestamp":1733197326995}
+2024-12-03T03:42:07.003Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197283149,"created_at_timestamp":1733197326995}
+2024-12-03T03:42:07.003Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197283149,"created_at_timestamp":1733197326995}
+2024-12-03T03:42:09.530Z  TotalEvents: 7105  WindowEvents: 252  WindowEventsPerSec 25.20  WindowAvgDelayMs: 9.02  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 29.00  LatestEventTime: 2024-12-03T03:41:25.692Z  WindowLatestEventTime: 2024-12-03T03:41:25.692Z  
+2024-12-03T03:42:10.127Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197285874,"created_at_timestamp":1733197330118}
+2024-12-03T03:42:10.129Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197286849,"created_at_timestamp":1733197330120}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288644,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197288936,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.55500030517578,"timestamp":1733197288970,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197288970,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197288970,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197288970,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197288970,"created_at_timestamp":1733197332006}
+2024-12-03T03:42:12.089Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197286849,"created_at_timestamp":1733197332081}
+2024-12-03T03:42:12.089Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.564998626708984,"timestamp":1733197286849,"created_at_timestamp":1733197332081}
+2024-12-03T03:42:12.092Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197286871,"created_at_timestamp":1733197332082}
+2024-12-03T03:42:12.092Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197287005,"created_at_timestamp":1733197332082}
+2024-12-03T03:42:12.092Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197287151,"created_at_timestamp":1733197332082}
+2024-12-03T03:42:12.092Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.560001373291016,"timestamp":1733197287156,"created_at_timestamp":1733197332082}
+2024-12-03T03:42:13.878Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197289823,"created_at_timestamp":1733197333868}
+2024-12-03T03:42:13.878Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197289964,"created_at_timestamp":1733197333869}
+2024-12-03T03:42:13.878Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.54999923706055,"timestamp":1733197289964,"created_at_timestamp":1733197333869}
+2024-12-03T03:42:13.878Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.55500030517578,"timestamp":1733197289967,"created_at_timestamp":1733197333869}
+2024-12-03T03:42:13.878Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.55500030517578,"timestamp":1733197290136,"created_at_timestamp":1733197333869}
+2024-12-03T03:42:13.879Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.55500030517578,"timestamp":1733197290136,"created_at_timestamp":1733197333869}
+2024-12-03T03:42:13.893Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.56999969482422,"timestamp":1733197290519,"created_at_timestamp":1733197333887}
+2024-12-03T03:42:19.531Z  TotalEvents: 7387  WindowEvents: 282  WindowEventsPerSec 28.20  WindowAvgDelayMs: 10.40  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:41:34.467Z  WindowLatestEventTime: 2024-12-03T03:41:34.467Z  
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197295572,"created_at_timestamp":1733197339993}
+2024-12-03T03:42:20.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197295572,"created_at_timestamp":1733197339994}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.57500076293945,"timestamp":1733197300629,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300629,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343933}
+2024-12-03T03:42:23.940Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.58000183105469,"timestamp":1733197300630,"created_at_timestamp":1733197343934}
+2024-12-03T03:42:25.995Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197301628,"created_at_timestamp":1733197345983}
+2024-12-03T03:42:25.995Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197301628,"created_at_timestamp":1733197345983}
+2024-12-03T03:42:27.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197302628,"created_at_timestamp":1733197346996}
+2024-12-03T03:42:27.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197302628,"created_at_timestamp":1733197346996}
+2024-12-03T03:42:27.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197302628,"created_at_timestamp":1733197346996}
+2024-12-03T03:42:27.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197302628,"created_at_timestamp":1733197346996}
+2024-12-03T03:42:27.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197302639,"created_at_timestamp":1733197346997}
+2024-12-03T03:42:29.531Z  TotalEvents: 7636  WindowEvents: 249  WindowEventsPerSec 24.90  WindowAvgDelayMs: 10.55  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:41:44.411Z  WindowLatestEventTime: 2024-12-03T03:41:44.411Z  
+2024-12-03T03:42:33.865Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197309984,"created_at_timestamp":1733197353862}
+2024-12-03T03:42:39.532Z  TotalEvents: 8064  WindowEvents: 428  WindowEventsPerSec 42.80  WindowAvgDelayMs: 9.32  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:41:53.932Z  WindowLatestEventTime: 2024-12-03T03:41:53.932Z  
+2024-12-03T03:42:44.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197318934,"created_at_timestamp":1733197363996}
+2024-12-03T03:42:44.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197318934,"created_at_timestamp":1733197363996}
+2024-12-03T03:42:44.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197318935,"created_at_timestamp":1733197363996}
+2024-12-03T03:42:44.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197318935,"created_at_timestamp":1733197363996}
+2024-12-03T03:42:49.533Z  TotalEvents: 8361  WindowEvents: 297  WindowEventsPerSec 29.70  WindowAvgDelayMs: 9.98  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:42:04.132Z  WindowLatestEventTime: 2024-12-03T03:42:04.132Z  
+2024-12-03T03:42:59.534Z  TotalEvents: 8508  WindowEvents: 147  WindowEventsPerSec 14.70  WindowAvgDelayMs: 9.82  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:42:13.273Z  WindowLatestEventTime: 2024-12-03T03:42:13.273Z  
+2024-12-03T03:43:00.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197333416,"created_at_timestamp":1733197379982}
+2024-12-03T03:43:00.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197333416,"created_at_timestamp":1733197379982}
+2024-12-03T03:43:00.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197333416,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333416,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333416,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333416,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333416,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.011Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333417,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.599998474121094,"timestamp":1733197333417,"created_at_timestamp":1733197379983}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197333429,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197333429,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197333446,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197333446,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197333515,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197333515,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197333515,"created_at_timestamp":1733197379984}
+2024-12-03T03:43:00.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.584999084472656,"timestamp":1733197333520,"created_at_timestamp":1733197379985}
+2024-12-03T03:43:09.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197342038,"created_at_timestamp":1733197389001}
+2024-12-03T03:43:09.535Z  TotalEvents: 8761  WindowEvents: 253  WindowEventsPerSec 25.30  WindowAvgDelayMs: 16.34  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 29.00  LatestEventTime: 2024-12-03T03:42:23.387Z  WindowLatestEventTime: 2024-12-03T03:42:23.387Z  
+2024-12-03T03:43:16.020Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197348884,"created_at_timestamp":1733197395997}
+2024-12-03T03:43:16.026Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197348890,"created_at_timestamp":1733197395998}
+2024-12-03T03:43:19.537Z  TotalEvents: 8999  WindowEvents: 238  WindowEventsPerSec 23.80  WindowAvgDelayMs: 14.42  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 30.00  LatestEventTime: 2024-12-03T03:42:32.830Z  WindowLatestEventTime: 2024-12-03T03:42:32.830Z  
+2024-12-03T03:43:22.021Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.595001220703125,"timestamp":1733197354907,"created_at_timestamp":1733197402002}
+2024-12-03T03:43:22.021Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.59000015258789,"timestamp":1733197354907,"created_at_timestamp":1733197402002}
+2024-12-03T03:43:29.538Z  TotalEvents: 9232  WindowEvents: 233  WindowEventsPerSec 23.30  WindowAvgDelayMs: 15.91  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 21.00  LatestEventTime: 2024-12-03T03:42:41.624Z  WindowLatestEventTime: 2024-12-03T03:42:41.624Z  
+2024-12-03T03:43:39.539Z  TotalEvents: 9457  WindowEvents: 225  WindowEventsPerSec 22.50  WindowAvgDelayMs: 8.60  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 25.00  LatestEventTime: 2024-12-03T03:42:51.375Z  WindowLatestEventTime: 2024-12-03T03:42:51.375Z  
+2024-12-03T03:43:42.005Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197373398,"created_at_timestamp":1733197421994}
+2024-12-03T03:43:48.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197378885,"created_at_timestamp":1733197427995}
+2024-12-03T03:43:49.540Z  TotalEvents: 9617  WindowEvents: 160  WindowEventsPerSec 16.00  WindowAvgDelayMs: 10.70  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 17.00  LatestEventTime: 2024-12-03T03:43:01.287Z  WindowLatestEventTime: 2024-12-03T03:43:01.287Z  
+2024-12-03T03:43:51.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197381869,"created_at_timestamp":1733197430994}
+2024-12-03T03:43:51.005Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197381869,"created_at_timestamp":1733197430994}
+2024-12-03T03:43:51.005Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197381871,"created_at_timestamp":1733197430995}
+2024-12-03T03:43:51.005Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.60499954223633,"timestamp":1733197381887,"created_at_timestamp":1733197430995}
+2024-12-03T03:43:59.540Z  TotalEvents: 9911  WindowEvents: 294  WindowEventsPerSec 29.40  WindowAvgDelayMs: 7.92  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 13.00  LatestEventTime: 2024-12-03T03:43:11.086Z  WindowLatestEventTime: 2024-12-03T03:43:11.086Z  
+2024-12-03T03:44:05.992Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197397041,"created_at_timestamp":1733197445984}
+2024-12-03T03:44:05.992Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197397041,"created_at_timestamp":1733197445984}
+2024-12-03T03:44:05.992Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197397041,"created_at_timestamp":1733197445984}
+2024-12-03T03:44:09.541Z  TotalEvents: 10128  WindowEvents: 217  WindowEventsPerSec 21.70  WindowAvgDelayMs: 6.97  WindowMinDelayMs: 1.00  WindowMaxDelayMs: 11.00  LatestEventTime: 2024-12-03T03:43:20.129Z  WindowLatestEventTime: 2024-12-03T03:43:20.129Z  
+2024-12-03T03:44:19.543Z  TotalEvents: 10352  WindowEvents: 224  WindowEventsPerSec 22.40  WindowAvgDelayMs: 12.55  WindowMinDelayMs: 4.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:43:30.622Z  WindowLatestEventTime: 2024-12-03T03:43:30.622Z  
+2024-12-03T03:44:29.543Z  TotalEvents: 10607  WindowEvents: 255  WindowEventsPerSec 25.50  WindowAvgDelayMs: 11.67  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 17.00  LatestEventTime: 2024-12-03T03:43:40.128Z  WindowLatestEventTime: 2024-12-03T03:43:40.128Z  
+2024-12-03T03:44:39.544Z  TotalEvents: 10852  WindowEvents: 245  WindowEventsPerSec 24.50  WindowAvgDelayMs: 9.07  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:43:49.997Z  WindowLatestEventTime: 2024-12-03T03:43:49.997Z  
+2024-12-03T03:44:49.544Z  TotalEvents: 11012  WindowEvents: 160  WindowEventsPerSec 16.00  WindowAvgDelayMs: 12.44  WindowMinDelayMs: 1.00  WindowMaxDelayMs: 18.00  LatestEventTime: 2024-12-03T03:43:58.898Z  WindowLatestEventTime: 2024-12-03T03:43:58.898Z  
+2024-12-03T03:44:53.981Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197443471,"created_at_timestamp":1733197493973}
+2024-12-03T03:44:58.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197447748,"created_at_timestamp":1733197497996}
+2024-12-03T03:44:58.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197445763,"created_at_timestamp":1733197498001}
+2024-12-03T03:44:58.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197445763,"created_at_timestamp":1733197498001}
+2024-12-03T03:44:58.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197445763,"created_at_timestamp":1733197498001}
+2024-12-03T03:44:58.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197447749,"created_at_timestamp":1733197498982}
+2024-12-03T03:44:59.545Z  TotalEvents: 11331  WindowEvents: 319  WindowEventsPerSec 31.90  WindowAvgDelayMs: 13.61  WindowMinDelayMs: 7.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:44:08.753Z  WindowLatestEventTime: 2024-12-03T03:44:08.753Z  
+2024-12-03T03:45:09.546Z  TotalEvents: 11501  WindowEvents: 170  WindowEventsPerSec 17.00  WindowAvgDelayMs: 10.17  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 14.00  LatestEventTime: 2024-12-03T03:44:17.622Z  WindowLatestEventTime: 2024-12-03T03:44:17.622Z  
+2024-12-03T03:45:11.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.630001068115234,"timestamp":1733197460127,"created_at_timestamp":1733197510994}
+2024-12-03T03:45:19.547Z  TotalEvents: 11713  WindowEvents: 212  WindowEventsPerSec 21.20  WindowAvgDelayMs: 10.42  WindowMinDelayMs: 4.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:44:28.492Z  WindowLatestEventTime: 2024-12-03T03:44:28.492Z  
+2024-12-03T03:45:22.017Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197469810,"created_at_timestamp":1733197521998}
+2024-12-03T03:45:29.548Z  TotalEvents: 11898  WindowEvents: 185  WindowEventsPerSec 18.50  WindowAvgDelayMs: 14.31  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:44:38.231Z  WindowLatestEventTime: 2024-12-03T03:44:38.231Z  
+2024-12-03T03:45:39.548Z  TotalEvents: 12115  WindowEvents: 217  WindowEventsPerSec 21.70  WindowAvgDelayMs: 10.21  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:44:46.276Z  WindowLatestEventTime: 2024-12-03T03:44:46.276Z  
+2024-12-03T03:45:43.966Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197492772,"created_at_timestamp":1733197543959}
+2024-12-03T03:45:49.549Z  TotalEvents: 12405  WindowEvents: 290  WindowEventsPerSec 29.00  WindowAvgDelayMs: 10.16  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:44:57.452Z  WindowLatestEventTime: 2024-12-03T03:44:57.452Z  
+2024-12-03T03:45:59.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197506147,"created_at_timestamp":1733197558994}
+2024-12-03T03:45:59.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197506891,"created_at_timestamp":1733197558998}
+2024-12-03T03:45:59.550Z  TotalEvents: 12603  WindowEvents: 198  WindowEventsPerSec 19.80  WindowAvgDelayMs: 13.11  WindowMinDelayMs: 8.00  WindowMaxDelayMs: 26.00  LatestEventTime: 2024-12-03T03:45:06.891Z  WindowLatestEventTime: 2024-12-03T03:45:06.891Z  
+2024-12-03T03:46:07.006Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197514338,"created_at_timestamp":1733197566995}
+2024-12-03T03:46:09.551Z  TotalEvents: 12845  WindowEvents: 242  WindowEventsPerSec 24.20  WindowAvgDelayMs: 12.96  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 22.00  LatestEventTime: 2024-12-03T03:45:16.843Z  WindowLatestEventTime: 2024-12-03T03:45:16.843Z  
+2024-12-03T03:46:19.551Z  TotalEvents: 12965  WindowEvents: 120  WindowEventsPerSec 12.00  WindowAvgDelayMs: 8.81  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 13.00  LatestEventTime: 2024-12-03T03:45:25.762Z  WindowLatestEventTime: 2024-12-03T03:45:25.762Z  
+2024-12-03T03:46:29.552Z  TotalEvents: 13113  WindowEvents: 148  WindowEventsPerSec 14.80  WindowAvgDelayMs: 5.30  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 10.00  LatestEventTime: 2024-12-03T03:45:34.928Z  WindowLatestEventTime: 2024-12-03T03:45:34.928Z  
+2024-12-03T03:46:39.551Z  TotalEvents: 13406  WindowEvents: 293  WindowEventsPerSec 29.30  WindowAvgDelayMs: 12.03  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 22.00  LatestEventTime: 2024-12-03T03:45:45.182Z  WindowLatestEventTime: 2024-12-03T03:45:45.182Z  
+2024-12-03T03:46:43.966Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197550532,"created_at_timestamp":1733197603958}
+2024-12-03T03:46:45.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197551798,"created_at_timestamp":1733197605985}
+2024-12-03T03:46:45.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197551798,"created_at_timestamp":1733197605985}
+2024-12-03T03:46:45.996Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.625,"timestamp":1733197551798,"created_at_timestamp":1733197605985}
+2024-12-03T03:46:45.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197551798,"created_at_timestamp":1733197605986}
+2024-12-03T03:46:45.997Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197551798,"created_at_timestamp":1733197605986}
+2024-12-03T03:46:49.552Z  TotalEvents: 13628  WindowEvents: 222  WindowEventsPerSec 22.20  WindowAvgDelayMs: 10.49  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:45:55.197Z  WindowLatestEventTime: 2024-12-03T03:45:55.197Z  
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613890}
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613890}
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613891}
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613891}
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613891}
+2024-12-03T03:46:53.894Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197560428,"created_at_timestamp":1733197613891}
+2024-12-03T03:46:56.003Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197561636,"created_at_timestamp":1733197615993}
+2024-12-03T03:46:59.552Z  TotalEvents: 13799  WindowEvents: 171  WindowEventsPerSec 17.10  WindowAvgDelayMs: 12.44  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 23.00  LatestEventTime: 2024-12-03T03:46:03.579Z  WindowLatestEventTime: 2024-12-03T03:46:03.579Z  
+2024-12-03T03:47:09.553Z  TotalEvents: 14080  WindowEvents: 281  WindowEventsPerSec 28.10  WindowAvgDelayMs: 9.54  WindowMinDelayMs: 3.00  WindowMaxDelayMs: 21.00  LatestEventTime: 2024-12-03T03:46:13.876Z  WindowLatestEventTime: 2024-12-03T03:46:13.876Z  
+2024-12-03T03:47:10.013Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197574192,"created_at_timestamp":1733197630003}
+2024-12-03T03:47:19.553Z  TotalEvents: 14357  WindowEvents: 277  WindowEventsPerSec 27.70  WindowAvgDelayMs: 9.73  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:46:24.288Z  WindowLatestEventTime: 2024-12-03T03:46:24.288Z  
+2024-12-03T03:47:26.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197590628,"created_at_timestamp":1733197645994}
+2024-12-03T03:47:26.004Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197590628,"created_at_timestamp":1733197645994}
+2024-12-03T03:47:29.554Z  TotalEvents: 14551  WindowEvents: 194  WindowEventsPerSec 19.40  WindowAvgDelayMs: 10.95  WindowMinDelayMs: 8.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:46:33.164Z  WindowLatestEventTime: 2024-12-03T03:46:33.164Z  
+2024-12-03T03:47:37.000Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.619998931884766,"timestamp":1733197601927,"created_at_timestamp":1733197656994}
+2024-12-03T03:47:39.555Z  TotalEvents: 14771  WindowEvents: 220  WindowEventsPerSec 22.00  WindowAvgDelayMs: 9.41  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 23.00  LatestEventTime: 2024-12-03T03:46:43.270Z  WindowLatestEventTime: 2024-12-03T03:46:43.270Z  
+2024-12-03T03:47:43.876Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197609263,"created_at_timestamp":1733197663873}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197611129,"created_at_timestamp":1733197668162}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197611129,"created_at_timestamp":1733197668162}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197611129,"created_at_timestamp":1733197668162}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197611129,"created_at_timestamp":1733197668162}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197611129,"created_at_timestamp":1733197668162}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197611443,"created_at_timestamp":1733197668163}
+2024-12-03T03:47:48.170Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197611443,"created_at_timestamp":1733197668163}
+2024-12-03T03:47:49.555Z  TotalEvents: 14969  WindowEvents: 198  WindowEventsPerSec 19.80  WindowAvgDelayMs: 8.98  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 15.00  LatestEventTime: 2024-12-03T03:46:52.025Z  WindowLatestEventTime: 2024-12-03T03:46:52.025Z  
+2024-12-03T03:47:59.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197621707,"created_at_timestamp":1733197678994}
+2024-12-03T03:47:59.009Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197621707,"created_at_timestamp":1733197678994}
+2024-12-03T03:47:59.556Z  TotalEvents: 15298  WindowEvents: 329  WindowEventsPerSec 32.90  WindowAvgDelayMs: 11.55  WindowMinDelayMs: 6.00  WindowMaxDelayMs: 19.00  LatestEventTime: 2024-12-03T03:47:03.099Z  WindowLatestEventTime: 2024-12-03T03:47:03.099Z  
+2024-12-03T03:48:06.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197628316,"created_at_timestamp":1733197685995}
+2024-12-03T03:48:06.010Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197628316,"created_at_timestamp":1733197685995}
+2024-12-03T03:48:09.557Z  TotalEvents: 15503  WindowEvents: 205  WindowEventsPerSec 20.50  WindowAvgDelayMs: 11.09  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 17.00  LatestEventTime: 2024-12-03T03:47:11.755Z  WindowLatestEventTime: 2024-12-03T03:47:11.755Z  
+2024-12-03T03:48:19.558Z  TotalEvents: 15645  WindowEvents: 142  WindowEventsPerSec 14.20  WindowAvgDelayMs: 11.08  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 28.00  LatestEventTime: 2024-12-03T03:47:21.829Z  WindowLatestEventTime: 2024-12-03T03:47:21.829Z  
+2024-12-03T03:48:29.558Z  TotalEvents: 15779  WindowEvents: 134  WindowEventsPerSec 13.40  WindowAvgDelayMs: 10.25  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 16.00  LatestEventTime: 2024-12-03T03:47:31.111Z  WindowLatestEventTime: 2024-12-03T03:47:31.111Z  
+2024-12-03T03:48:30.018Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197651196,"created_at_timestamp":1733197710012}
+2024-12-03T03:48:30.018Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197651196,"created_at_timestamp":1733197710012}
+2024-12-03T03:48:39.558Z  TotalEvents: 16014  WindowEvents: 235  WindowEventsPerSec 23.50  WindowAvgDelayMs: 9.68  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 20.00  LatestEventTime: 2024-12-03T03:47:41.040Z  WindowLatestEventTime: 2024-12-03T03:47:41.040Z  
+2024-12-03T03:48:49.559Z  TotalEvents: 16217  WindowEvents: 203  WindowEventsPerSec 20.30  WindowAvgDelayMs: 11.44  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 26.00  LatestEventTime: 2024-12-03T03:47:51.492Z  WindowLatestEventTime: 2024-12-03T03:47:51.492Z  
+2024-12-03T03:48:52.008Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197672695,"created_at_timestamp":1733197731996}
+2024-12-03T03:48:59.560Z  TotalEvents: 16386  WindowEvents: 169  WindowEventsPerSec 16.90  WindowAvgDelayMs: 8.51  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 18.00  LatestEventTime: 2024-12-03T03:48:01.420Z  WindowLatestEventTime: 2024-12-03T03:48:01.420Z  
+2024-12-03T03:49:09.561Z  TotalEvents: 16648  WindowEvents: 262  WindowEventsPerSec 26.20  WindowAvgDelayMs: 15.33  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 26.00  LatestEventTime: 2024-12-03T03:48:10.453Z  WindowLatestEventTime: 2024-12-03T03:48:10.453Z  
+2024-12-03T03:49:11.175Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197692405,"created_at_timestamp":1733197751171}
+2024-12-03T03:49:13.897Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197696612,"created_at_timestamp":1733197753892}
+2024-12-03T03:49:16.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197696612,"created_at_timestamp":1733197755995}
+2024-12-03T03:49:16.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197696612,"created_at_timestamp":1733197755995}
+2024-12-03T03:49:16.012Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197696612,"created_at_timestamp":1733197755995}
+2024-12-03T03:49:18.999Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197698715,"created_at_timestamp":1733197758993}
+2024-12-03T03:49:19.561Z  TotalEvents: 16795  WindowEvents: 147  WindowEventsPerSec 14.70  WindowAvgDelayMs: 8.50  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 18.00  LatestEventTime: 2024-12-03T03:48:19.912Z  WindowLatestEventTime: 2024-12-03T03:48:19.912Z  
+2024-12-03T03:49:26.016Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.6150016784668,"timestamp":1733197706072,"created_at_timestamp":1733197766001}
+2024-12-03T03:49:28.994Z  {"id":"STM.FR","symbol":"STM","exchange":"FR","sectype":"E","lasttradeprice":44.61000061035156,"timestamp":1733197707915,"created_at_timestamp":1733197768985}
+2024-12-03T03:49:29.562Z  TotalEvents: 17166  WindowEvents: 371  WindowEventsPerSec 37.10  WindowAvgDelayMs: 11.39  WindowMinDelayMs: 5.00  WindowMaxDelayMs: 24.00  LatestEventTime: 2024-12-03T03:48:29.771Z  WindowLatestEventTime: 2024-12-03T03:48:29.771Z  
+2024-12-03T03:49:39.562Z  TotalEvents: 17313  WindowEvents: 147  WindowEventsPerSec 14.70  WindowAvgDelayMs: 6.52  WindowMinDelayMs: 2.00  WindowMaxDelayMs: 11.00  LatestEventTime: 2024-12-03T03:48:36.216Z  WindowLatestEventTime: 2024-12-03T03:48:36.216Z  
+2024-12-03T03:49:49.562Z  TotalEvents: 17313  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:48:36.216Z  
+2024-12-03T03:49:59.563Z  TotalEvents: 17313  WindowEvents: 0  WindowEventsPerSec 0.00  LatestEventTime: 2024-12-03T03:48:36.216Z  

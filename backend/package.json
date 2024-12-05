@@ -19,6 +19,7 @@
   "dependencies": {
     "@confluentinc/kafka-javascript": "^0.5.2",
     "avsc": "^5.7.7",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",

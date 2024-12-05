@@ -60,5 +60,18 @@ There was/is a bug in our test consumer that it might timeout and stop working a
 there are 2 files for the `test_buy_sell_consumer` and 3 files for the `test_late_trade_data_consumer`.
 Note, because of this, the totalEvents for `test_buy_sell_consumer` need to be summed from the two logs.
 There is a small chance some data is missing due to us not having time to look into the timeout issue
-of the kafka consumer, but most likely no data was missing.
+of the kafka consumer, but most likely no data was missing. HOWEVER, in the start of the second log some buy
+sell events are out of order, most likely due to racing to consume all of them from all 3 partitions
+that had been stuck there due to the `test_buy_sell_consumer` disconnecting.
 
+In `with_paralellism_1` logs, we used 1 partitions per kafka topic with the flink job using parallism 1.
+
+In `with_paralellism_3_no_discarded_data` logs, we used 3 partitions per kafka topic with the flink job using parallism 3 BUT
+we already in the csv parsing phase omit all data that would be discarded in the flink job (missing trade date or trade time or trade price)
+
+In `with_paralellism_3_no_discarded_data_realtime` logs, we used 3 partitions per kafka topic with the flink job using parallism 3 BUT
+we already in the csv parsing phase omit all data that would be discarded in the flink job (missing trade date or trade time or trade price).
+In addition, we are using our "real time" mocking by adding delays to the consumption after the data points event time is after
+2021-11-08T11:00:00Z and changing them to be close to the userclock. However, it is not fully accurate and there is a drift.
+In the example data, at the end of the code the drift is around 53 seconds. This means when looking at the ema values in the logs,
+they come around 10 seconds after the window ends (taking the drift into account), so the delay to get results is around 10 seconds.

@@ -8,6 +8,7 @@ import { handleSubscribe, initializeSocket } from '../socket'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import BuySellEventTable from './BuySellEventTable'
+import { fetchBuySellEvents, fetchEmaEvents, fetchTradeEvents } from '../api'
 
 const REMOVE_BUY_SELL_EVENT_AFTER_MILLIS = 30000
 const MAX_TOAST_COUNT = 30
@@ -49,6 +50,23 @@ const App = () => {
   }
 
   useEffect(() => {
+    fetchBuySellEvents().then((events) => {
+      setBuySellEvents((currentEvents) => {
+        const newEvents = events.filter((e) => {
+          return !currentEvents.some((currEv) => {
+            return (
+              currEv.buy_or_sell_action === e.buy_or_sell_action &&
+              currEv.symbol === e.symbol &&
+              e.window_end === currEv.window_end
+            )
+          })
+        })
+
+        const allEvents = [...newEvents, ...currentEvents]
+        return allEvents
+      })
+    })
+
     return initializeSocket(
       stockState.setStocks,
       setTradeEvents,
@@ -70,6 +88,13 @@ const App = () => {
     setTradeEvents([])
     setEMAEvents([])
     handleSubscribe(visualizedSymbol)
+    fetchTradeEvents(visualizedSymbol).then((data) => {
+      setTradeEvents(data)
+    })
+
+    fetchEmaEvents(visualizedSymbol).then((data) => {
+      setEMAEvents(data)
+    })
   }, [visualizedSymbol])
 
   return (
